@@ -1,15 +1,17 @@
 ---
-title: "Inventaristatie - Tutorial 'introductie tot R'"
+title: "Tutorial 'introductie tot R'"
 author: "Louis Verschuren, Lander Baeten"
 ---
+
+*Deze tutorial komt uit de cursus "Inventarisatie van boes en natuur" (IMBONA)*
 
 R is een programmeertaal en omgeving voor data analyse en grafische weergave. Het is een open source implementatie van de S taal, die o.a. de basis vormt voor de S-PLUS software. Een heel aantal statistische analysetechnieken wordt standaard in de basisomgeving van R aangeboden, maar de meeste worden beschikbaar gesteld als extra packages op het CRAN  netwerk (<http://cran.r-project.org/>). Er is een belangrijk verschil in filosofie tussen R (en S) en andere software die courant gebruikt wordt voor data analyse. In R worden analyses uitgevoerd in opeenvolgende stappen waarbij intermediaire resultaten bewaard worden als objecten. Waar andere systemen zoals SAS en SPSS direct relatief veel output tonen in tabellen en figuren, zal R minimale output tonen en de resultaten opslaan in nieuwe objecten. Die objecten kunnen dan verder gebruik worden in andere R functies.
 
 Deze introductie is zeer beknopt en gebaseerd op de veel uitgebreidere documentatie op het CRAN netwerk: <http://cran.r-project.org/doc/manuals/R-intro.html>
 
-De interface
------------------------------------------------------
-### RStudio
+# De interface
+
+## RStudio
 
 In deze cursus maken we gebruik van RStudio, een vrij beschikbare *integrated development environment (IDE)* voor R. Installeer een recente versie van RStudio op <https://www.rstudio.com/>.
 
@@ -29,7 +31,8 @@ mean(x)
 ```
 <sub>*Opmerking: de grijze box toont de code die je zelf typt na de prompt, de witte box toont de output die in de Console zal verschijnen*
 
-### R markdown
+## R markdown
+
 In deze cursus maken we gebruik van **R markdown**. Deze markdowns laten toe tekst, code (*chunks*) en resultaten in een enkel document te ontwikkelen. Het verschil met een script is dat (1) de tekst opgemaakt kan worden (en niet enkel na een hashtag moet komen) en (2) de output van de analyse niet in de console of tab met figuren terechtkomt, maar rechstreeks tussen de tekst. Dit is erg nuttig voor het uitwerken van een wetenschappelijk verslag. Open een nieuwe markdown `File > New file > R markdown`. Dit opent een voorbeeld markdown, met kop-informatie, voorbeeld tekst en code.
 
 **Tekst** - De tekst in een markdown wordt geschreven in Markdown formaat. Dit is een eenvoudige opmaaksyntax voor het creëren van HTML, PDF... documenten. Zie <http://rmarkdown.rstudio.com> voor meer info of oefen wat met de opmaaktaal via een online Markdown editor zoals <https://stackedit.io>. Er is ook een spiekbriefje dat je [hier](http://rmarkdown.rstudio.com/lesson-15.html) kan downloaden.
@@ -47,9 +50,7 @@ In deze cursus maken we gebruik van **R markdown**. Deze markdowns laten toe tek
 
 **Voor je verder gaat!**  R zal steeds data, etc... zoeken in de *working directory*. Deze moet je dus eerst instellen: `Session > Set working directory > Choose directory`. Het is echter veel gemakkelijker om te werken binnen projecten, die leggen je *working directory* vast. Een nieuw project maak je aan door op `File > New Project...` te  klikken en dan de folder die je voor dit project wil gebruiken aan te geven. Elke keer dat je aan het project wil werken open je de .Rproj file, dan is je working directory direct juist. 
 
-
-R ALS REKENMACHINE
------------------------------------------------------
+# R als rekenmachine
 
 Vanaf hier beginnen we met eenvoudige stukken code te ontwikkelen en starten met enkele voorbeelden die basisbewerkingen in R illustreren. Voer ze uit in *code chunks* van je nieuwe R Notebook file.
 
@@ -71,8 +72,8 @@ Logische operatoren
 <sub>*let op de dubbele == om een gelijkheid te evalueren*
 
 
-VARIABELEN EN VECTOREN
------------------------------------------------------
+# Variabelen en vectoren 
+
 Een variabele defini&euml;ren en er een waarde aan toekennen kan door een pijltje `<-` of `=` te gebruiken. Je definieert zo dus een nieuw object. Let op: R is hoofdlettergevoelig.
 ```{r}
 x <- 2
@@ -104,8 +105,8 @@ length(a)       # het aantal elementen in vector a
 
 Probeer nu zelf een vector met naam 'b' te maken, met als elementen 120, 140 en 160. Bereken de som van deze drie getallen en neem er de vierkantswortel van.
 
-MATRICES
------------------------------------------------------
+# Matrices
+
 Matrices worden o.a. met de functie `matrix()` gedefinieerd.
 ```{r}
 A <- matrix(1:10, nrow=2, ncol=5)
@@ -115,8 +116,8 @@ nrow(A)         # aantal rijen in matrix A
 dim(A)          # dimensies van de matrix A
 ```
 
-SUBSCRIPTING
------------------------------------------------------
+# Subscripting
+
 Subscripting is het selecteren van elementen van een vector of matrix met behulp van rechte haken. Probeer de werking van onderstaande bewerkingen goed te begrijpen.
 ```{r}
 a[2]            # het tweede element van de vector a
@@ -138,15 +139,16 @@ length(a[a>14])
 ```
 
 
+# Gebruiker gedefinieerde functies
 
-GERBRUIKER GEDEFINIEERDE FUNCTIES
--------------------------------------------
 Binnen R kan je ook je eigen functies bouwen, deze hebben normaal de volgende syntax: 
 
-functie _naam <- function(argument_1, argument_2) { 
+```
+functie_naam <- function(argument_1, argument_2) { 
   functie berekeningen
   return (output)
 }
+```
 
 Bijvoorbeeld, als we een functie willen bouwen die het gemiddelde van twee getallen berekent, kan dat als volgt: 
 ```{r}
@@ -155,15 +157,12 @@ gemiddelde_twee_getallen <- function(num_1, num_2) {
   return (gemiddelde)
 }
 gemiddelde_twee_getallen(10, 16)
-
 ```
+
 Dit kan handig zijn indien je dezelfde bewerking meermaals moet uitvoeren, op die manier is de berekening maar 1 maal uitgeschreven en blijft de code overzichtelijk. Schrijf nu je eigen functie die de omtrek van een cirkel met straal r berekent. 
 
+# Grafieken
 
-
-
-GRAFIEKEN
------------------------------------------------------
 R is bijzonder geschikt om data grafisch voor te stellen. Veel gebruikte basisfuncties zijn bv. ```plot()``` en ```hist()```
 ```{r fig.width=4, fig.height=4}
 x.data <- c(1:100)                      # x is een vector met waarden 1 tot en met 100  
@@ -174,8 +173,7 @@ hist(y.data)                            # histogram (frequenties) van y.data
 ```
 
 
-DATA INPUT
------------------------------------------------------
+# Data input
 
 R kan verschillende bestandsformaten inlezen. Je kan data ingeven in Excel en opslaan in een eenvoudig tekstformaat, bijvoorbeeld waarbij kolommen gescheiden worden door een komma (comma separated values of 'csv' file). Op Ufora vind je het bestand *bomen.csv*. Sla deze file op in je **working directory**. Vervolgens kan je in R deze file inlezen en toewijzen aan een nieuw object (hier noemen we de data ```M_voorbeeld```)
 
@@ -215,11 +213,10 @@ M_voorbeeld$Volume_m3
 
 Selecteer nu zelf *Quercus rubur* uit de bovenstaande dataset en maak een scatterplot met als x en y variabele de diameter en hoogte van deze soorten.
 
+# Extra paketten
 
-
-EXTRA PAKKETTEN
--------------------------------------------
 Naast de basisfuncties die automatisch ge&iuml;nstalleerd worden bij installatie van R, worden er talloze extra functies, data en documentatie beschikbaar gesteld in extra *packages* via het CRAN netwerk. Deze pakketten zijn te installeren in R zelf. Voor het maken van mooie figuren gebruiken we vaak het pakket ```ggplot2```. 
+
 ```{r, eval=F}
 install.packages("ggplot2")
 ```
@@ -233,11 +230,8 @@ Een overzicht van alle tutorials en helpfiles voor dit pakket vind je via
 help(package="ggplot2")
 ```
 
+## ggplot2
 
-
-
-GGPLOT2
--------------------------------------------
 ggplot2 is gebaseerd op ```the grammar of graphics```, het idee dat je elke grafiek uit dezelfde componenten kunt bouwen: een dataset, een coördinatensysteem en geoms: visuele markeringen die datapunten vertegenwoordigen. Om waarden weer te geven, wijs je variabelen in de gegevens toe aan visuele eigenschappen van het geom (aesthetics), zoals grootte, kleur en x- en y-locaties. Het onderstaande sjabloon kan gebruikt worden om een grafiek te maken.
 
 ggplot(data = <Data>) +
