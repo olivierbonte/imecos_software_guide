@@ -9,6 +9,7 @@ website:
       - href: index.qmd
         text: Home
       - python_vs_code.qmd
+      - genai.qmd
 
 
 format:
