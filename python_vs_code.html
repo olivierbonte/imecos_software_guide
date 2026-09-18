@@ -139,6 +139,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link active" href="./python_vs_code.html" aria-current="page"> 
 <span class="menu-text">Python and VS Code</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./genai.html"> 
+<span class="menu-text">Generative AI</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -154,31 +158,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Op deze pagina</h2>
    
-  <ul>
-  <li><a href="#waarom-deze-handleiding" id="toc-waarom-deze-handleiding" class="nav-link active" data-scroll-target="#waarom-deze-handleiding">Waarom deze handleiding?</a></li>
-  <li><a href="#installeer-de-software" id="toc-installeer-de-software" class="nav-link" data-scroll-target="#installeer-de-software">Installeer de software</a>
   <ul class="collapse">
-  <li><a href="#anaconda-python-interpreter" id="toc-anaconda-python-interpreter" class="nav-link" data-scroll-target="#anaconda-python-interpreter">Anaconda + Python interpreter</a></li>
-  <li><a href="#vs-code" id="toc-vs-code" class="nav-link" data-scroll-target="#vs-code">VS Code</a></li>
-  <li><a href="#vs-code-extensies" id="toc-vs-code-extensies" class="nav-link" data-scroll-target="#vs-code-extensies">VS Code extensies</a></li>
-  <li><a href="#controleer-de-installatie-van-conda" id="toc-controleer-de-installatie-van-conda" class="nav-link" data-scroll-target="#controleer-de-installatie-van-conda">Controleer de installatie van <em>conda</em></a></li>
-  </ul></li>
-  <li><a href="#configureer-vs-code" id="toc-configureer-vs-code" class="nav-link" data-scroll-target="#configureer-vs-code">Configureer VS Code</a>
+  <li><a href="#waarom-deze-handleiding" id="toc-waarom-deze-handleiding" class="nav-link active" data-scroll-target="#waarom-deze-handleiding"><span class="header-section-number">1</span> Waarom deze handleiding?</a></li>
+  <li><a href="#installeer-de-software" id="toc-installeer-de-software" class="nav-link" data-scroll-target="#installeer-de-software"><span class="header-section-number">2</span> Installeer de software</a>
   <ul class="collapse">
-  <li><a href="#selecteer-de-working-directory" id="toc-selecteer-de-working-directory" class="nav-link" data-scroll-target="#selecteer-de-working-directory">Selecteer de <em>Working directory</em></a></li>
-  <li><a href="#creëer-een-environment-via-een-yaml-bestand" id="toc-creëer-een-environment-via-een-yaml-bestand" class="nav-link" data-scroll-target="#creëer-een-environment-via-een-yaml-bestand">Creëer een <em>environment</em> via een YAML-bestand</a></li>
-  <li><a href="#voer-een-volledig-python-script-uit" id="toc-voer-een-volledig-python-script-uit" class="nav-link" data-scroll-target="#voer-een-volledig-python-script-uit">Voer een volledig Python script uit</a></li>
-  <li><a href="#voer-een-selectie-van-een-python-script-uit-en-bekijk-variabelen" id="toc-voer-een-selectie-van-een-python-script-uit-en-bekijk-variabelen" class="nav-link" data-scroll-target="#voer-een-selectie-van-een-python-script-uit-en-bekijk-variabelen">Voer een selectie van een Python script uit en bekijk variabelen</a></li>
+  <li><a href="#anaconda-python-interpreter" id="toc-anaconda-python-interpreter" class="nav-link" data-scroll-target="#anaconda-python-interpreter"><span class="header-section-number">2.1</span> Anaconda + Python interpreter</a></li>
+  <li><a href="#vs-code" id="toc-vs-code" class="nav-link" data-scroll-target="#vs-code"><span class="header-section-number">2.2</span> VS Code</a></li>
+  <li><a href="#vs-code-extensies" id="toc-vs-code-extensies" class="nav-link" data-scroll-target="#vs-code-extensies"><span class="header-section-number">2.3</span> VS Code extensies</a></li>
+  <li><a href="#controleer-de-installatie-van-conda" id="toc-controleer-de-installatie-van-conda" class="nav-link" data-scroll-target="#controleer-de-installatie-van-conda"><span class="header-section-number">2.4</span> Controleer de installatie van <em>conda</em></a></li>
   </ul></li>
-  <li><a href="#tips-voor-programmeren" id="toc-tips-voor-programmeren" class="nav-link" data-scroll-target="#tips-voor-programmeren">Tips voor programmeren</a></li>
-  <li><a href="#beheer-zelf-environments-optioneel" id="toc-beheer-zelf-environments-optioneel" class="nav-link" data-scroll-target="#beheer-zelf-environments-optioneel">Beheer zelf <em>environments</em> (optioneel)</a>
+  <li><a href="#configureer-vs-code" id="toc-configureer-vs-code" class="nav-link" data-scroll-target="#configureer-vs-code"><span class="header-section-number">3</span> Configureer VS Code</a>
   <ul class="collapse">
-  <li><a href="#maak-environments-aan" id="toc-maak-environments-aan" class="nav-link" data-scroll-target="#maak-environments-aan">Maak <em>environments</em> aan</a></li>
-  <li><a href="#deel-environments-transparant-en-reproduceerbaar" id="toc-deel-environments-transparant-en-reproduceerbaar" class="nav-link" data-scroll-target="#deel-environments-transparant-en-reproduceerbaar">Deel <em>environments</em> transparant en reproduceerbaar</a></li>
-  <li><a href="#verwijder-environments" id="toc-verwijder-environments" class="nav-link" data-scroll-target="#verwijder-environments">Verwijder <em>environments</em></a></li>
+  <li><a href="#selecteer-de-working-directory" id="toc-selecteer-de-working-directory" class="nav-link" data-scroll-target="#selecteer-de-working-directory"><span class="header-section-number">3.1</span> Selecteer de <em>Working directory</em></a></li>
+  <li><a href="#creëer-een-environment-via-een-yaml-bestand" id="toc-creëer-een-environment-via-een-yaml-bestand" class="nav-link" data-scroll-target="#creëer-een-environment-via-een-yaml-bestand"><span class="header-section-number">3.2</span> Creëer een <em>environment</em> via een YAML-bestand</a></li>
+  <li><a href="#voer-een-volledig-python-script-uit" id="toc-voer-een-volledig-python-script-uit" class="nav-link" data-scroll-target="#voer-een-volledig-python-script-uit"><span class="header-section-number">3.3</span> Voer een volledig Python script uit</a></li>
+  <li><a href="#voer-een-selectie-van-een-python-script-uit-en-bekijk-variabelen" id="toc-voer-een-selectie-van-een-python-script-uit-en-bekijk-variabelen" class="nav-link" data-scroll-target="#voer-een-selectie-van-een-python-script-uit-en-bekijk-variabelen"><span class="header-section-number">3.4</span> Voer een selectie van een Python script uit en bekijk variabelen</a></li>
   </ul></li>
-  <li><a href="#pandas-optioneel" id="toc-pandas-optioneel" class="nav-link" data-scroll-target="#pandas-optioneel">Pandas (optioneel)</a></li>
-  <li><a href="#quarto-optioneel" id="toc-quarto-optioneel" class="nav-link" data-scroll-target="#quarto-optioneel">Quarto (optioneel)</a></li>
+  <li><a href="#tips-voor-programmeren" id="toc-tips-voor-programmeren" class="nav-link" data-scroll-target="#tips-voor-programmeren"><span class="header-section-number">4</span> Tips voor programmeren</a></li>
+  <li><a href="#beheer-zelf-environments-optioneel" id="toc-beheer-zelf-environments-optioneel" class="nav-link" data-scroll-target="#beheer-zelf-environments-optioneel"><span class="header-section-number">5</span> Beheer zelf <em>environments</em> (optioneel)</a>
+  <ul class="collapse">
+  <li><a href="#maak-environments-aan" id="toc-maak-environments-aan" class="nav-link" data-scroll-target="#maak-environments-aan"><span class="header-section-number">5.1</span> Maak <em>environments</em> aan</a></li>
+  <li><a href="#deel-environments-transparant-en-reproduceerbaar" id="toc-deel-environments-transparant-en-reproduceerbaar" class="nav-link" data-scroll-target="#deel-environments-transparant-en-reproduceerbaar"><span class="header-section-number">5.2</span> Deel <em>environments</em> transparant en reproduceerbaar</a></li>
+  <li><a href="#verwijder-environments" id="toc-verwijder-environments" class="nav-link" data-scroll-target="#verwijder-environments"><span class="header-section-number">5.3</span> Verwijder <em>environments</em></a></li>
+  </ul></li>
+  <li><a href="#pandas-optioneel" id="toc-pandas-optioneel" class="nav-link" data-scroll-target="#pandas-optioneel"><span class="header-section-number">6</span> Pandas (optioneel)</a></li>
+  <li><a href="#quarto-optioneel" id="toc-quarto-optioneel" class="nav-link" data-scroll-target="#quarto-optioneel"><span class="header-section-number">7</span> Quarto (optioneel)</a></li>
   </ul>
 </nav>
     </div>
@@ -211,20 +215,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><em>As of 18/09/2026, this guide is in Dutch and tailored to the course Hydrology in the 3rd year of the Bachelor’s program.</em></p>
-<section id="waarom-deze-handleiding" class="level1">
-<h1>Waarom deze handleiding?</h1>
+<section id="waarom-deze-handleiding" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Waarom deze handleiding?</h1>
 <p>Visual Studio Code (VS Code) is een code-editor (<em>Integrated Development Environment</em> of IDE) waarmee je zowel Python- als R-code kan schrijven en uitvoeren. In het eerste bachelorjaar leerde je al hoe je VS Code installeert en gebruikt als Python-IDE. Deze handleiding herhaalt kort de basis en toont daarna hoe je geavanceerdere Python-code transparant en reproduceerbaar kan delen en bewaren.</p>
 <p>Python-code gebruikt vaak pakketten (<em>packages</em>) met specifieke versies. Na updates kunnen pakketten of Python-versies soms niet meer goed samenwerken. Zelfs als ze technisch nog samenwerken, kan de syntax of werking van functies veranderd zijn, waardoor oude code toch fouten geeft. Daarom werk je best met een lokale <em>environment</em>: een omgeving waarin alle nodige pakketten en versies voor één project of vak samen zitten. Zo kan je de code later opnieuw gebruiken of delen zonder dat andere Python- of pakketversies problemen veroorzaken. Voor de programmeertaal R bestaan <em>environments</em> ook, maar deze zijn minder vaak nodig omdat de pakketten sterker centraal gecontroleerd worden op compatibiliteit via CRAN.</p>
 </section>
-<section id="installeer-de-software" class="level1">
-<h1>Installeer de software</h1>
+<section id="installeer-de-software" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Installeer de software</h1>
 <p>Volg de installatie-instructies hieronder als de software niet meer op je computer staat. Als bepaalde software nog op je computer staat, maar je ervaart problemen, dan kan het helpen om de software eerst te verwijderen en nadien de nieuwste versies opnieuw te installeren zoals hieronder aangegeven. Je leert hieronder:</p>
 <ul>
 <li><p>Anaconda en een <em>Python Interpreter</em> installeren</p></li>
 <li><p>VS Code installeren</p></li>
 </ul>
-<section id="anaconda-python-interpreter" class="level2">
-<h2 class="anchored" data-anchor-id="anaconda-python-interpreter">Anaconda + Python interpreter</h2>
+<section id="anaconda-python-interpreter" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="anaconda-python-interpreter"><span class="header-section-number">2.1</span> Anaconda + Python interpreter</h2>
 <p>Een <em>Python Interpreter</em> is een programma dat Python code kan uitvoeren. Anaconda is een populair softwareplatform voor wetenschappelijk programmeren dat automatisch een <em>Python</em> en <em>R</em> <em>interpreter</em> installeert, maar ook het beheer van pakketten vergemakkelijkt. Als je Anaconda installeert, hoef je dus niet apart een <em>Python Interpreter</em> te installeren.</p>
 <p>Installeer Anaconda via deze stappen:</p>
 <ol type="1">
@@ -237,8 +241,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Sluit <em>Anaconda Prompt</em></p></li>
 </ol>
 </section>
-<section id="vs-code" class="level2">
-<h2 class="anchored" data-anchor-id="vs-code">VS Code</h2>
+<section id="vs-code" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="vs-code"><span class="header-section-number">2.2</span> VS Code</h2>
 <p>Installeer VS Code via deze stappen:</p>
 <ol type="1">
 <li><p>Surf naar <a href="https://code.visualstudio.com/download">code.visualstudio.com/download</a></p></li>
@@ -247,8 +251,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Klik <em>Next</em> en uiteindelijk <em>Install</em></p></li>
 </ol>
 </section>
-<section id="vs-code-extensies" class="level2">
-<h2 class="anchored" data-anchor-id="vs-code-extensies">VS Code extensies</h2>
+<section id="vs-code-extensies" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="vs-code-extensies"><span class="header-section-number">2.3</span> VS Code extensies</h2>
 <p>VS Code kan uitgebreid worden met extensies die het programmeren vergemakkelijken of extra mogelijkheden bieden. Installeer nieuwe extensies in VS Code als volgt:</p>
 <ol type="1">
 <li><p>Start VS Code</p></li>
@@ -258,8 +262,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p><img src="figures/python_vs_code/VSCode_extensions.png" class="img-fluid" style="width:7.5cm"></p>
 </section>
-<section id="controleer-de-installatie-van-conda" class="level2">
-<h2 class="anchored" data-anchor-id="controleer-de-installatie-van-conda">Controleer de installatie van <em>conda</em></h2>
+<section id="controleer-de-installatie-van-conda" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="controleer-de-installatie-van-conda"><span class="header-section-number">2.4</span> Controleer de installatie van <em>conda</em></h2>
 <p>Soms moet je bewerkingen doen die niet ‘in’ je Python- of R-code staan, maar die daarbuiten gebeuren, zoals een specifiek script uitvoeren, pakketten installeren of <em>environments</em> creëren. VS Code voorziet daarvoor een <em>terminal</em>, een venster waarmee je commando’s kan geven aan jouw besturingssysteem, zonder je muis te gebruiken. Zo kan je bijvoorbeeld de software <em>conda</em> aansturen via de terminal om pakketten en <em>environments</em> te beheren. Voer deze stappen uit om een terminal te openen en hiermee te controleren of de software <em>conda</em> correct geïnstalleerd is:</p>
 <ol type="1">
 <li><p>Ga naar <em>View</em> &gt; <em>Command Palette…</em></p></li>
@@ -281,16 +285,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 </section>
 </section>
-<section id="configureer-vs-code" class="level1">
-<h1>Configureer VS Code</h1>
+<section id="configureer-vs-code" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Configureer VS Code</h1>
 <p>In deze sectie leer je hoe je VS Code configureert om te kunnen gebruiken voor het vak Hydrologie. Veel van de instellingen kan je ook gebruiken voor andere vakken in de opleiding Ecosysteembeheer. Je leert hier:</p>
 <ul>
 <li><p>een werkmap (<em>Working Directory</em>) selecteren in VS Code</p></li>
 <li><p>een <em>environment</em> creëren en gebruiken die een lesgever deelt, waarin alle nodige, compatibele pakketten zitten die nodig zijn voor een vak</p></li>
 <li><p>een script uitvoeren via een geselecteerde <em>environment</em> en de geïnstalleerde extensies gebruiken</p></li>
 </ul>
-<section id="selecteer-de-working-directory" class="level2">
-<h2 class="anchored" data-anchor-id="selecteer-de-working-directory">Selecteer de <em>Working directory</em></h2>
+<section id="selecteer-de-working-directory" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="selecteer-de-working-directory"><span class="header-section-number">3.1</span> Selecteer de <em>Working directory</em></h2>
 <p>De werkmap (<em>Working Directory</em>) is de map op je computer waarin VS Code momenteel standaard alle bestanden zoekt, leest en opslaat als je code uitvoert. Als je deze niet bewust kiest, leidt dit typisch tot foutmeldingen zoals ‘<em>file not found</em>’ of vind je de figures/python_vs_code niet terug die je hebt gemaakt met Python. Selecteer de werkmap als volgt:</p>
 <ol type="1">
 <li><p>Ga naar <em>File</em> &gt; <em>Open folder …</em></p></li>
@@ -299,8 +303,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Selecteer <em>Yes, I trust the authors</em> als dit gevraagd wordt</p></li>
 </ol>
 </section>
-<section id="creëer-een-environment-via-een-yaml-bestand" class="level2">
-<h2 class="anchored" data-anchor-id="creëer-een-environment-via-een-yaml-bestand">Creëer een <em>environment</em> via een YAML-bestand</h2>
+<section id="creëer-een-environment-via-een-yaml-bestand" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="creëer-een-environment-via-een-yaml-bestand"><span class="header-section-number">3.2</span> Creëer een <em>environment</em> via een YAML-bestand</h2>
 <p>De Python-pakketten die nodig zijn om een bepaald script uit te kunnen voeren kunnen gedeeld worden tussen gebruikers via een YAML-bestand (<code>.yml</code> of <code>.yaml</code> extensie). Dit bestand bevat een overzicht van de nodige pakketten en versies om een <em>environment</em> aan te maken. Nadat je een <em>environment</em> hebt gecreëerd op je computer, blijft het beschikbaar binnen VS Code. Hieronder wordt als voorbeeld uitgelegd hoe je het <em>environment</em> kan aanmaken dat je voor alle werkcolleges en taken van het vak hydrologie moet gebruiken:</p>
 <ol type="1">
 <li><p>Download het bestand <code>hydrologie_env.yml</code> van Ufora</p></li>
@@ -318,12 +322,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p><img src="figures/python_vs_code/VSCode_bottom_right.png" style="width:14cm;height:0.7cm"></p>
 </section>
-<section id="voer-een-volledig-python-script-uit" class="level2">
-<h2 class="anchored" data-anchor-id="voer-een-volledig-python-script-uit">Voer een volledig Python script uit</h2>
+<section id="voer-een-volledig-python-script-uit" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="voer-een-volledig-python-script-uit"><span class="header-section-number">3.3</span> Voer een volledig Python script uit</h2>
 <ol type="1">
 <li>Kopieer deze Python-code in het py-bestand via het klembord-icoon</li>
 </ol>
-<div id="7905c587" class="cell" data-execution_count="1">
+<div id="21af230d" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># Open een pakket om te werken met vectoren/matrices </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># Open een pakket om figures/python_vs_code te maken </span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -342,7 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Voer het volledige script uit door te klikken op het pijl-icoon <img src="figures/python_vs_code/Run_button.png" style="width:0.6cm;height:0.3cm"></p></li>
 <li><p>Controleer of je onderstaande output krijgt</p></li>
 </ol>
-<div id="ca5005c9" class="cell" data-execution_count="2">
+<div id="c66bf015" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-stdout">
 <pre><code>Gemiddelde dagelijkse neerslaghoogte: 2.5 mm</code></pre>
 </div>
@@ -355,8 +359,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="voer-een-selectie-van-een-python-script-uit-en-bekijk-variabelen" class="level2">
-<h2 class="anchored" data-anchor-id="voer-een-selectie-van-een-python-script-uit-en-bekijk-variabelen">Voer een selectie van een Python script uit en bekijk variabelen</h2>
+<section id="voer-een-selectie-van-een-python-script-uit-en-bekijk-variabelen" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="voer-een-selectie-van-een-python-script-uit-en-bekijk-variabelen"><span class="header-section-number">3.4</span> Voer een selectie van een Python script uit en bekijk variabelen</h2>
 <p>Bij lange of rekenintensieve scripts is het tijdrovend om bij elke aanpassing het volledige script opnieuw uit te voeren. Met de <em>Jupyter</em> extensie kan je een selectie van je code uitvoeren om snel iets te testen. <em>Jupyter</em> laat ook toe om de waarde(n) van variabelen te bekijken, zelfs als ze niet in de output van het script terecht komen. De extensie <em>Data Wrangler</em> stelt je bovendien in staat om variabelen met veel data in tabelvorm te bekijken. Voer hiervoor de volgende stappen uit:</p>
 <ol type="1">
 <li><p>Ga naar <em>File</em> &gt; <em>Preferences</em> &gt; <em>Settings</em></p></li>
@@ -380,27 +384,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="8" type="1">
 <li>Pas dan alleen het print commando in het py-bestand aan</li>
 </ol>
-<div id="053c24d5" class="cell" data-execution_count="3">
+<div id="abe3e3f1" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Totale neerslaghoogte: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">sum</span>(P)<span class="sc">:.1f}</span><span class="ss"> mm'</span>) <span class="co"># Toon de totale neerslaghoogte over de meetperiode</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="9" type="1">
 <li><p>Selecteer alleen het aangepaste commando met je cursor en toets <em>shift + enter</em></p></li>
 <li><p>Controleer of je onderstaande output ziet in de <em>Jupyter Interactive Window</em></p></li>
 </ol>
-<div id="0804766e" class="cell" data-execution_count="4">
+<div id="a9201d02" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
 <pre><code>Totale neerslaghoogte: 17.5 mm</code></pre>
 </div>
 </div>
 </section>
 </section>
-<section id="tips-voor-programmeren" class="level1">
-<h1>Tips voor programmeren</h1>
+<section id="tips-voor-programmeren" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Tips voor programmeren</h1>
 <p>Er zijn ontzettend veel pakketten, functies, methodes, datatypes etc. beschikbaar in Python. Je hoeft deze echter niet allemaal van buiten te kennen om ermee te kunnen werken. Als je niet weet hoe een functie werkt of welke functie voor een bepaalde opdracht geschikt is, dan kan je volgende hulpmiddelen gebruiken, in volgorde van belang:</p>
 <ol type="1">
 <li>Gebruik het ingebouwde help-commando als je niet weet welke input parameters een functie verwacht of hoe deze werkt. Meestal helpen de ‘Examples’ onderaan het best om de basiswerking van een functie snel te begrijpen.</li>
 </ol>
-<div id="b13211aa" class="cell" data-execution_count="5">
+<div id="9aa9a5a2" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(np.<span class="bu">sum</span>)</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Output">
@@ -415,7 +419,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="0ae193f9" class="cell" data-execution_count="6">
+<div id="d7c69419" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on method descriptor sum in module numpy:
 
@@ -545,7 +549,7 @@ sum(
 <ol start="2" type="1">
 <li>Test commando’s op kleine, fictieve datasets voordat je ze toepast op grote datasets om te begrijpen wat ze doen</li>
 </ol>
-<div id="8b4dd1a4" class="cell" data-execution_count="7">
+<div id="3808aad9" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>np.array([<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>]) <span class="op">&gt;</span> <span class="dv">0</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Output">
@@ -560,7 +564,7 @@ sum(
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="8b2e90c6" class="cell" data-execution_count="8">
+<div id="7ccd8c29" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>array([False, False,  True])</code></pre>
 </div>
@@ -581,10 +585,10 @@ sum(
 </ul>
 <p>Je bent nu klaar voor het eerste werkcollege van Hydrologie! Hieronder staat optionele extra informatie die handig kan zijn voor je taken of voor andere vakken.</p>
 </section>
-<section id="beheer-zelf-environments-optioneel" class="level1">
-<h1>Beheer zelf <em>environments</em> (optioneel)</h1>
-<section id="maak-environments-aan" class="level2">
-<h2 class="anchored" data-anchor-id="maak-environments-aan">Maak <em>environments</em> aan</h2>
+<section id="beheer-zelf-environments-optioneel" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Beheer zelf <em>environments</em> (optioneel)</h1>
+<section id="maak-environments-aan" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="maak-environments-aan"><span class="header-section-number">5.1</span> Maak <em>environments</em> aan</h2>
 <p>Je kan zelf nieuwe <em>environments</em> aanmaken als de base-<em>environment</em> of <em>environment</em> gedeeld door een lesgever niet voldoet aan je noden. Maak eerst een nieuw YAML-bestand aan met de pakketten die je wil gebruiken. Je hoeft de pakket-versies niet per sé te specifiëren. De software conda controleert automatisch welke versies van de nodige pakketten onderling compatibel zijn en installeert deze. Er worden ook automatisch andere pakketten geïnstalleerd die niet expliciet in de YAML staan als deze nodig zijn om de gevraagde pakketten te laten werken.</p>
 <ol type="1">
 <li><p>Ga naar <em>File</em> &gt; <em>New Text File</em> &gt; <em>Save as</em> &gt; Zoek de huidige <em>Working Directory</em> &gt; Kies als naam bijvoorbeeld <code>example_env</code> en kies bij <em>Opslaan als YAML</em></p></li>
@@ -606,8 +610,8 @@ sum(
 </ol>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>conda activate example_env</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="deel-environments-transparant-en-reproduceerbaar" class="level2">
-<h2 class="anchored" data-anchor-id="deel-environments-transparant-en-reproduceerbaar">Deel <em>environments</em> transparant en reproduceerbaar</h2>
+<section id="deel-environments-transparant-en-reproduceerbaar" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="deel-environments-transparant-en-reproduceerbaar"><span class="header-section-number">5.2</span> Deel <em>environments</em> transparant en reproduceerbaar</h2>
 <p>Als je een YAML-bestand zonder versies specifieert bestaat het risico dat ditzelfde bestand tot andere versies leidt als iemand hiermee op een ander moment een <em>environment</em> maakt. Als je dit wil voorkomen, moet je de versies die je gebruikt mee in het YAML-bestand zetten. Het laatste cijfer van een versie, zoals de ‘3’ in ‘2.1.3’ hoef je niet te vermelden. Dit is de patch-versie en verandert gewoonlijk geen syntax.</p>
 <ol type="1">
 <li>Voer onderstaande code uit in de terminal om te zien welke versies in je actieve environment staan</li>
@@ -627,8 +631,8 @@ sum(
 <li>Bewaar en deel dit bestand samen met het programmeerproject waarvoor je het gebruikt</li>
 </ol>
 </section>
-<section id="verwijder-environments" class="level2">
-<h2 class="anchored" data-anchor-id="verwijder-environments">Verwijder <em>environments</em></h2>
+<section id="verwijder-environments" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="verwijder-environments"><span class="header-section-number">5.3</span> Verwijder <em>environments</em></h2>
 <p>Je kan <em>environments</em> als volgt van je computer verwijderen:</p>
 <ol type="1">
 <li>Voer onderstaande code uit in de terminal om alle <em>environments</em> te deactiveren</li>
@@ -640,12 +644,12 @@ sum(
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>conda remove <span class="op">--</span>name example_env <span class="op">--</span>all</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="pandas-optioneel" class="level1">
-<h1>Pandas (optioneel)</h1>
+<section id="pandas-optioneel" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Pandas (optioneel)</h1>
 <p>Welke functies je precies gebruikt voor de oefeningen en taken van het vak Hydrologie, doet er niet toe voor de evaluatie. Je wordt enkel geëvalueerd op het inzicht in je eigen code, het eindresultaat en de transparantie en reproduceerbaarheid. Het pakket Pandas is echter wel een aanrader voor de analyse van tijdreeksen. Dit pakket is een uitbreiding op NumPy, die veel typische bewerkingen op grote datasets vereenvoudigd, zoals filteren, groeperen en sorteren, vergelijkbaar met <em>tidyverse</em> in R. Een introductie tot Pandas vind je hier: <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min">pandas.pydata.org/pandas-docs/stable/user_guide/10min</a>.</p>
 </section>
-<section id="quarto-optioneel" class="level1">
-<h1>Quarto (optioneel)</h1>
+<section id="quarto-optioneel" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Quarto (optioneel)</h1>
 <p>Als je een wetenschappelijk verslag schrijft in Word of Latex, kan je je Python-code als bijlage toevoegen voor transparantie en reproduceerbaarheid. Met de software Quarto kan je beide tegelijk: je kan hiermee stukken opgemaakte tekst schrijven, afgewisseld met stukken Python- (of R-)code. Je kan een quarto-document omzetten (<em>renderen</em>) naar een HTML, PDF of Word-bestand en daarbij de output van de code automatisch tonen in het rapport, al dan niet samen met de code zelf. Deze handleiding werd op die manier gemaakt. Meer info over hoe je Quarto kan gebruiken in VS Code vind je op <a href="https://quarto.org/docs/tools/vscode/index.html">quarto.org/docs/tools/vscode/index.html</a>.</p>
 
 

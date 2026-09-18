@@ -10,78 +10,78 @@
     "objectID": "python_vs_code.html#anaconda-python-interpreter",
     "href": "python_vs_code.html#anaconda-python-interpreter",
     "title": "Python and VS Code",
-    "section": "Anaconda + Python interpreter",
-    "text": "Anaconda + Python interpreter\nEen Python Interpreter is een programma dat Python code kan uitvoeren. Anaconda is een populair softwareplatform voor wetenschappelijk programmeren dat automatisch een Python en R interpreter installeert, maar ook het beheer van pakketten vergemakkelijkt. Als je Anaconda installeert, hoef je dus niet apart een Python Interpreter te installeren.\nInstalleer Anaconda via deze stappen:\n\nSurf naar anaconda.com/download/success;\nDownload de juiste Anaconda Distribution Graphical Installer voor jouw besturingssysteem\nOpen de installer\nKlik op I Agree, Next en uiteindelijk Install\nOpen de software Anaconda Prompt\nVoor een Windows systeem, voer het commando conda init powershell uit. Voor Mac/Linux gebruikers, gebruik het commando conda init bash.\nSluit Anaconda Prompt"
+    "section": "2.1 Anaconda + Python interpreter",
+    "text": "2.1 Anaconda + Python interpreter\nEen Python Interpreter is een programma dat Python code kan uitvoeren. Anaconda is een populair softwareplatform voor wetenschappelijk programmeren dat automatisch een Python en R interpreter installeert, maar ook het beheer van pakketten vergemakkelijkt. Als je Anaconda installeert, hoef je dus niet apart een Python Interpreter te installeren.\nInstalleer Anaconda via deze stappen:\n\nSurf naar anaconda.com/download/success;\nDownload de juiste Anaconda Distribution Graphical Installer voor jouw besturingssysteem\nOpen de installer\nKlik op I Agree, Next en uiteindelijk Install\nOpen de software Anaconda Prompt\nVoor een Windows systeem, voer het commando conda init powershell uit. Voor Mac/Linux gebruikers, gebruik het commando conda init bash.\nSluit Anaconda Prompt"
   },
   {
     "objectID": "python_vs_code.html#vs-code",
     "href": "python_vs_code.html#vs-code",
     "title": "Python and VS Code",
-    "section": "VS Code",
-    "text": "VS Code\nInstalleer VS Code via deze stappen:\n\nSurf naar code.visualstudio.com/download\nSelecteer je besturingssysteem\nOpen de installer\nKlik Next en uiteindelijk Install"
+    "section": "2.2 VS Code",
+    "text": "2.2 VS Code\nInstalleer VS Code via deze stappen:\n\nSurf naar code.visualstudio.com/download\nSelecteer je besturingssysteem\nOpen de installer\nKlik Next en uiteindelijk Install"
   },
   {
     "objectID": "python_vs_code.html#vs-code-extensies",
     "href": "python_vs_code.html#vs-code-extensies",
     "title": "Python and VS Code",
-    "section": "VS Code extensies",
-    "text": "VS Code extensies\nVS Code kan uitgebreid worden met extensies die het programmeren vergemakkelijken of extra mogelijkheden bieden. Installeer nieuwe extensies in VS Code als volgt:\n\nStart VS Code\nGa naar View &gt; Extensions\nZoek voor het vak hydrologie minstens de extensies Python, Pylance, Jupyter en Data Wrangler\nKlik telkens op Install"
+    "section": "2.3 VS Code extensies",
+    "text": "2.3 VS Code extensies\nVS Code kan uitgebreid worden met extensies die het programmeren vergemakkelijken of extra mogelijkheden bieden. Installeer nieuwe extensies in VS Code als volgt:\n\nStart VS Code\nGa naar View &gt; Extensions\nZoek voor het vak hydrologie minstens de extensies Python, Pylance, Jupyter en Data Wrangler\nKlik telkens op Install"
   },
   {
     "objectID": "python_vs_code.html#controleer-de-installatie-van-conda",
     "href": "python_vs_code.html#controleer-de-installatie-van-conda",
     "title": "Python and VS Code",
-    "section": "Controleer de installatie van conda",
-    "text": "Controleer de installatie van conda\nSoms moet je bewerkingen doen die niet ‘in’ je Python- of R-code staan, maar die daarbuiten gebeuren, zoals een specifiek script uitvoeren, pakketten installeren of environments creëren. VS Code voorziet daarvoor een terminal, een venster waarmee je commando’s kan geven aan jouw besturingssysteem, zonder je muis te gebruiken. Zo kan je bijvoorbeeld de software conda aansturen via de terminal om pakketten en environments te beheren. Voer deze stappen uit om een terminal te openen en hiermee te controleren of de software conda correct geïnstalleerd is:\n\nGa naar View &gt; Command Palette…\nTyp Terminal: Create New Terminal\nKlik op de pop-up die verschijnt\nControleer of er onderaan een scherm opent dat lijkt op de onderstaande schermopname1.\n\n\n\nVoer deze code uit in de terminal\n\nconda --version\n\nControleer of je conda xx.x.x als antwoord krijgt, vergelijkbaar met de onderstaande schermopname\n\n\n\nAls het antwoord command not found: conda is, volg dan de instructies op anaconda.com/docs/getting-started/working-with-conda/environments#troubleshooting"
+    "section": "2.4 Controleer de installatie van conda",
+    "text": "2.4 Controleer de installatie van conda\nSoms moet je bewerkingen doen die niet ‘in’ je Python- of R-code staan, maar die daarbuiten gebeuren, zoals een specifiek script uitvoeren, pakketten installeren of environments creëren. VS Code voorziet daarvoor een terminal, een venster waarmee je commando’s kan geven aan jouw besturingssysteem, zonder je muis te gebruiken. Zo kan je bijvoorbeeld de software conda aansturen via de terminal om pakketten en environments te beheren. Voer deze stappen uit om een terminal te openen en hiermee te controleren of de software conda correct geïnstalleerd is:\n\nGa naar View &gt; Command Palette…\nTyp Terminal: Create New Terminal\nKlik op de pop-up die verschijnt\nControleer of er onderaan een scherm opent dat lijkt op de onderstaande schermopname1.\n\n\n\nVoer deze code uit in de terminal\n\nconda --version\n\nControleer of je conda xx.x.x als antwoord krijgt, vergelijkbaar met de onderstaande schermopname\n\n\n\nAls het antwoord command not found: conda is, volg dan de instructies op anaconda.com/docs/getting-started/working-with-conda/environments#troubleshooting"
   },
   {
     "objectID": "python_vs_code.html#selecteer-de-working-directory",
     "href": "python_vs_code.html#selecteer-de-working-directory",
     "title": "Python and VS Code",
-    "section": "Selecteer de Working directory",
-    "text": "Selecteer de Working directory\nDe werkmap (Working Directory) is de map op je computer waarin VS Code momenteel standaard alle bestanden zoekt, leest en opslaat als je code uitvoert. Als je deze niet bewust kiest, leidt dit typisch tot foutmeldingen zoals ‘file not found’ of vind je de figures/python_vs_code niet terug die je hebt gemaakt met Python. Selecteer de werkmap als volgt:\n\nGa naar File &gt; Open folder …\nNavigeer naar de map waarin je script(s), data en andere bestanden staan waarmee je wil werken\nKlik Select Folder\nSelecteer Yes, I trust the authors als dit gevraagd wordt"
+    "section": "3.1 Selecteer de Working directory",
+    "text": "3.1 Selecteer de Working directory\nDe werkmap (Working Directory) is de map op je computer waarin VS Code momenteel standaard alle bestanden zoekt, leest en opslaat als je code uitvoert. Als je deze niet bewust kiest, leidt dit typisch tot foutmeldingen zoals ‘file not found’ of vind je de figures/python_vs_code niet terug die je hebt gemaakt met Python. Selecteer de werkmap als volgt:\n\nGa naar File &gt; Open folder …\nNavigeer naar de map waarin je script(s), data en andere bestanden staan waarmee je wil werken\nKlik Select Folder\nSelecteer Yes, I trust the authors als dit gevraagd wordt"
   },
   {
     "objectID": "python_vs_code.html#creëer-een-environment-via-een-yaml-bestand",
     "href": "python_vs_code.html#creëer-een-environment-via-een-yaml-bestand",
     "title": "Python and VS Code",
-    "section": "Creëer een environment via een YAML-bestand",
-    "text": "Creëer een environment via een YAML-bestand\nDe Python-pakketten die nodig zijn om een bepaald script uit te kunnen voeren kunnen gedeeld worden tussen gebruikers via een YAML-bestand (.yml of .yaml extensie). Dit bestand bevat een overzicht van de nodige pakketten en versies om een environment aan te maken. Nadat je een environment hebt gecreëerd op je computer, blijft het beschikbaar binnen VS Code. Hieronder wordt als voorbeeld uitgelegd hoe je het environment kan aanmaken dat je voor alle werkcolleges en taken van het vak hydrologie moet gebruiken:\n\nDownload het bestand hydrologie_env.yml van Ufora\nKies de map met dit bestand als Working Directory\nVoer deze code uit in de terminal van VS Code en wacht tot de environment gecreëerd is\n\nconda env create -f hydrologie_env.yml\n\nMaak een nieuw .py-bestand aan: File &gt; New File… &gt; Python File\nSla het .py-bestand op onder een naam naar keuze in je working directory\nGa naar View &gt; Command Palette…\nTyp Python: Select Interpreter\nKlik op de net gecreëerde hydrologie_env om deze environment te gebruiken voor dit py-bestand\nControleer of je rechts onderaan het VS Code scherm de naam van de gekozen environment ziet, zoals in de schermopname hieronder. Als je hier base ziet staan, dan is de standaard Python-environment die meekomt met Anaconda nog geactiveerd. Controleer de gebruikte environment telkens voordat je een script runt"
+    "section": "3.2 Creëer een environment via een YAML-bestand",
+    "text": "3.2 Creëer een environment via een YAML-bestand\nDe Python-pakketten die nodig zijn om een bepaald script uit te kunnen voeren kunnen gedeeld worden tussen gebruikers via een YAML-bestand (.yml of .yaml extensie). Dit bestand bevat een overzicht van de nodige pakketten en versies om een environment aan te maken. Nadat je een environment hebt gecreëerd op je computer, blijft het beschikbaar binnen VS Code. Hieronder wordt als voorbeeld uitgelegd hoe je het environment kan aanmaken dat je voor alle werkcolleges en taken van het vak hydrologie moet gebruiken:\n\nDownload het bestand hydrologie_env.yml van Ufora\nKies de map met dit bestand als Working Directory\nVoer deze code uit in de terminal van VS Code en wacht tot de environment gecreëerd is\n\nconda env create -f hydrologie_env.yml\n\nMaak een nieuw .py-bestand aan: File &gt; New File… &gt; Python File\nSla het .py-bestand op onder een naam naar keuze in je working directory\nGa naar View &gt; Command Palette…\nTyp Python: Select Interpreter\nKlik op de net gecreëerde hydrologie_env om deze environment te gebruiken voor dit py-bestand\nControleer of je rechts onderaan het VS Code scherm de naam van de gekozen environment ziet, zoals in de schermopname hieronder. Als je hier base ziet staan, dan is de standaard Python-environment die meekomt met Anaconda nog geactiveerd. Controleer de gebruikte environment telkens voordat je een script runt"
   },
   {
     "objectID": "python_vs_code.html#voer-een-volledig-python-script-uit",
     "href": "python_vs_code.html#voer-een-volledig-python-script-uit",
     "title": "Python and VS Code",
-    "section": "Voer een volledig Python script uit",
-    "text": "Voer een volledig Python script uit\n\nKopieer deze Python-code in het py-bestand via het klembord-icoon\n\n\nimport numpy as np # Open een pakket om te werken met vectoren/matrices \nimport matplotlib.pyplot as plt # Open een pakket om figures/python_vs_code te maken \n\nt = np.arange(1, 8) #[d] Maak een vector met dagen tussen 1 en 8 (excl. 8)\nP = np.array([1.8, 2.1, 2.7, 3.4, 3.0, 2.5, 2.0]) #[mm/d] Maak een vector met dagelijkse nee rslaghoogtes\n\nprint(f'Gemiddelde dagelijkse neerslaghoogte: {np.mean(P):.1f} mm') # Toon de gemiddelde dagelijkse neerslaghoogte\n\nfig = plt.figure() # Maak een nieuwe figuur\nplt.plot(t, P, marker = '.', linestyle = 'None', color = 'black') # Maak een spreidingsdiagram met zwarte punten \nplt.xlabel('Tijd (dagen)') # Maak een titel voor de x-as\nplt.ylabel('Dagelijkse neerslaghoogte [mm]') # Maak een titel voor de y-as\nplt.show() # Toon de grafiek in de output\n\n\nVoer het volledige script uit door te klikken op het pijl-icoon \nControleer of je onderstaande output krijgt\n\n\n\nGemiddelde dagelijkse neerslaghoogte: 2.5 mm"
+    "section": "3.3 Voer een volledig Python script uit",
+    "text": "3.3 Voer een volledig Python script uit\n\nKopieer deze Python-code in het py-bestand via het klembord-icoon\n\n\nimport numpy as np # Open een pakket om te werken met vectoren/matrices \nimport matplotlib.pyplot as plt # Open een pakket om figures/python_vs_code te maken \n\nt = np.arange(1, 8) #[d] Maak een vector met dagen tussen 1 en 8 (excl. 8)\nP = np.array([1.8, 2.1, 2.7, 3.4, 3.0, 2.5, 2.0]) #[mm/d] Maak een vector met dagelijkse nee rslaghoogtes\n\nprint(f'Gemiddelde dagelijkse neerslaghoogte: {np.mean(P):.1f} mm') # Toon de gemiddelde dagelijkse neerslaghoogte\n\nfig = plt.figure() # Maak een nieuwe figuur\nplt.plot(t, P, marker = '.', linestyle = 'None', color = 'black') # Maak een spreidingsdiagram met zwarte punten \nplt.xlabel('Tijd (dagen)') # Maak een titel voor de x-as\nplt.ylabel('Dagelijkse neerslaghoogte [mm]') # Maak een titel voor de y-as\nplt.show() # Toon de grafiek in de output\n\n\nVoer het volledige script uit door te klikken op het pijl-icoon \nControleer of je onderstaande output krijgt\n\n\n\nGemiddelde dagelijkse neerslaghoogte: 2.5 mm"
   },
   {
     "objectID": "python_vs_code.html#voer-een-selectie-van-een-python-script-uit-en-bekijk-variabelen",
     "href": "python_vs_code.html#voer-een-selectie-van-een-python-script-uit-en-bekijk-variabelen",
     "title": "Python and VS Code",
-    "section": "Voer een selectie van een Python script uit en bekijk variabelen",
-    "text": "Voer een selectie van een Python script uit en bekijk variabelen\nBij lange of rekenintensieve scripts is het tijdrovend om bij elke aanpassing het volledige script opnieuw uit te voeren. Met de Jupyter extensie kan je een selectie van je code uitvoeren om snel iets te testen. Jupyter laat ook toe om de waarde(n) van variabelen te bekijken, zelfs als ze niet in de output van het script terecht komen. De extensie Data Wrangler stelt je bovendien in staat om variabelen met veel data in tabelvorm te bekijken. Voer hiervoor de volgende stappen uit:\n\nGa naar File &gt; Preferences &gt; Settings\nZoek naar Jupyter Interactive Window Text Editor Execute Selection\nVink deze optie aan\n\n\n\nSelecteer het volledige script met je cursor en toets shift + enter\nKlik op Jupyter Variables in de nieuwe Jupyter Interactive Window. Als Jupyter Variables niet meteen zichtbaar is, klik dan op de puntjes:\n\n\n\nControleer of je onderstaande variabelen ziet staan\n\n\n\nDubbelklik op één van de variabelen om via Data Wrangler de variabele als een tabel te bekijken\n\n\n\nPas dan alleen het print commando in het py-bestand aan\n\n\nprint(f'Totale neerslaghoogte: {np.sum(P):.1f} mm') # Toon de totale neerslaghoogte over de meetperiode\n\n\nSelecteer alleen het aangepaste commando met je cursor en toets shift + enter\nControleer of je onderstaande output ziet in de Jupyter Interactive Window\n\n\n\nTotale neerslaghoogte: 17.5 mm"
+    "section": "3.4 Voer een selectie van een Python script uit en bekijk variabelen",
+    "text": "3.4 Voer een selectie van een Python script uit en bekijk variabelen\nBij lange of rekenintensieve scripts is het tijdrovend om bij elke aanpassing het volledige script opnieuw uit te voeren. Met de Jupyter extensie kan je een selectie van je code uitvoeren om snel iets te testen. Jupyter laat ook toe om de waarde(n) van variabelen te bekijken, zelfs als ze niet in de output van het script terecht komen. De extensie Data Wrangler stelt je bovendien in staat om variabelen met veel data in tabelvorm te bekijken. Voer hiervoor de volgende stappen uit:\n\nGa naar File &gt; Preferences &gt; Settings\nZoek naar Jupyter Interactive Window Text Editor Execute Selection\nVink deze optie aan\n\n\n\nSelecteer het volledige script met je cursor en toets shift + enter\nKlik op Jupyter Variables in de nieuwe Jupyter Interactive Window. Als Jupyter Variables niet meteen zichtbaar is, klik dan op de puntjes:\n\n\n\nControleer of je onderstaande variabelen ziet staan\n\n\n\nDubbelklik op één van de variabelen om via Data Wrangler de variabele als een tabel te bekijken\n\n\n\nPas dan alleen het print commando in het py-bestand aan\n\n\nprint(f'Totale neerslaghoogte: {np.sum(P):.1f} mm') # Toon de totale neerslaghoogte over de meetperiode\n\n\nSelecteer alleen het aangepaste commando met je cursor en toets shift + enter\nControleer of je onderstaande output ziet in de Jupyter Interactive Window\n\n\n\nTotale neerslaghoogte: 17.5 mm"
   },
   {
     "objectID": "python_vs_code.html#maak-environments-aan",
     "href": "python_vs_code.html#maak-environments-aan",
     "title": "Python and VS Code",
-    "section": "Maak environments aan",
-    "text": "Maak environments aan\nJe kan zelf nieuwe environments aanmaken als de base-environment of environment gedeeld door een lesgever niet voldoet aan je noden. Maak eerst een nieuw YAML-bestand aan met de pakketten die je wil gebruiken. Je hoeft de pakket-versies niet per sé te specifiëren. De software conda controleert automatisch welke versies van de nodige pakketten onderling compatibel zijn en installeert deze. Er worden ook automatisch andere pakketten geïnstalleerd die niet expliciet in de YAML staan als deze nodig zijn om de gevraagde pakketten te laten werken.\n\nGa naar File &gt; New Text File &gt; Save as &gt; Zoek de huidige Working Directory &gt; Kies als naam bijvoorbeeld example_env en kies bij Opslaan als YAML\nGebruik onderstaande syntax en vul de lijst met pakketten aan naar wens\n\nname: example_env\nchannels:\n  - conda-forge\ndependencies:\n  - python\n  - numpy\n  - matplotlib\n\nVoer onderstaande code uit in de terminal van VS Code en wacht tot de environment gecreëerd is\n\nconda env create -f example_env.yml\n\nVoer deze code uit in de terminal om de environment te activeren (hiermee wordt je openstaande python script niet per sé uitgevoerd via deze environment, maar kan je via de terminal aanpassingen maken aan deze environment)\n\nconda activate example_env"
+    "section": "5.1 Maak environments aan",
+    "text": "5.1 Maak environments aan\nJe kan zelf nieuwe environments aanmaken als de base-environment of environment gedeeld door een lesgever niet voldoet aan je noden. Maak eerst een nieuw YAML-bestand aan met de pakketten die je wil gebruiken. Je hoeft de pakket-versies niet per sé te specifiëren. De software conda controleert automatisch welke versies van de nodige pakketten onderling compatibel zijn en installeert deze. Er worden ook automatisch andere pakketten geïnstalleerd die niet expliciet in de YAML staan als deze nodig zijn om de gevraagde pakketten te laten werken.\n\nGa naar File &gt; New Text File &gt; Save as &gt; Zoek de huidige Working Directory &gt; Kies als naam bijvoorbeeld example_env en kies bij Opslaan als YAML\nGebruik onderstaande syntax en vul de lijst met pakketten aan naar wens\n\nname: example_env\nchannels:\n  - conda-forge\ndependencies:\n  - python\n  - numpy\n  - matplotlib\n\nVoer onderstaande code uit in de terminal van VS Code en wacht tot de environment gecreëerd is\n\nconda env create -f example_env.yml\n\nVoer deze code uit in de terminal om de environment te activeren (hiermee wordt je openstaande python script niet per sé uitgevoerd via deze environment, maar kan je via de terminal aanpassingen maken aan deze environment)\n\nconda activate example_env"
   },
   {
     "objectID": "python_vs_code.html#deel-environments-transparant-en-reproduceerbaar",
     "href": "python_vs_code.html#deel-environments-transparant-en-reproduceerbaar",
     "title": "Python and VS Code",
-    "section": "Deel environments transparant en reproduceerbaar",
-    "text": "Deel environments transparant en reproduceerbaar\nAls je een YAML-bestand zonder versies specifieert bestaat het risico dat ditzelfde bestand tot andere versies leidt als iemand hiermee op een ander moment een environment maakt. Als je dit wil voorkomen, moet je de versies die je gebruikt mee in het YAML-bestand zetten. Het laatste cijfer van een versie, zoals de ‘3’ in ‘2.1.3’ hoef je niet te vermelden. Dit is de patch-versie en verandert gewoonlijk geen syntax.\n\nVoer onderstaande code uit in de terminal om te zien welke versies in je actieve environment staan\n\nconda list\n\nZoek de pakketten die in je YAML-bestand staan en kopieer hun hoofd- en onderversie (de eerste 2 cijfers) naar het YAML-bestand, zoals in het voorbeeld hieronder\n\nname: example_env\nchannels:\n  - conda-forge\ndependencies:\n  - python=3.13\n  - numpy=2.3\n  - matplotlib=3.10\n\nBewaar en deel dit bestand samen met het programmeerproject waarvoor je het gebruikt"
+    "section": "5.2 Deel environments transparant en reproduceerbaar",
+    "text": "5.2 Deel environments transparant en reproduceerbaar\nAls je een YAML-bestand zonder versies specifieert bestaat het risico dat ditzelfde bestand tot andere versies leidt als iemand hiermee op een ander moment een environment maakt. Als je dit wil voorkomen, moet je de versies die je gebruikt mee in het YAML-bestand zetten. Het laatste cijfer van een versie, zoals de ‘3’ in ‘2.1.3’ hoef je niet te vermelden. Dit is de patch-versie en verandert gewoonlijk geen syntax.\n\nVoer onderstaande code uit in de terminal om te zien welke versies in je actieve environment staan\n\nconda list\n\nZoek de pakketten die in je YAML-bestand staan en kopieer hun hoofd- en onderversie (de eerste 2 cijfers) naar het YAML-bestand, zoals in het voorbeeld hieronder\n\nname: example_env\nchannels:\n  - conda-forge\ndependencies:\n  - python=3.13\n  - numpy=2.3\n  - matplotlib=3.10\n\nBewaar en deel dit bestand samen met het programmeerproject waarvoor je het gebruikt"
   },
   {
     "objectID": "python_vs_code.html#verwijder-environments",
     "href": "python_vs_code.html#verwijder-environments",
     "title": "Python and VS Code",
-    "section": "Verwijder environments",
-    "text": "Verwijder environments\nJe kan environments als volgt van je computer verwijderen:\n\nVoer onderstaande code uit in de terminal om alle environments te deactiveren\n\nconda deactivate\n\nVoer onderstaande code uit in de terminal om de environment met naam example_env te verwijderen van je computer\n\nconda remove --name example_env --all"
+    "section": "5.3 Verwijder environments",
+    "text": "5.3 Verwijder environments\nJe kan environments als volgt van je computer verwijderen:\n\nVoer onderstaande code uit in de terminal om alle environments te deactiveren\n\nconda deactivate\n\nVoer onderstaande code uit in de terminal om de environment met naam example_env te verwijderen van je computer\n\nconda remove --name example_env --all"
   },
   {
     "objectID": "python_vs_code.html#footnotes",
@@ -96,5 +96,19 @@
     "title": "IMECOS software guide",
     "section": "",
     "text": "Welcome to the IMECOS software guide. On this website, you will find following information:\n\nUsing Python and VS Code\n…"
+  },
+  {
+    "objectID": "genai.html",
+    "href": "genai.html",
+    "title": "Generative AI",
+    "section": "",
+    "text": "Wat betreft het gebruik van (generatieve) AI:\nZie ook het Universiteitsbreed ricthkader voor het verantwoord gebruik van AI aan de UGent"
+  },
+  {
+    "objectID": "genai.html#footnotes",
+    "href": "genai.html#footnotes",
+    "title": "Generative AI",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nDit VN rapport geeft interestante achtergrondinformatie hierover↩︎"
   }
 ]
