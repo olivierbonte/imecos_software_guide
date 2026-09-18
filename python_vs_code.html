@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -13,10 +13,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -75,10 +78,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6b810ea5690f90cf0e632f26ca90fb26.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3e9b1289f5f353c49b617ce48ad2bc38.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -320,7 +323,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Kopieer deze Python-code in het py-bestand via het klembord-icoon</li>
 </ol>
-<div id="0d88b743" class="cell" data-execution_count="1">
+<div id="7905c587" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># Open een pakket om te werken met vectoren/matrices </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># Open een pakket om figures/python_vs_code te maken </span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -339,14 +342,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Voer het volledige script uit door te klikken op het pijl-icoon <img src="figures/python_vs_code/Run_button.png" style="width:0.6cm;height:0.3cm"></p></li>
 <li><p>Controleer of je onderstaande output krijgt</p></li>
 </ol>
-<div id="b6d1a2bd" class="cell" data-execution_count="2">
+<div id="ca5005c9" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-stdout">
 <pre><code>Gemiddelde dagelijkse neerslaghoogte: 2.5 mm</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 <figure class="figure">
-<p><img src="python_vs_code_files/figure-html/cell-3-output-2.png" width="589" height="429" class="figure-img"></p>
+<p><img src="python_vs_code_files/figure-html/cell-3-output-2.png" width="590" height="431" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -377,14 +380,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="8" type="1">
 <li>Pas dan alleen het print commando in het py-bestand aan</li>
 </ol>
-<div id="13c211d6" class="cell" data-execution_count="3">
+<div id="053c24d5" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Totale neerslaghoogte: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">sum</span>(P)<span class="sc">:.1f}</span><span class="ss"> mm'</span>) <span class="co"># Toon de totale neerslaghoogte over de meetperiode</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="9" type="1">
 <li><p>Selecteer alleen het aangepaste commando met je cursor en toets <em>shift + enter</em></p></li>
 <li><p>Controleer of je onderstaande output ziet in de <em>Jupyter Interactive Window</em></p></li>
 </ol>
-<div id="16516d0e" class="cell" data-execution_count="4">
+<div id="0804766e" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
 <pre><code>Totale neerslaghoogte: 17.5 mm</code></pre>
 </div>
@@ -397,7 +400,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Gebruik het ingebouwde help-commando als je niet weet welke input parameters een functie verwacht of hoe deze werkt. Meestal helpen de ‘Examples’ onderaan het best om de basiswerking van een functie snel te begrijpen.</li>
 </ol>
-<div id="d18021c0" class="cell" data-execution_count="5">
+<div id="b13211aa" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(np.<span class="bu">sum</span>)</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Output">
@@ -412,9 +415,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="2b98c764" class="cell" data-execution_count="6">
+<div id="0ae193f9" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-stdout">
-<pre><code>Help on _ArrayFunctionDispatcher in module numpy:
+<pre><code>Help on method descriptor sum in module numpy:
 
 sum(
     a,
@@ -505,7 +508,7 @@ sum(
     more precise approach to summation.
     Especially when summing a large number of lower precision floating point
     numbers, such as ``float32``, numerical errors can become significant.
-    In such cases it can be advisable to use `dtype="float64"` to use a higher
+    In such cases it can be advisable to use `dtype=np.float64` to use a higher
     precision for the output.
 
     Examples
@@ -542,7 +545,7 @@ sum(
 <ol start="2" type="1">
 <li>Test commando’s op kleine, fictieve datasets voordat je ze toepast op grote datasets om te begrijpen wat ze doen</li>
 </ol>
-<div id="6576b3b5" class="cell" data-execution_count="7">
+<div id="8b4dd1a4" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>np.array([<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>]) <span class="op">&gt;</span> <span class="dv">0</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Output">
@@ -557,7 +560,7 @@ sum(
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="9d059794" class="cell" data-execution_count="8">
+<div id="8b2e90c6" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>array([False, False,  True])</code></pre>
 </div>
