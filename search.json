@@ -49,6 +49,55 @@
     "text": "Welcome to the IMECOS software guide. On this website, you will find following information:\n\nUsing Python and VS Code\nUsing R and RStudio\nAdvice and guidelines on Generative AI"
   },
   {
+    "objectID": "quarto.html",
+    "href": "quarto.html",
+    "title": "Quarto",
+    "section": "",
+    "text": "Quarto is a publishing system that lets you write formatted text (Markdown), code (Python, R, Julia) and the output of that code (figures, tables) together in a single document (.qmd). You then render that document to HTML, PDF or Word. This tutorial itself is written in Quarto.\nFor basic text formatting (headings, bold text, lists, links, …) you use Markdown syntax; the details of which will not be repeated here.\nTo get started, follow the installations instructions at https://quarto.org/docs/get-started/"
+  },
+  {
+    "objectID": "quarto.html#imported-figures",
+    "href": "quarto.html#imported-figures",
+    "title": "Quarto",
+    "section": "4.1 Imported figures",
+    "text": "4.1 Imported figures\nInsert an existing image with Markdown syntax. For a label (needed to reference it) and a caption, use:\n![A very scientific cat.](figures/quarto/cat.jpg){#fig-cat}\nRendered, this gives Figure 1:\n\n\n\n\n\n\nFigure 1: A very scientific cat."
+  },
+  {
+    "objectID": "quarto.html#python-figures",
+    "href": "quarto.html#python-figures",
+    "title": "Quarto",
+    "section": "4.2 Python figures",
+    "text": "4.2 Python figures\nFor a figure produced by Python code, set the label and caption as chunk options label (must start with fig-) and fig-cap:\n```{python}\n#| label: fig-precipitation\n#| fig-cap: \"Precipitation over time.\"\nimport matplotlib.pyplot as plt\n\nplt.plot(P)\nplt.xlabel(\"Time (days)\")\nplt.ylabel(\"Precipitation [mm/d]\")\n```\nRendered, this produces Figure 2:\n\nimport matplotlib.pyplot as plt\n\nplt.plot(P)\nplt.xlabel(\"Time (days)\")\nplt.ylabel(\"Precipitation [mm/d]\")\nplt.show()\n\n\n\n\n\n\n\nFigure 2: Precipitation over time."
+  },
+  {
+    "objectID": "quarto.html#referencing-a-figure",
+    "href": "quarto.html#referencing-a-figure",
+    "title": "Quarto",
+    "section": "4.3 Referencing a figure",
+    "text": "4.3 Referencing a figure\nReference a labelled figure anywhere in your text with @fig-label, e.g. @fig-precipitation gives Figure 2."
+  },
+  {
+    "objectID": "quarto.html#manual-tables",
+    "href": "quarto.html#manual-tables",
+    "title": "Quarto",
+    "section": "5.1 Manual tables",
+    "text": "5.1 Manual tables\nType a table directly in Markdown. Add a label (must start with tbl-) and caption on the line right after the table, preceded by a ::\n| Variable | Unit |\n|----------|------|\n| P        | mm/d |\n| Q        | mm/d |\n\n: Overview of the variables used {#tbl-variables}\nRendered, this gives Table 1:\n\n\n\nTable 1: Overview of the variables used\n\n\n\n\n\nVariable\nUnit\n\n\n\n\nP\nmm/d\n\n\nQ\nmm/d"
+  },
+  {
+    "objectID": "quarto.html#python-tables",
+    "href": "quarto.html#python-tables",
+    "title": "Quarto",
+    "section": "5.2 Python tables",
+    "text": "5.2 Python tables\nFor a table produced by Python code (e.g. a pandas.DataFrame), again use the chunk options label (starting with tbl-) and tbl-cap:\n```{python}\n#| label: tbl-summary\n#| tbl-cap: \"Summary of the precipitation data.\"\nimport pandas as pd\n\npd.DataFrame({\"Mean\": [np.mean(P)], \"Sum\": [np.sum(P)]})\n```\nRendered, this produces Table 2:\n\nimport pandas as pd\n\npd.DataFrame({\"Mean\": [np.mean(P)], \"Sum\": [np.sum(P)]})\n\n\n\nTable 2: Summary of the precipitation data.\n\n\n\n\n\n\n\n\n\n\nMean\nSum\n\n\n\n\n0\n2.5\n10.0"
+  },
+  {
+    "objectID": "quarto.html#referencing-a-table",
+    "href": "quarto.html#referencing-a-table",
+    "title": "Quarto",
+    "section": "5.3 Referencing a table",
+    "text": "5.3 Referencing a table\nReference a labelled table with @tbl-label, e.g. @tbl-summary gives Table 2."
+  },
+  {
     "objectID": "python_vs_code.html",
     "href": "python_vs_code.html",
     "title": "Python and VS Code",
