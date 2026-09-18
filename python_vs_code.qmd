@@ -1,19 +1,7 @@
 ---
 title: "Python and VS Code"
-# format:
-#     html:
-#         embed-resources: true
-#         code-copy: true
-#         number-sections: true
-#         number-depth: 3
-#         toc: true
-#         toc-location: right
-#         toc-depth: 2
 author: ir. Olivier Bonte en dr. ir. Janis Baeten
 lang: nl
-execute:
-  echo: true
-  eval: true
 jupyter: python3 
 ---
 
