@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="ir. Olivier Bonte en dr. ir. Janis Baeten">
+
+<title>Python and VS Code – IMECOS software guide</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6b810ea5690f90cf0e632f26ca90fb26.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden",
+    "search-label": "Zoeken"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">IMECOS software guide</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Zoeken"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Schakel navigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./python_vs_code.html" aria-current="page"> 
+<span class="menu-text">Python and VS Code</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Op deze pagina</h2>
+   
+  <ul>
+  <li><a href="#waarom-deze-handleiding" id="toc-waarom-deze-handleiding" class="nav-link active" data-scroll-target="#waarom-deze-handleiding">Waarom deze handleiding?</a></li>
+  <li><a href="#installeer-de-software" id="toc-installeer-de-software" class="nav-link" data-scroll-target="#installeer-de-software">Installeer de software</a>
+  <ul class="collapse">
+  <li><a href="#anaconda-python-interpreter" id="toc-anaconda-python-interpreter" class="nav-link" data-scroll-target="#anaconda-python-interpreter">Anaconda + Python interpreter</a></li>
+  <li><a href="#vs-code" id="toc-vs-code" class="nav-link" data-scroll-target="#vs-code">VS Code</a></li>
+  <li><a href="#vs-code-extensies" id="toc-vs-code-extensies" class="nav-link" data-scroll-target="#vs-code-extensies">VS Code extensies</a></li>
+  <li><a href="#controleer-de-installatie-van-conda" id="toc-controleer-de-installatie-van-conda" class="nav-link" data-scroll-target="#controleer-de-installatie-van-conda">Controleer de installatie van <em>conda</em></a></li>
+  </ul></li>
+  <li><a href="#configureer-vs-code" id="toc-configureer-vs-code" class="nav-link" data-scroll-target="#configureer-vs-code">Configureer VS Code</a>
+  <ul class="collapse">
+  <li><a href="#selecteer-de-working-directory" id="toc-selecteer-de-working-directory" class="nav-link" data-scroll-target="#selecteer-de-working-directory">Selecteer de <em>Working directory</em></a></li>
+  <li><a href="#creëer-een-environment-via-een-yaml-bestand" id="toc-creëer-een-environment-via-een-yaml-bestand" class="nav-link" data-scroll-target="#creëer-een-environment-via-een-yaml-bestand">Creëer een <em>environment</em> via een YAML-bestand</a></li>
+  <li><a href="#voer-een-volledig-python-script-uit" id="toc-voer-een-volledig-python-script-uit" class="nav-link" data-scroll-target="#voer-een-volledig-python-script-uit">Voer een volledig Python script uit</a></li>
+  <li><a href="#voer-een-selectie-van-een-python-script-uit-en-bekijk-variabelen" id="toc-voer-een-selectie-van-een-python-script-uit-en-bekijk-variabelen" class="nav-link" data-scroll-target="#voer-een-selectie-van-een-python-script-uit-en-bekijk-variabelen">Voer een selectie van een Python script uit en bekijk variabelen</a></li>
+  </ul></li>
+  <li><a href="#tips-voor-programmeren" id="toc-tips-voor-programmeren" class="nav-link" data-scroll-target="#tips-voor-programmeren">Tips voor programmeren</a></li>
+  <li><a href="#beheer-zelf-environments-optioneel" id="toc-beheer-zelf-environments-optioneel" class="nav-link" data-scroll-target="#beheer-zelf-environments-optioneel">Beheer zelf <em>environments</em> (optioneel)</a>
+  <ul class="collapse">
+  <li><a href="#maak-environments-aan" id="toc-maak-environments-aan" class="nav-link" data-scroll-target="#maak-environments-aan">Maak <em>environments</em> aan</a></li>
+  <li><a href="#deel-environments-transparant-en-reproduceerbaar" id="toc-deel-environments-transparant-en-reproduceerbaar" class="nav-link" data-scroll-target="#deel-environments-transparant-en-reproduceerbaar">Deel <em>environments</em> transparant en reproduceerbaar</a></li>
+  <li><a href="#verwijder-environments" id="toc-verwijder-environments" class="nav-link" data-scroll-target="#verwijder-environments">Verwijder <em>environments</em></a></li>
+  </ul></li>
+  <li><a href="#pandas-optioneel" id="toc-pandas-optioneel" class="nav-link" data-scroll-target="#pandas-optioneel">Pandas (optioneel)</a></li>
+  <li><a href="#quarto-optioneel" id="toc-quarto-optioneel" class="nav-link" data-scroll-target="#quarto-optioneel">Quarto (optioneel)</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Python and VS Code</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur</div>
+    <div class="quarto-title-meta-contents">
+             <p>ir. Olivier Bonte en dr. ir. Janis Baeten </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><em>As of 18/09/2026, this guide is in Dutch and tailored to the course Hydrology in the 3rd year of the Bachelor’s program.</em></p>
+<section id="waarom-deze-handleiding" class="level1">
+<h1>Waarom deze handleiding?</h1>
+<p>Visual Studio Code (VS Code) is een code-editor (<em>Integrated Development Environment</em> of IDE) waarmee je zowel Python- als R-code kan schrijven en uitvoeren. In het eerste bachelorjaar leerde je al hoe je VS Code installeert en gebruikt als Python-IDE. Deze handleiding herhaalt kort de basis en toont daarna hoe je geavanceerdere Python-code transparant en reproduceerbaar kan delen en bewaren.</p>
+<p>Python-code gebruikt vaak pakketten (<em>packages</em>) met specifieke versies. Na updates kunnen pakketten of Python-versies soms niet meer goed samenwerken. Zelfs als ze technisch nog samenwerken, kan de syntax of werking van functies veranderd zijn, waardoor oude code toch fouten geeft. Daarom werk je best met een lokale <em>environment</em>: een omgeving waarin alle nodige pakketten en versies voor één project of vak samen zitten. Zo kan je de code later opnieuw gebruiken of delen zonder dat andere Python- of pakketversies problemen veroorzaken. Voor de programmeertaal R bestaan <em>environments</em> ook, maar deze zijn minder vaak nodig omdat de pakketten sterker centraal gecontroleerd worden op compatibiliteit via CRAN.</p>
+</section>
+<section id="installeer-de-software" class="level1">
+<h1>Installeer de software</h1>
+<p>Volg de installatie-instructies hieronder als de software niet meer op je computer staat. Als bepaalde software nog op je computer staat, maar je ervaart problemen, dan kan het helpen om de software eerst te verwijderen en nadien de nieuwste versies opnieuw te installeren zoals hieronder aangegeven. Je leert hieronder:</p>
+<ul>
+<li><p>Anaconda en een <em>Python Interpreter</em> installeren</p></li>
+<li><p>VS Code installeren</p></li>
+</ul>
+<section id="anaconda-python-interpreter" class="level2">
+<h2 class="anchored" data-anchor-id="anaconda-python-interpreter">Anaconda + Python interpreter</h2>
+<p>Een <em>Python Interpreter</em> is een programma dat Python code kan uitvoeren. Anaconda is een populair softwareplatform voor wetenschappelijk programmeren dat automatisch een <em>Python</em> en <em>R</em> <em>interpreter</em> installeert, maar ook het beheer van pakketten vergemakkelijkt. Als je Anaconda installeert, hoef je dus niet apart een <em>Python Interpreter</em> te installeren.</p>
+<p>Installeer Anaconda via deze stappen:</p>
+<ol type="1">
+<li><p>Surf naar <a href="https://www.anaconda.com/download/success">anaconda.com/download/success</a>;</p></li>
+<li><p>Download de juiste <em>Anaconda Distribution Graphical Installer</em> voor jouw besturingssysteem</p></li>
+<li><p>Open de installer</p></li>
+<li><p>Klik op <em>I Agree</em>, <em>Next</em> en uiteindelijk <em>Install</em></p></li>
+<li><p>Open de software <em>Anaconda Prompt</em></p></li>
+<li><p>Voor een Windows systeem, voer het commando <code>conda init powershell</code> uit. Voor Mac/Linux gebruikers, gebruik het commando <code>conda init bash</code>.</p></li>
+<li><p>Sluit <em>Anaconda Prompt</em></p></li>
+</ol>
+</section>
+<section id="vs-code" class="level2">
+<h2 class="anchored" data-anchor-id="vs-code">VS Code</h2>
+<p>Installeer VS Code via deze stappen:</p>
+<ol type="1">
+<li><p>Surf naar <a href="https://code.visualstudio.com/download">code.visualstudio.com/download</a></p></li>
+<li><p>Selecteer je besturingssysteem</p></li>
+<li><p>Open de <em>installer</em></p></li>
+<li><p>Klik <em>Next</em> en uiteindelijk <em>Install</em></p></li>
+</ol>
+</section>
+<section id="vs-code-extensies" class="level2">
+<h2 class="anchored" data-anchor-id="vs-code-extensies">VS Code extensies</h2>
+<p>VS Code kan uitgebreid worden met extensies die het programmeren vergemakkelijken of extra mogelijkheden bieden. Installeer nieuwe extensies in VS Code als volgt:</p>
+<ol type="1">
+<li><p>Start VS Code</p></li>
+<li><p>Ga naar <em>View</em> &gt; <em>Extensions</em></p></li>
+<li><p>Zoek voor het vak hydrologie minstens de extensies <em>Python</em>, <em>Pylance</em>, <em>Jupyter</em> en <em>Data Wrangler</em></p></li>
+<li><p>Klik telkens op <em>Install</em></p></li>
+</ol>
+<p><img src="figures/python_vs_code/VSCode_extensions.png" class="img-fluid" style="width:7.5cm"></p>
+</section>
+<section id="controleer-de-installatie-van-conda" class="level2">
+<h2 class="anchored" data-anchor-id="controleer-de-installatie-van-conda">Controleer de installatie van <em>conda</em></h2>
+<p>Soms moet je bewerkingen doen die niet ‘in’ je Python- of R-code staan, maar die daarbuiten gebeuren, zoals een specifiek script uitvoeren, pakketten installeren of <em>environments</em> creëren. VS Code voorziet daarvoor een <em>terminal</em>, een venster waarmee je commando’s kan geven aan jouw besturingssysteem, zonder je muis te gebruiken. Zo kan je bijvoorbeeld de software <em>conda</em> aansturen via de terminal om pakketten en <em>environments</em> te beheren. Voer deze stappen uit om een terminal te openen en hiermee te controleren of de software <em>conda</em> correct geïnstalleerd is:</p>
+<ol type="1">
+<li><p>Ga naar <em>View</em> &gt; <em>Command Palette…</em></p></li>
+<li><p>Typ <em>Terminal: Create New Terminal</em></p></li>
+<li><p>Klik op de pop-up die verschijnt</p></li>
+<li><p>Controleer of er onderaan een scherm opent dat lijkt op de onderstaande schermopname<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p></li>
+</ol>
+<p><img src="figures/python_vs_code/VSCode_terminal.png" class="img-fluid"></p>
+<ol start="5" type="1">
+<li>Voer deze code uit in de terminal</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>conda <span class="op">--</span>version</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="6" type="1">
+<li>Controleer of je <em>conda xx.x.x</em> als antwoord krijgt, vergelijkbaar met de onderstaande schermopname</li>
+</ol>
+<p><img src="figures/python_vs_code/Conda_version.png" class="img-fluid" style="width:8.7cm"></p>
+<ol start="7" type="1">
+<li>Als het antwoord <em>command not found: conda</em> is, volg dan de instructies op <a href="https://www.anaconda.com/docs/getting-started/working-with-conda/environments#troubleshooting">anaconda.com/docs/getting-started/working-with-conda/environments#troubleshooting</a></li>
+</ol>
+</section>
+</section>
+<section id="configureer-vs-code" class="level1">
+<h1>Configureer VS Code</h1>
+<p>In deze sectie leer je hoe je VS Code configureert om te kunnen gebruiken voor het vak Hydrologie. Veel van de instellingen kan je ook gebruiken voor andere vakken in de opleiding Ecosysteembeheer. Je leert hier:</p>
+<ul>
+<li><p>een werkmap (<em>Working Directory</em>) selecteren in VS Code</p></li>
+<li><p>een <em>environment</em> creëren en gebruiken die een lesgever deelt, waarin alle nodige, compatibele pakketten zitten die nodig zijn voor een vak</p></li>
+<li><p>een script uitvoeren via een geselecteerde <em>environment</em> en de geïnstalleerde extensies gebruiken</p></li>
+</ul>
+<section id="selecteer-de-working-directory" class="level2">
+<h2 class="anchored" data-anchor-id="selecteer-de-working-directory">Selecteer de <em>Working directory</em></h2>
+<p>De werkmap (<em>Working Directory</em>) is de map op je computer waarin VS Code momenteel standaard alle bestanden zoekt, leest en opslaat als je code uitvoert. Als je deze niet bewust kiest, leidt dit typisch tot foutmeldingen zoals ‘<em>file not found</em>’ of vind je de figures/python_vs_code niet terug die je hebt gemaakt met Python. Selecteer de werkmap als volgt:</p>
+<ol type="1">
+<li><p>Ga naar <em>File</em> &gt; <em>Open folder …</em></p></li>
+<li><p>Navigeer naar de map waarin je script(s), data en andere bestanden staan waarmee je wil werken</p></li>
+<li><p>Klik <em>Select Folder</em></p></li>
+<li><p>Selecteer <em>Yes, I trust the authors</em> als dit gevraagd wordt</p></li>
+</ol>
+</section>
+<section id="creëer-een-environment-via-een-yaml-bestand" class="level2">
+<h2 class="anchored" data-anchor-id="creëer-een-environment-via-een-yaml-bestand">Creëer een <em>environment</em> via een YAML-bestand</h2>
+<p>De Python-pakketten die nodig zijn om een bepaald script uit te kunnen voeren kunnen gedeeld worden tussen gebruikers via een YAML-bestand (<code>.yml</code> of <code>.yaml</code> extensie). Dit bestand bevat een overzicht van de nodige pakketten en versies om een <em>environment</em> aan te maken. Nadat je een <em>environment</em> hebt gecreëerd op je computer, blijft het beschikbaar binnen VS Code. Hieronder wordt als voorbeeld uitgelegd hoe je het <em>environment</em> kan aanmaken dat je voor alle werkcolleges en taken van het vak hydrologie moet gebruiken:</p>
+<ol type="1">
+<li><p>Download het bestand <code>hydrologie_env.yml</code> van Ufora</p></li>
+<li><p>Kies de map met dit bestand als <em>Working Directory</em></p></li>
+<li><p>Voer deze code uit in de terminal van VS Code en wacht tot de <em>environment</em> gecreëerd is</p></li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>conda env create <span class="op">-</span>f hydrologie_env<span class="op">.</span><span class="fu">yml</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="4" type="1">
+<li><p>Maak een nieuw <code>.py</code>-bestand aan: <em>File &gt; New File… &gt; Python File</em></p></li>
+<li><p>Sla het <code>.py</code>-bestand op onder een naam naar keuze in je working directory</p></li>
+<li><p>Ga naar <em>View</em> &gt; <em>Command Palette…</em></p></li>
+<li><p>Typ <em>Python: Select Interpreter</em></p></li>
+<li><p>Klik op de net gecreëerde <code>hydrologie_env</code>&nbsp;om deze <em>environment</em> te gebruiken voor dit py-bestand</p></li>
+<li><p>Controleer of je rechts onderaan het VS Code scherm de naam van de gekozen environment ziet, zoals in de schermopname hieronder. Als je hier <em>base</em> ziet staan, dan is de standaard Python-<em>environment</em> die meekomt met Anaconda nog geactiveerd. Controleer de gebruikte <em>environment</em> telkens voordat je een script runt</p></li>
+</ol>
+<p><img src="figures/python_vs_code/VSCode_bottom_right.png" style="width:14cm;height:0.7cm"></p>
+</section>
+<section id="voer-een-volledig-python-script-uit" class="level2">
+<h2 class="anchored" data-anchor-id="voer-een-volledig-python-script-uit">Voer een volledig Python script uit</h2>
+<ol type="1">
+<li>Kopieer deze Python-code in het py-bestand via het klembord-icoon</li>
+</ol>
+<div id="0d88b743" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># Open een pakket om te werken met vectoren/matrices </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># Open een pakket om figures/python_vs_code te maken </span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">8</span>) <span class="co">#[d] Maak een vector met dagen tussen 1 en 8 (excl. 8)</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> np.array([<span class="fl">1.8</span>, <span class="fl">2.1</span>, <span class="fl">2.7</span>, <span class="fl">3.4</span>, <span class="fl">3.0</span>, <span class="fl">2.5</span>, <span class="fl">2.0</span>]) <span class="co">#[mm/d] Maak een vector met dagelijkse nee rslaghoogtes</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Gemiddelde dagelijkse neerslaghoogte: </span><span class="sc">{</span>np<span class="sc">.</span>mean(P)<span class="sc">:.1f}</span><span class="ss"> mm'</span>) <span class="co"># Toon de gemiddelde dagelijkse neerslaghoogte</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure() <span class="co"># Maak een nieuwe figuur</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.plot(t, P, marker <span class="op">=</span> <span class="st">'.'</span>, linestyle <span class="op">=</span> <span class="st">'None'</span>, color <span class="op">=</span> <span class="st">'black'</span>) <span class="co"># Maak een spreidingsdiagram met zwarte punten </span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Tijd (dagen)'</span>) <span class="co"># Maak een titel voor de x-as</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Dagelijkse neerslaghoogte [mm]'</span>) <span class="co"># Maak een titel voor de y-as</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>plt.show() <span class="co"># Toon de grafiek in de output</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="2" type="1">
+<li><p>Voer het volledige script uit door te klikken op het pijl-icoon <img src="figures/python_vs_code/Run_button.png" style="width:0.6cm;height:0.3cm"></p></li>
+<li><p>Controleer of je onderstaande output krijgt</p></li>
+</ol>
+<div id="b6d1a2bd" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-stdout">
+<pre><code>Gemiddelde dagelijkse neerslaghoogte: 2.5 mm</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+<figure class="figure">
+<p><img src="python_vs_code_files/figure-html/cell-3-output-2.png" width="589" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="voer-een-selectie-van-een-python-script-uit-en-bekijk-variabelen" class="level2">
+<h2 class="anchored" data-anchor-id="voer-een-selectie-van-een-python-script-uit-en-bekijk-variabelen">Voer een selectie van een Python script uit en bekijk variabelen</h2>
+<p>Bij lange of rekenintensieve scripts is het tijdrovend om bij elke aanpassing het volledige script opnieuw uit te voeren. Met de <em>Jupyter</em> extensie kan je een selectie van je code uitvoeren om snel iets te testen. <em>Jupyter</em> laat ook toe om de waarde(n) van variabelen te bekijken, zelfs als ze niet in de output van het script terecht komen. De extensie <em>Data Wrangler</em> stelt je bovendien in staat om variabelen met veel data in tabelvorm te bekijken. Voer hiervoor de volgende stappen uit:</p>
+<ol type="1">
+<li><p>Ga naar <em>File</em> &gt; <em>Preferences</em> &gt; <em>Settings</em></p></li>
+<li><p>Zoek naar <em>Jupyter Interactive Window Text Editor Execute Selection</em></p></li>
+<li><p>Vink deze optie aan</p></li>
+</ol>
+<p><img src="figures/python_vs_code/VSCode_shift_enter.png" style="width:8.7cm;height:4cm"></p>
+<ol start="4" type="1">
+<li><p>Selecteer het volledige script met je cursor en toets <em>shift + enter</em></p></li>
+<li><p>Klik op <em>Jupyter Variables</em> in de nieuwe <em>Jupyter Interactive Window</em>. Als <em>Jupyter Variables</em> niet meteen zichtbaar is, klik dan op de puntjes:</p></li>
+</ol>
+<p><img src="figures/python_vs_code/Jupyter_interactive _window.png" class="img-fluid" style="width:10.9cm"></p>
+<ol start="6" type="1">
+<li>Controleer of je onderstaande variabelen ziet staan</li>
+</ol>
+<p><img src="figures/python_vs_code/Jupyter variable space.png" class="img-fluid"></p>
+<ol start="7" type="1">
+<li>Dubbelklik op één van de variabelen om via <em>Data Wrangler</em> de variabele als een tabel te bekijken</li>
+</ol>
+<p><img src="figures/python_vs_code/Data_Wrangler.png" class="img-fluid" style="width:11.1cm"></p>
+<ol start="8" type="1">
+<li>Pas dan alleen het print commando in het py-bestand aan</li>
+</ol>
+<div id="13c211d6" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Totale neerslaghoogte: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">sum</span>(P)<span class="sc">:.1f}</span><span class="ss"> mm'</span>) <span class="co"># Toon de totale neerslaghoogte over de meetperiode</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="9" type="1">
+<li><p>Selecteer alleen het aangepaste commando met je cursor en toets <em>shift + enter</em></p></li>
+<li><p>Controleer of je onderstaande output ziet in de <em>Jupyter Interactive Window</em></p></li>
+</ol>
+<div id="16516d0e" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-stdout">
+<pre><code>Totale neerslaghoogte: 17.5 mm</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="tips-voor-programmeren" class="level1">
+<h1>Tips voor programmeren</h1>
+<p>Er zijn ontzettend veel pakketten, functies, methodes, datatypes etc. beschikbaar in Python. Je hoeft deze echter niet allemaal van buiten te kennen om ermee te kunnen werken. Als je niet weet hoe een functie werkt of welke functie voor een bepaalde opdracht geschikt is, dan kan je volgende hulpmiddelen gebruiken, in volgorde van belang:</p>
+<ol type="1">
+<li>Gebruik het ingebouwde help-commando als je niet weet welke input parameters een functie verwacht of hoe deze werkt. Meestal helpen de ‘Examples’ onderaan het best om de basiswerking van een functie snel te begrijpen.</li>
+</ol>
+<div id="d18021c0" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(np.<span class="bu">sum</span>)</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Output">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Opmerking</span>Output
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="2b98c764" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-stdout">
+<pre><code>Help on _ArrayFunctionDispatcher in module numpy:
+
+sum(
+    a,
+    axis=None,
+    dtype=None,
+    out=None,
+    keepdims=&lt;no value&gt;,
+    initial=&lt;no value&gt;,
+    where=&lt;no value&gt;
+)
+    Sum of array elements over a given axis.
+
+    Parameters
+    ----------
+    a : array_like
+        Elements to sum.
+    axis : None or int or tuple of ints, optional
+        Axis or axes along which a sum is performed.  The default,
+        axis=None, will sum all of the elements of the input array.  If
+        axis is negative it counts from the last to the first axis. If
+        axis is a tuple of ints, a sum is performed on all of the axes
+        specified in the tuple instead of a single axis or all the axes as
+        before.
+    dtype : dtype, optional
+        The type of the returned array and of the accumulator in which the
+        elements are summed.  The dtype of `a` is used by default unless `a`
+        has an integer dtype of less precision than the default platform
+        integer.  In that case, if `a` is signed then the platform integer
+        is used while if `a` is unsigned then an unsigned integer of the
+        same precision as the platform integer is used.
+    out : ndarray, optional
+        Alternative output array in which to place the result. It must have
+        the same shape as the expected output, but the type of the output
+        values will be cast if necessary.
+    keepdims : bool, optional
+        If this is set to True, the axes which are reduced are left
+        in the result as dimensions with size one. With this option,
+        the result will broadcast correctly against the input array.
+
+        If the default value is passed, then `keepdims` will not be
+        passed through to the `sum` method of sub-classes of
+        `ndarray`, however any non-default value will be.  If the
+        sub-class' method does not implement `keepdims` any
+        exceptions will be raised.
+    initial : scalar, optional
+        Starting value for the sum. See `~numpy.ufunc.reduce` for details.
+    where : array_like of bool, optional
+        Elements to include in the sum. See `~numpy.ufunc.reduce` for details.
+
+    Returns
+    -------
+    sum_along_axis : ndarray
+        An array with the same shape as `a`, with the specified
+        axis removed.   If `a` is a 0-d array, or if `axis` is None, a scalar
+        is returned.  If an output array is specified, a reference to
+        `out` is returned.
+
+    See Also
+    --------
+    ndarray.sum : Equivalent method.
+    add: ``numpy.add.reduce`` equivalent function.
+    cumsum : Cumulative sum of array elements.
+    trapezoid : Integration of array values using composite trapezoidal rule.
+
+    mean, average
+
+    Notes
+    -----
+    Arithmetic is modular when using integer types, and no error is
+    raised on overflow.
+
+    The sum of an empty array is the neutral element 0:
+
+    &gt;&gt;&gt; np.sum([])
+    0.0
+
+    For floating point numbers the numerical precision of sum (and
+    ``np.add.reduce``) is in general limited by directly adding each number
+    individually to the result causing rounding errors in every step.
+    However, often numpy will use a  numerically better approach (partial
+    pairwise summation) leading to improved precision in many use-cases.
+    This improved precision is always provided when no ``axis`` is given.
+    When ``axis`` is given, it will depend on which axis is summed.
+    Technically, to provide the best speed possible, the improved precision
+    is only used when the summation is along the fast axis in memory.
+    Note that the exact precision may vary depending on other parameters.
+    In contrast to NumPy, Python's ``math.fsum`` function uses a slower but
+    more precise approach to summation.
+    Especially when summing a large number of lower precision floating point
+    numbers, such as ``float32``, numerical errors can become significant.
+    In such cases it can be advisable to use `dtype="float64"` to use a higher
+    precision for the output.
+
+    Examples
+    --------
+    &gt;&gt;&gt; import numpy as np
+    &gt;&gt;&gt; np.sum([0.5, 1.5])
+    2.0
+    &gt;&gt;&gt; np.sum([0.5, 0.7, 0.2, 1.5], dtype=np.int32)
+    np.int32(1)
+    &gt;&gt;&gt; np.sum([[0, 1], [0, 5]])
+    6
+    &gt;&gt;&gt; np.sum([[0, 1], [0, 5]], axis=0)
+    array([0, 6])
+    &gt;&gt;&gt; np.sum([[0, 1], [0, 5]], axis=1)
+    array([1, 5])
+    &gt;&gt;&gt; np.sum([[0, 1], [np.nan, 5]], where=[False, True], axis=1)
+    array([1., 5.])
+
+    If the accumulator is too small, overflow occurs:
+
+    &gt;&gt;&gt; np.ones(128, dtype=np.int8).sum(dtype=np.int8)
+    np.int8(-128)
+
+    You can also start the sum with a value other than zero:
+
+    &gt;&gt;&gt; np.sum([10], initial=5)
+    15
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Test commando’s op kleine, fictieve datasets voordat je ze toepast op grote datasets om te begrijpen wat ze doen</li>
+</ol>
+<div id="6576b3b5" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>np.array([<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>]) <span class="op">&gt;</span> <span class="dv">0</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Output">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Opmerking</span>Output
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="9d059794" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>array([False, False,  True])</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li><p><a href="#voer-een-selectie-van-een-python-script-uit-en-bekijk-variabelen">Voer een selectie van een Python script uit en bekijk variabelen</a> om te controleren of je commando’s het gewenste effect hebben</p></li>
+<li><p>Vraag hulp aan medestudenten of begeleiders</p></li>
+<li><p>Gebruik Google om documentatie en voorbeelden van het gebruik van commando’s op te zoeken</p></li>
+<li><p>Gebruik GenAI. Hou hierbij rekening met de <a href="https://www.ugent.be/nl/univgent/missie/genai">richtlijnen voor verantwoord gebruik van GenAI van de UGent</a>. Specifiek geldt hier een verbod om de data te delen die je van de lesgevers krijgt. Wees je bewust van de nadelen van GenAI voor oefeningen, zoals:</p></li>
+</ol>
+<ul>
+<li>het kan je motivatie verminderen</li>
+<li>het kan je leerproces verhinderen, waardoor je tijdens het semester misschien sneller resultaten bekomt maar tijdens het examen minder goed kan antwoorden op vragen</li>
+<li>het verbruikt veel energie, terwijl gelijkaardige info waarschijnlijk al ergens op het internet staat</li>
+</ul>
+<p>Je bent nu klaar voor het eerste werkcollege van Hydrologie! Hieronder staat optionele extra informatie die handig kan zijn voor je taken of voor andere vakken.</p>
+</section>
+<section id="beheer-zelf-environments-optioneel" class="level1">
+<h1>Beheer zelf <em>environments</em> (optioneel)</h1>
+<section id="maak-environments-aan" class="level2">
+<h2 class="anchored" data-anchor-id="maak-environments-aan">Maak <em>environments</em> aan</h2>
+<p>Je kan zelf nieuwe <em>environments</em> aanmaken als de base-<em>environment</em> of <em>environment</em> gedeeld door een lesgever niet voldoet aan je noden. Maak eerst een nieuw YAML-bestand aan met de pakketten die je wil gebruiken. Je hoeft de pakket-versies niet per sé te specifiëren. De software conda controleert automatisch welke versies van de nodige pakketten onderling compatibel zijn en installeert deze. Er worden ook automatisch andere pakketten geïnstalleerd die niet expliciet in de YAML staan als deze nodig zijn om de gevraagde pakketten te laten werken.</p>
+<ol type="1">
+<li><p>Ga naar <em>File</em> &gt; <em>New Text File</em> &gt; <em>Save as</em> &gt; Zoek de huidige <em>Working Directory</em> &gt; Kies als naam bijvoorbeeld <code>example_env</code> en kies bij <em>Opslaan als YAML</em></p></li>
+<li><p>Gebruik onderstaande syntax en vul de lijst met pakketten aan naar wens</p></li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> example_env</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">channels</span><span class="kw">:</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> conda-forge</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dependencies</span><span class="kw">:</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> python</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> numpy</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> matplotlib</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="3" type="1">
+<li>Voer onderstaande code uit in de terminal van VS Code en wacht tot de <em>environment</em> gecreëerd is</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>conda env create <span class="op">-</span>f example_env<span class="op">.</span><span class="fu">yml</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="4" type="1">
+<li>Voer deze code uit in de terminal om de <em>environment</em> te activeren (hiermee wordt je openstaande python script niet per sé uitgevoerd via deze <em>environment</em>, maar kan je via de terminal aanpassingen maken aan deze <em>environment</em>)</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>conda activate example_env</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="deel-environments-transparant-en-reproduceerbaar" class="level2">
+<h2 class="anchored" data-anchor-id="deel-environments-transparant-en-reproduceerbaar">Deel <em>environments</em> transparant en reproduceerbaar</h2>
+<p>Als je een YAML-bestand zonder versies specifieert bestaat het risico dat ditzelfde bestand tot andere versies leidt als iemand hiermee op een ander moment een <em>environment</em> maakt. Als je dit wil voorkomen, moet je de versies die je gebruikt mee in het YAML-bestand zetten. Het laatste cijfer van een versie, zoals de ‘3’ in ‘2.1.3’ hoef je niet te vermelden. Dit is de patch-versie en verandert gewoonlijk geen syntax.</p>
+<ol type="1">
+<li>Voer onderstaande code uit in de terminal om te zien welke versies in je actieve environment staan</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>conda list</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="2" type="1">
+<li>Zoek de pakketten die in je YAML-bestand staan en kopieer hun hoofd- en onderversie (de eerste 2 cijfers) naar het YAML-bestand, zoals in het voorbeeld hieronder</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> example_env</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">channels</span><span class="kw">:</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> conda-forge</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dependencies</span><span class="kw">:</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> python=3.13</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> numpy=2.3</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> matplotlib=3.10</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="3" type="1">
+<li>Bewaar en deel dit bestand samen met het programmeerproject waarvoor je het gebruikt</li>
+</ol>
+</section>
+<section id="verwijder-environments" class="level2">
+<h2 class="anchored" data-anchor-id="verwijder-environments">Verwijder <em>environments</em></h2>
+<p>Je kan <em>environments</em> als volgt van je computer verwijderen:</p>
+<ol type="1">
+<li>Voer onderstaande code uit in de terminal om alle <em>environments</em> te deactiveren</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>conda deactivate</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="2" type="1">
+<li>Voer onderstaande code uit in de terminal om de <em>environment</em> met naam <em>example_env</em> te verwijderen van je computer</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>conda remove <span class="op">--</span>name example_env <span class="op">--</span>all</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="pandas-optioneel" class="level1">
+<h1>Pandas (optioneel)</h1>
+<p>Welke functies je precies gebruikt voor de oefeningen en taken van het vak Hydrologie, doet er niet toe voor de evaluatie. Je wordt enkel geëvalueerd op het inzicht in je eigen code, het eindresultaat en de transparantie en reproduceerbaarheid. Het pakket Pandas is echter wel een aanrader voor de analyse van tijdreeksen. Dit pakket is een uitbreiding op NumPy, die veel typische bewerkingen op grote datasets vereenvoudigd, zoals filteren, groeperen en sorteren, vergelijkbaar met <em>tidyverse</em> in R. Een introductie tot Pandas vind je hier: <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min">pandas.pydata.org/pandas-docs/stable/user_guide/10min</a>.</p>
+</section>
+<section id="quarto-optioneel" class="level1">
+<h1>Quarto (optioneel)</h1>
+<p>Als je een wetenschappelijk verslag schrijft in Word of Latex, kan je je Python-code als bijlage toevoegen voor transparantie en reproduceerbaarheid. Met de software Quarto kan je beide tegelijk: je kan hiermee stukken opgemaakte tekst schrijven, afgewisseld met stukken Python- (of R-)code. Je kan een quarto-document omzetten (<em>renderen</em>) naar een HTML, PDF of Word-bestand en daarbij de output van de code automatisch tonen in het rapport, al dan niet samen met de code zelf. Deze handleiding werd op die manier gemaakt. Meer info over hoe je Quarto kan gebruiken in VS Code vind je op <a href="https://quarto.org/docs/tools/vscode/index.html">quarto.org/docs/tools/vscode/index.html</a>.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Voetnoten</h2>
+
+<ol>
+<li id="fn1"><p>Onderstaande afbeelding is voor Windows, voor Mac/Linux kan dit er licht anders uitzien<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Gekopieerd!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Gekopieerd!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/olivierbonte\.github\.io\/imecos_software_guide\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
