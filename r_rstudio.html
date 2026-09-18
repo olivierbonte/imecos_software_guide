@@ -8,7 +8,7 @@
 
 <meta name="author" content="Louis Verschuren, Lander Baeten">
 
-<title>Inventaristatie - Tutorial ‘introductie tot R’ – IMECOS software guide</title>
+<title>Tutorial ‘introductie tot R’ – IMECOS software guide</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -141,7 +141,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./r_rstudio.html" aria-current="page"> 
-<span class="menu-text">Inventaristatie - Tutorial ‘introductie tot R’</span></a>
+<span class="menu-text">Tutorial ‘introductie tot R’</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./genai.html"> 
@@ -163,16 +163,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#de-interface" id="toc-de-interface" class="nav-link active" data-scroll-target="#de-interface"><span class="header-section-number">1</span> De interface</a></li>
-  <li><a href="#r-als-rekenmachine" id="toc-r-als-rekenmachine" class="nav-link" data-scroll-target="#r-als-rekenmachine"><span class="header-section-number">2</span> R ALS REKENMACHINE</a></li>
-  <li><a href="#variabelen-en-vectoren" id="toc-variabelen-en-vectoren" class="nav-link" data-scroll-target="#variabelen-en-vectoren"><span class="header-section-number">3</span> VARIABELEN EN VECTOREN</a></li>
-  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices"><span class="header-section-number">4</span> MATRICES</a></li>
-  <li><a href="#subscripting" id="toc-subscripting" class="nav-link" data-scroll-target="#subscripting"><span class="header-section-number">5</span> SUBSCRIPTING</a></li>
-  <li><a href="#gerbruiker-gedefinieerde-functies" id="toc-gerbruiker-gedefinieerde-functies" class="nav-link" data-scroll-target="#gerbruiker-gedefinieerde-functies"><span class="header-section-number">6</span> GERBRUIKER GEDEFINIEERDE FUNCTIES</a></li>
-  <li><a href="#grafieken" id="toc-grafieken" class="nav-link" data-scroll-target="#grafieken"><span class="header-section-number">7</span> GRAFIEKEN</a></li>
-  <li><a href="#data-input" id="toc-data-input" class="nav-link" data-scroll-target="#data-input"><span class="header-section-number">8</span> DATA INPUT</a></li>
-  <li><a href="#extra-pakketten" id="toc-extra-pakketten" class="nav-link" data-scroll-target="#extra-pakketten"><span class="header-section-number">9</span> EXTRA PAKKETTEN</a></li>
-  <li><a href="#ggplot2" id="toc-ggplot2" class="nav-link" data-scroll-target="#ggplot2"><span class="header-section-number">10</span> GGPLOT2</a></li>
+  <li><a href="#de-interface" id="toc-de-interface" class="nav-link active" data-scroll-target="#de-interface"><span class="header-section-number">1</span> De interface</a>
+  <ul class="collapse">
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio"><span class="header-section-number">1.1</span> RStudio</a></li>
+  <li><a href="#r-markdown" id="toc-r-markdown" class="nav-link" data-scroll-target="#r-markdown"><span class="header-section-number">1.2</span> R markdown</a></li>
+  </ul></li>
+  <li><a href="#r-als-rekenmachine" id="toc-r-als-rekenmachine" class="nav-link" data-scroll-target="#r-als-rekenmachine"><span class="header-section-number">2</span> R als rekenmachine</a></li>
+  <li><a href="#variabelen-en-vectoren" id="toc-variabelen-en-vectoren" class="nav-link" data-scroll-target="#variabelen-en-vectoren"><span class="header-section-number">3</span> Variabelen en vectoren</a></li>
+  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices"><span class="header-section-number">4</span> Matrices</a></li>
+  <li><a href="#subscripting" id="toc-subscripting" class="nav-link" data-scroll-target="#subscripting"><span class="header-section-number">5</span> Subscripting</a></li>
+  <li><a href="#gebruiker-gedefinieerde-functies" id="toc-gebruiker-gedefinieerde-functies" class="nav-link" data-scroll-target="#gebruiker-gedefinieerde-functies"><span class="header-section-number">6</span> Gebruiker gedefinieerde functies</a></li>
+  <li><a href="#grafieken" id="toc-grafieken" class="nav-link" data-scroll-target="#grafieken"><span class="header-section-number">7</span> Grafieken</a></li>
+  <li><a href="#data-input" id="toc-data-input" class="nav-link" data-scroll-target="#data-input"><span class="header-section-number">8</span> Data input</a></li>
+  <li><a href="#extra-paketten" id="toc-extra-paketten" class="nav-link" data-scroll-target="#extra-paketten"><span class="header-section-number">9</span> Extra paketten</a>
+  <ul class="collapse">
+  <li><a href="#ggplot2" id="toc-ggplot2" class="nav-link" data-scroll-target="#ggplot2"><span class="header-section-number">9.1</span> ggplot2</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -181,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Inventaristatie - Tutorial ‘introductie tot R’</h1>
+<h1 class="title">Tutorial ‘introductie tot R’</h1>
 </div>
 
 
@@ -204,12 +210,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p><em>Deze tutorial komt uit de cursus “Inventarisatie van boes en natuur” (IMBONA)</em></p>
 <p>R is een programmeertaal en omgeving voor data analyse en grafische weergave. Het is een open source implementatie van de S taal, die o.a. de basis vormt voor de S-PLUS software. Een heel aantal statistische analysetechnieken wordt standaard in de basisomgeving van R aangeboden, maar de meeste worden beschikbaar gesteld als extra packages op het CRAN netwerk (<a href="http://cran.r-project.org/" class="uri">http://cran.r-project.org/</a>). Er is een belangrijk verschil in filosofie tussen R (en S) en andere software die courant gebruikt wordt voor data analyse. In R worden analyses uitgevoerd in opeenvolgende stappen waarbij intermediaire resultaten bewaard worden als objecten. Waar andere systemen zoals SAS en SPSS direct relatief veel output tonen in tabellen en figuren, zal R minimale output tonen en de resultaten opslaan in nieuwe objecten. Die objecten kunnen dan verder gebruik worden in andere R functies.</p>
 <p>Deze introductie is zeer beknopt en gebaseerd op de veel uitgebreidere documentatie op het CRAN netwerk: <a href="http://cran.r-project.org/doc/manuals/R-intro.html" class="uri">http://cran.r-project.org/doc/manuals/R-intro.html</a></p>
-<section id="de-interface" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="de-interface"><span class="header-section-number">1</span> De interface</h2>
-<section id="rstudio" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="rstudio"><span class="header-section-number">1.1</span> RStudio</h3>
+<section id="de-interface" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> De interface</h1>
+<section id="rstudio" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="rstudio"><span class="header-section-number">1.1</span> RStudio</h2>
 <p>In deze cursus maken we gebruik van RStudio, een vrij beschikbare <em>integrated development environment (IDE)</em> voor R. Installeer een recente versie van RStudio op <a href="https://www.rstudio.com/" class="uri">https://www.rstudio.com/</a>.</p>
 <p>Na openen van RStudio zie je in de <strong>R Console</strong> een koptekst met o.a. basisinfo over de gebruikte versie. Daarna volgt een blanco lijn voorafgegaan door het <code>&gt;</code> symbool. Dit symbool wordt een prompt genoemd en is R taal voor ‘Wat nu?’. Hier worden commando’s getypt, gevolgd door ENTER. Het kan gebeuren dat er links een <code>+</code> staat, wat betekent dat het commando dat getypt werd onvolledig is (bv. haakjes vergeten). Hulp bij functies is gemakkelijk online te vinden en kan ook direct opgeroepen worden in R via</p>
 <div class="cell">
@@ -227,8 +234,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><sub><em>Opmerking: de grijze box toont de code die je zelf typt na de prompt, de witte box toont de output die in de Console zal verschijnen</em></sub></p>
 </section>
-<section id="r-markdown" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="r-markdown"><span class="header-section-number">1.2</span> R markdown</h3>
+<section id="r-markdown" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="r-markdown"><span class="header-section-number">1.2</span> R markdown</h2>
 <p>In deze cursus maken we gebruik van <strong>R markdown</strong>. Deze markdowns laten toe tekst, code (<em>chunks</em>) en resultaten in een enkel document te ontwikkelen. Het verschil met een script is dat (1) de tekst opgemaakt kan worden (en niet enkel na een hashtag moet komen) en (2) de output van de analyse niet in de console of tab met figuren terechtkomt, maar rechstreeks tussen de tekst. Dit is erg nuttig voor het uitwerken van een wetenschappelijk verslag. Open een nieuwe markdown <code>File &gt; New file &gt; R markdown</code>. Dit opent een voorbeeld markdown, met kop-informatie, voorbeeld tekst en code.</p>
 <p><strong>Tekst</strong> - De tekst in een markdown wordt geschreven in Markdown formaat. Dit is een eenvoudige opmaaksyntax voor het creëren van HTML, PDF… documenten. Zie <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a> voor meer info of oefen wat met de opmaaktaal via een online Markdown editor zoals <a href="https://stackedit.io" class="uri">https://stackedit.io</a>. Er is ook een spiekbriefje dat je <a href="http://rmarkdown.rstudio.com/lesson-15.html">hier</a> kan downloaden.</p>
 <p><strong>Code chunks</strong> - Het werkpaard in een notebook zijn zogenaamde <em>code chunks</em>. Dit zijn blokken code die je kan invoegen met <code>AltGr + Ctrl + I</code> en waar je reguliere R syntax kan gebruiken. In RStudio kan je ook een nieuwe <em>chunk</em> maken door bovenaan op de groene C+ te klikken, en vervolgens “R” aan te duiden. Uitvoeren van een blok code kan door op het groene pijltje te drukken. Het resultaat verschijnt onder de blok code. Maak een nieuwe <em>chunk</em>, typ onderstaande code en voer ze uit.</p>
@@ -241,8 +248,8 @@ hist(x)
 <p><strong>Voor je verder gaat!</strong> R zal steeds data, etc… zoeken in de <em>working directory</em>. Deze moet je dus eerst instellen: <code>Session &gt; Set working directory &gt; Choose directory</code>. Het is echter veel gemakkelijker om te werken binnen projecten, die leggen je <em>working directory</em> vast. Een nieuw project maak je aan door op <code>File &gt; New Project...</code> te klikken en dan de folder die je voor dit project wil gebruiken aan te geven. Elke keer dat je aan het project wil werken open je de .Rproj file, dan is je working directory direct juist.</p>
 </section>
 </section>
-<section id="r-als-rekenmachine" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="r-als-rekenmachine"><span class="header-section-number">2</span> R ALS REKENMACHINE</h2>
+<section id="r-als-rekenmachine" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> R als rekenmachine</h1>
 <p>Vanaf hier beginnen we met eenvoudige stukken code te ontwikkelen en starten met enkele voorbeelden die basisbewerkingen in R illustreren. Voer ze uit in <em>code chunks</em> van je nieuwe R Notebook file.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="sc">+</span><span class="dv">4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -278,8 +285,8 @@ hist(x)
 </div>
 <p><sub><em>let op de dubbele == om een gelijkheid te evalueren</em></sub></p>
 </section>
-<section id="variabelen-en-vectoren" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="variabelen-en-vectoren"><span class="header-section-number">3</span> VARIABELEN EN VECTOREN</h2>
+<section id="variabelen-en-vectoren" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Variabelen en vectoren</h1>
 <p>Een variabele definiëren en er een waarde aan toekennen kan door een pijltje <code>&lt;-</code> of <code>=</code> te gebruiken. Je definieert zo dus een nieuw object. Let op: R is hoofdlettergevoelig.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
@@ -340,8 +347,8 @@ hist(x)
 </div>
 <p>Probeer nu zelf een vector met naam ‘b’ te maken, met als elementen 120, 140 en 160. Bereken de som van deze drie getallen en neem er de vierkantswortel van.</p>
 </section>
-<section id="matrices" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="matrices"><span class="header-section-number">4</span> MATRICES</h2>
+<section id="matrices" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Matrices</h1>
 <p>Matrices worden o.a. met de functie <code>matrix()</code> gedefinieerd.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">ncol=</span><span class="dv">5</span>)</span>
@@ -365,8 +372,8 @@ hist(x)
 </div>
 </div>
 </section>
-<section id="subscripting" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="subscripting"><span class="header-section-number">5</span> SUBSCRIPTING</h2>
+<section id="subscripting" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Subscripting</h1>
 <p>Subscripting is het selecteren van elementen van een vector of matrix met behulp van rechte haken. Probeer de werking van onderstaande bewerkingen goed te begrijpen.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">2</span>]            <span class="co"># het tweede element van de vector a</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -417,31 +424,34 @@ hist(x)
 </div>
 </div>
 </section>
-<section id="gerbruiker-gedefinieerde-functies" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="gerbruiker-gedefinieerde-functies"><span class="header-section-number">6</span> GERBRUIKER GEDEFINIEERDE FUNCTIES</h2>
+<section id="gebruiker-gedefinieerde-functies" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Gebruiker gedefinieerde functies</h1>
 <p>Binnen R kan je ook je eigen functies bouwen, deze hebben normaal de volgende syntax:</p>
-<p>functie _naam &lt;- function(argument_1, argument_2) { functie berekeningen return (output) }</p>
+<pre><code>functie_naam &lt;- function(argument_1, argument_2) { 
+  functie berekeningen
+  return (output)
+}</code></pre>
 <p>Bijvoorbeeld, als we een functie willen bouwen die het gemiddelde van twee getallen berekent, kan dat als volgt:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>gemiddelde_twee_getallen <span class="ot">&lt;-</span> <span class="cf">function</span>(num_1, num_2) {</span>
-<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>  gemiddelde <span class="ot">&lt;-</span> (num_1 <span class="sc">+</span> num_2) <span class="sc">/</span> <span class="dv">2</span></span>
-<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span> (gemiddelde)</span>
-<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="fu">gemiddelde_twee_getallen</span>(<span class="dv">10</span>, <span class="dv">16</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>gemiddelde_twee_getallen <span class="ot">&lt;-</span> <span class="cf">function</span>(num_1, num_2) {</span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>  gemiddelde <span class="ot">&lt;-</span> (num_1 <span class="sc">+</span> num_2) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span> (gemiddelde)</span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a><span class="fu">gemiddelde_twee_getallen</span>(<span class="dv">10</span>, <span class="dv">16</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 13</code></pre>
 </div>
 </div>
 <p>Dit kan handig zijn indien je dezelfde bewerking meermaals moet uitvoeren, op die manier is de berekening maar 1 maal uitgeschreven en blijft de code overzichtelijk. Schrijf nu je eigen functie die de omtrek van een cirkel met straal r berekent.</p>
 </section>
-<section id="grafieken" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="grafieken"><span class="header-section-number">7</span> GRAFIEKEN</h2>
+<section id="grafieken" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Grafieken</h1>
 <p>R is bijzonder geschikt om data grafisch voor te stellen. Veel gebruikte basisfuncties zijn bv. <code>plot()</code> en <code>hist()</code></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>x.data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>)                      <span class="co"># x is een vector met waarden 1 tot en met 100  </span></span>
-<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>y.data <span class="ot">&lt;-</span> x.data <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">100</span>,<span class="at">sd=</span><span class="dv">20</span>)   <span class="co"># toevoegen van ruis (op basis van normale verdeling)</span></span>
-<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="co"># met st. dev. = 20 voor de 100 elementen in x </span></span>
-<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x=</span>x.data, <span class="at">y=</span>y.data)                <span class="co"># scatterplot met x.data en y.data als x en y variabele         </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>x.data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>)                      <span class="co"># x is een vector met waarden 1 tot en met 100  </span></span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>y.data <span class="ot">&lt;-</span> x.data <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">100</span>,<span class="at">sd=</span><span class="dv">20</span>)   <span class="co"># toevoegen van ruis (op basis van normale verdeling)</span></span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="co"># met st. dev. = 20 voor de 100 elementen in x </span></span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x=</span>x.data, <span class="at">y=</span>y.data)                <span class="co"># scatterplot met x.data en y.data als x en y variabele         </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -449,7 +459,7 @@ hist(x)
 </figure>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(y.data)                            <span class="co"># histogram (frequenties) van y.data</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(y.data)                            <span class="co"># histogram (frequenties) van y.data</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -459,12 +469,12 @@ hist(x)
 </div>
 </div>
 </section>
-<section id="data-input" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="data-input"><span class="header-section-number">8</span> DATA INPUT</h2>
+<section id="data-input" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Data input</h1>
 <p>R kan verschillende bestandsformaten inlezen. Je kan data ingeven in Excel en opslaan in een eenvoudig tekstformaat, bijvoorbeeld waarbij kolommen gescheiden worden door een komma (comma separated values of ‘csv’ file). Op Ufora vind je het bestand <em>bomen.csv</em>. Sla deze file op in je <strong>working directory</strong>. Vervolgens kan je in R deze file inlezen en toewijzen aan een nieuw object (hier noemen we de data <code>M_voorbeeld</code>)</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>M_voorbeeld <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'data/bomen.csv'</span>, <span class="at">header=</span>T)</span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>M_voorbeeld</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>M_voorbeeld <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'data/bomen.csv'</span>, <span class="at">header=</span>T)</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>M_voorbeeld</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   ID           Soort DBH_cm Hoogte_m
 1   1   Quercus robur  20.75     21.0
@@ -502,11 +512,11 @@ hist(x)
 </div>
 <p>Je kan nu enkele attributen van de dataset bekijken.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(M_voorbeeld)                  <span class="co"># namen van variabelen (kolomnamen)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(M_voorbeeld)                  <span class="co"># namen van variabelen (kolomnamen)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "ID"       "Soort"    "DBH_cm"   "Hoogte_m"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(M_voorbeeld)                        <span class="co"># toont structuur (type variabelen)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(M_voorbeeld)                        <span class="co"># toont structuur (type variabelen)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   31 obs. of  4 variables:
  $ ID      : int  1 2 3 4 5 6 7 8 9 10 ...
@@ -514,7 +524,7 @@ hist(x)
  $ DBH_cm  : num  20.8 21.5 22 26.2 26.8 ...
  $ Hoogte_m: num  21 19.5 18.9 21.6 24.3 24.9 19.8 22.5 24 22.5 ...</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.data.frame</span>(M_voorbeeld)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.data.frame</span>(M_voorbeeld)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
@@ -522,7 +532,7 @@ hist(x)
 <p>Dit laatste commando toont dat het object dataset van het type dataframe is. Een dataframe heeft zoals een matrix rijen (voor de verschillende observaties) en kolommen (voor de verschillende variabelen). De waarden in een matrix kunnen maar van één type zijn (bv. of getallen of letters), terwijl bij een zelfde dataframe zowel getallen als tekst (incl.&nbsp;datums, logische variabelen) mogelijk zijn.</p>
 <p>Variabelen, rijen of elementen in een dataframe selecteren kan zoals bij een matrix m.b.v. subscripting, maar ook met de operator <code>$</code>. Vergelijk</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>M_voorbeeld[,<span class="dv">2</span>]                       <span class="co"># selecteer de 2e kolom (d.i. Soort a)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>M_voorbeeld[,<span class="dv">2</span>]                       <span class="co"># selecteer de 2e kolom (d.i. Soort a)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "Quercus robur"   "Quercus robur"   "Fagus sylvatica" "Fagus sylvatica"
  [5] "Quercus robur"   "Quercus robur"   "Quercus robur"   "Fagus sylvatica"
@@ -533,7 +543,7 @@ hist(x)
 [25] "Quercus robur"   "Quercus robur"   "Quercus robur"   "Fagus sylvatica"
 [29] "Fagus sylvatica" "Quercus robur"   "Fagus sylvatica"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>M_voorbeeld<span class="sc">$</span>Soort                 <span class="co"># selecteer soort direct</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>M_voorbeeld<span class="sc">$</span>Soort                 <span class="co"># selecteer soort direct</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "Quercus robur"   "Quercus robur"   "Fagus sylvatica" "Fagus sylvatica"
  [5] "Quercus robur"   "Quercus robur"   "Quercus robur"   "Fagus sylvatica"
@@ -547,7 +557,7 @@ hist(x)
 </div>
 <p>Het tegelijk selecteren van observaties en variabelen kan met <code>subset()</code>. Als voorbeeld een selectie van alle observaties (rijen) met soort <em>Fagus sylvatica</em> en variabelen 3 t.e.m. 4</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(M_voorbeeld, Soort<span class="sc">==</span><span class="st">"Fagus sylvatica"</span>, <span class="at">select=</span><span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(M_voorbeeld, Soort<span class="sc">==</span><span class="st">"Fagus sylvatica"</span>, <span class="at">select=</span><span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   DBH_cm Hoogte_m
 3   22.00     18.9
@@ -566,15 +576,15 @@ hist(x)
 </div>
 <p>Functies zijn uit te voeren over de variabelen, net zoals voor vectoren en matrices</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(M_voorbeeld<span class="sc">$</span>DBH_cm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(M_voorbeeld<span class="sc">$</span>DBH_cm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1026.75</code></pre>
 </div>
 </div>
 <p>Er kunnen ook nieuwe kolomen gemaakt worden, bijvoorbeeld met berekeningen die gebruik maken van al bestaande variabelen in de dataframe</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>M_voorbeeld<span class="sc">$</span>Volume_m3 <span class="ot">&lt;-</span> (((M_voorbeeld<span class="sc">$</span>DBH_cm<span class="sc">/</span><span class="dv">100</span>)<span class="sc">/</span><span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span>pi<span class="sc">*</span>M_voorbeeld<span class="sc">$</span>Hoogte_m     <span class="co"># volume van een cilinder</span></span>
-<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>M_voorbeeld<span class="sc">$</span>Volume_m3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>M_voorbeeld<span class="sc">$</span>Volume_m3 <span class="ot">&lt;-</span> (((M_voorbeeld<span class="sc">$</span>DBH_cm<span class="sc">/</span><span class="dv">100</span>)<span class="sc">/</span><span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span>pi<span class="sc">*</span>M_voorbeeld<span class="sc">$</span>Hoogte_m     <span class="co"># volume van een cilinder</span></span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a>M_voorbeeld<span class="sc">$</span>Volume_m3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 0.7101423 0.7079481 0.7184508 1.1689670 1.3656636 1.4256626 1.1760356
  [8] 1.3364041 1.4515336 1.3854424 1.4855085 1.4545024 1.4545024 1.3909514
@@ -585,30 +595,29 @@ hist(x)
 </div>
 <p>Selecteer nu zelf <em>Quercus rubur</em> uit de bovenstaande dataset en maak een scatterplot met als x en y variabele de diameter en hoogte van deze soorten.</p>
 </section>
-<section id="extra-pakketten" class="level2" data-number="9">
-<h2 data-number="9" class="anchored" data-anchor-id="extra-pakketten"><span class="header-section-number">9</span> EXTRA PAKKETTEN</h2>
+<section id="extra-paketten" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Extra paketten</h1>
 <p>Naast de basisfuncties die automatisch geïnstalleerd worden bij installatie van R, worden er talloze extra functies, data en documentatie beschikbaar gesteld in extra <em>packages</em> via het CRAN netwerk. Deze pakketten zijn te installeren in R zelf. Voor het maken van mooie figuren gebruiken we vaak het pakket <code>ggplot2</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Er wordt gevraagd een CRAN mirror te kiezen (kies Belgium). Eens geïnstalleerd in je bibliotheek van pakketten (<strong>installatie moet maar één maal gebeuren)!</strong>, moet je het pakket telkens je een sessie begint opnieuw laden vanuit die bibliotheek. De functies in een pakket zijn maar actief eens het geladen is.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)                    <span class="co"># laden van ggplot2 package</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)                    <span class="co"># laden van ggplot2 package</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Een overzicht van alle tutorials en helpfiles voor dit pakket vind je via</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="at">package=</span><span class="st">"ggplot2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="at">package=</span><span class="st">"ggplot2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="ggplot2" class="level2" data-number="10">
-<h2 data-number="10" class="anchored" data-anchor-id="ggplot2"><span class="header-section-number">10</span> GGPLOT2</h2>
+<section id="ggplot2" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="ggplot2"><span class="header-section-number">9.1</span> ggplot2</h2>
 <p>ggplot2 is gebaseerd op <code>the grammar of graphics</code>, het idee dat je elke grafiek uit dezelfde componenten kunt bouwen: een dataset, een coördinatensysteem en geoms: visuele markeringen die datapunten vertegenwoordigen. Om waarden weer te geven, wijs je variabelen in de gegevens toe aan visuele eigenschappen van het geom (aesthetics), zoals grootte, kleur en x- en y-locaties. Het onderstaande sjabloon kan gebruikt worden om een grafiek te maken.</p>
 <p>ggplot(data = <data>) + <geom_function>(mapping = aes(<mappings>), stat = <stat>, position = <position>) + <coordinate_function> + <facet_function> + <scale_function> + <theme_function></theme_function></scale_function></facet_function></coordinate_function></position></stat></mappings></geom_function></data></p>
 <p>Gegevens, een Geom-functie en Aes-toewijzingen zijn vereist. Stat-, Positie- en Coördinaat-, Facet-, Schaal- en Thema-functies zijn niet vereist en bieden goede standaardinstellingen. In het volgende voorbeeld maken we een scatterplot die DBH en hoogte tegen elkaar uit zet, met een kleur per soort.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>plot1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(M_voorbeeld, <span class="fu">aes</span>(<span class="at">x =</span> DBH_cm, <span class="at">y =</span> Hoogte_m, <span class="at">color =</span> Soort)) <span class="sc">+</span></span>
-<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb91-3"><a href="#cb91-3" aria-hidden="true" tabindex="-1"></a>plot1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>plot1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(M_voorbeeld, <span class="fu">aes</span>(<span class="at">x =</span> DBH_cm, <span class="at">y =</span> Hoogte_m, <span class="at">color =</span> Soort)) <span class="sc">+</span></span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a>plot1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -619,8 +628,8 @@ hist(x)
 </div>
 <p>We kunnen verschillende geoms aan deze grafiek toe voegen die de zelfde data gebruiken, zoals een trendlijn per soort:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>plot1 <span class="ot">&lt;-</span> plot1 <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span>
-<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a>plot1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>plot1 <span class="ot">&lt;-</span> plot1 <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>plot1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
@@ -634,13 +643,13 @@ hist(x)
 </div>
 <p>De opmaak van deze figuren is ook makkelijk te veranderen:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>plot1 <span class="ot">&lt;-</span> plot1 <span class="sc">+</span> </span>
-<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Diameter op borsthoogte (cm)"</span>) <span class="sc">+</span></span>
-<span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Hoogte (m)"</span>) <span class="sc">+</span></span>
-<span id="cb94-4"><a href="#cb94-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Hoogte vs Diameter"</span>) <span class="sc">+</span></span>
-<span id="cb94-5"><a href="#cb94-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb94-6"><a href="#cb94-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
-<span id="cb94-7"><a href="#cb94-7" aria-hidden="true" tabindex="-1"></a>plot1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>plot1 <span class="ot">&lt;-</span> plot1 <span class="sc">+</span> </span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Diameter op borsthoogte (cm)"</span>) <span class="sc">+</span></span>
+<span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Hoogte (m)"</span>) <span class="sc">+</span></span>
+<span id="cb95-4"><a href="#cb95-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Hoogte vs Diameter"</span>) <span class="sc">+</span></span>
+<span id="cb95-5"><a href="#cb95-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb95-6"><a href="#cb95-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb95-7"><a href="#cb95-7" aria-hidden="true" tabindex="-1"></a>plot1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
@@ -656,6 +665,7 @@ hist(x)
 <p>Maak nu zelf een violin plot die de volumes van de twee soorten naast elkaar weer geeft.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
