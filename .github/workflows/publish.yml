@@ -20,14 +20,14 @@ jobs:
         with:
           version: 1.10.18
           
-      - name: Get environment name from environment.yml
+      - name: Get environment name from hydrologie_env.yml
         id: get-env-name
-        run: echo "ENV_NAME=$(yq '.name' environment.yml)" >> "$GITHUB_OUTPUT"
+        run: echo "ENV_NAME=$(yq '.name' hydrologie_env.yml)" >> "$GITHUB_OUTPUT"
 
       - name: Setup Python with Miniconda
         uses: conda-incubator/setup-miniconda@v3
         with:
-          environment-file: environment.yml
+          environment-file: hydrologie_env.yml
           activate-environment: ${{ steps.get-env-name.outputs.ENV_NAME }}
           auto-activate-base: false 
           
