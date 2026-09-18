@@ -5,4 +5,5 @@ title: "IMECOS software guide"
 Welcome to the IMECOS software guide. On this website, you will find following information:
 
 - Using [Python and VS Code](python_vs_code.qmd)
-- ... 
+- Using [R and RStudio](r_rstudio.qmd)
+- Advice and guidelines on [Generative AI](genai.qmd)
