@@ -1,0 +1,151 @@
+---
+title: "Quarto"
+author: Olivier Bonte
+jupyter: python3
+---
+
+# What is Quarto?
+
+[Quarto](https://quarto.org/) is a publishing system that lets you write formatted text (Markdown), code (Python, R, Julia) and the output of that code (figures, tables) together in a single document (`.qmd`). You then render that document to HTML, PDF or Word. This tutorial itself is written in Quarto.
+
+For basic text formatting (headings, bold text, lists, links, ...) you use [Markdown](https://quarto.org/docs/authoring/markdown-basics.html) syntax; the details of which will not be repeated here.
+
+To get started, follow the installations instructions at [https://quarto.org/docs/get-started/](https://quarto.org/docs/get-started/)
+
+# Previewing in VS Code
+
+A basic intro to on how to use Quarto in VS Code can be found [here](https://quarto.org/docs/get-started/hello/vscode.html#render-and-preview). The brief summary of the process is as follows:
+
+1.  Install the [Quarto VS Code extension](https://marketplace.visualstudio.com/items?itemName=quarto.quarto).
+2.  With a `.qmd` file open, run the **Quarto: Preview** command (`Ctrl+Shift+K`, or the **Preview** button top-right of the editor) to render the document and open a live preview next to your source.
+
+
+See [Render and Preview](https://quarto.org/docs/get-started/hello/vscode.html#render-and-preview) for details. Note that VS Code is not the only way to interact with Quarto documents, as you can for example also use it from [RStudio](https://quarto.org/docs/get-started/hello/rstudio.html).
+
+# Python code blocks
+A code block (*chunk*) starts and ends with three backticks, with `{python}` right after the opening backticks. Extra chunk options go on separate lines starting with `#|`, right at the top of the chunk. Type this yourself in a `.qmd` file:
+
+````
+```{{python}}
+#| echo: true
+import numpy as np
+
+P = np.array([1.8, 2.1, 2.7, 3.4])  # [mm/d] precipitation
+print(f"Mean precipitation: {np.mean(P):.1f} mm/d")
+```
+````
+
+See the [full documentation](https://quarto.org/docs/computations/python.html) for all available chunk options. Rendered, the chunk above looks like this:
+
+```{python}
+#| echo: true
+import numpy as np
+
+P = np.array([1.8, 2.1, 2.7, 3.4])  # [mm/d] precipitation
+print(f"Mean precipitation: {np.mean(P):.1f} mm/d")
+```
+
+Before trying this yourself, make sure you have installed Python via Conda and configured it correctly, as outlined in the [Python and VS Code](python_vs_code.qmd) tutorial.
+
+# Figures
+
+All details on figures are in the [documentation](https://quarto.org/docs/authoring/figures.html); labelling and referencing is explained under [cross-references](https://quarto.org/docs/authoring/cross-references.html#figures).
+
+## Imported figures
+
+Insert an existing image with Markdown syntax. For a label (needed to reference it) and a caption, use:
+
+```md
+![A very scientific cat.](figures/quarto/cat.jpg){#fig-cat}
+```
+
+Rendered, this gives @fig-cat:
+
+![A very scientific cat.](figures/quarto/cat.jpg){#fig-cat}
+
+## Python figures
+
+For a figure produced by Python code, set the label and caption as chunk options `label` (must start with `fig-`) and `fig-cap`:
+
+````
+```{{python}}
+#| label: fig-precipitation
+#| fig-cap: "Precipitation over time."
+import matplotlib.pyplot as plt
+
+plt.plot(P)
+plt.xlabel("Time (days)")
+plt.ylabel("Precipitation [mm/d]")
+```
+````
+
+Rendered, this produces @fig-precipitation:
+
+```{python}
+#| label: fig-precipitation
+#| fig-cap: "Precipitation over time."
+import matplotlib.pyplot as plt
+
+plt.plot(P)
+plt.xlabel("Time (days)")
+plt.ylabel("Precipitation [mm/d]")
+plt.show()
+```
+
+## Referencing a figure
+
+Reference a labelled figure anywhere in your text with `@fig-label`, e.g. `@fig-precipitation` gives @fig-precipitation.
+
+# Tables
+
+All details on tables are in the [Quarto documentation](https://quarto.org/docs/authoring/tables.html); labelling and referencing is explained under [cross-references](https://quarto.org/docs/authoring/cross-references.html#tables).
+
+## Manual tables
+
+Type a table directly in Markdown. Add a label (must start with `tbl-`) and caption on the line right after the table, preceded by a `:`:
+
+```md
+| Variable | Unit |
+|----------|------|
+| P        | mm/d |
+| Q        | mm/d |
+
+: Overview of the variables used {#tbl-variables}
+```
+
+Rendered, this gives @tbl-variables:
+
+| Variable | Unit |
+|----------|------|
+| P        | mm/d |
+| Q        | mm/d |
+
+: Overview of the variables used {#tbl-variables}
+
+## Python tables
+
+For a table produced by Python code (e.g. a `pandas.DataFrame`), again use the chunk options `label` (starting with `tbl-`) and `tbl-cap`:
+
+````
+```{{python}}
+#| label: tbl-summary
+#| tbl-cap: "Summary of the precipitation data."
+import pandas as pd
+
+pd.DataFrame({"Mean": [np.mean(P)], "Sum": [np.sum(P)]})
+```
+````
+
+Rendered, this produces @tbl-summary:
+
+```{python}
+#| label: tbl-summary
+#| tbl-cap: "Summary of the precipitation data."
+import pandas as pd
+
+pd.DataFrame({"Mean": [np.mean(P)], "Sum": [np.sum(P)]})
+```
+
+## Referencing a table
+
+Reference a labelled table with `@tbl-label`, e.g. `@tbl-summary` gives @tbl-summary.

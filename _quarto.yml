@@ -10,6 +10,7 @@ website:
         text: Home
       - python_vs_code.qmd
       - r_rstudio.qmd
+      - quarto.qmd
       - genai.qmd
 
 
