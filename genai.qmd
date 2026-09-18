@@ -1,6 +1,6 @@
 ---
 title: "Generative AI"
-author: ir. Louis Verschuren, ir. Olivier Bonte  
+author: Louis Verschuren, Olivier Bonte  
 ---
 
 Wat betreft het gebruik van (generatieve) AI:

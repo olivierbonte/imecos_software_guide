@@ -1,6 +1,6 @@
 ---
 title: "Python and VS Code"
-author: ir. Olivier Bonte en dr. ir. Janis Baeten
+author: Olivier Bonte, Janis Baeten
 lang: nl
 jupyter: python3 
 ---
