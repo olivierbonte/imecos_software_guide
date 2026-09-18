@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="ir. Olivier Bonte en dr. ir. Janis Baeten">
+<meta name="author" content="Olivier Bonte, Janis Baeten">
 
 <title>Python and VS Code – IMECOS software guide</title>
 <style>
@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Auteur</div>
     <div class="quarto-title-meta-contents">
-             <p>ir. Olivier Bonte en dr. ir. Janis Baeten </p>
+             <p>Olivier Bonte, Janis Baeten </p>
           </div>
   </div>
     
@@ -327,7 +327,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Kopieer deze Python-code in het py-bestand via het klembord-icoon</li>
 </ol>
-<div id="21af230d" class="cell" data-execution_count="1">
+<div id="2dda44be" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># Open een pakket om te werken met vectoren/matrices </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># Open een pakket om figures/python_vs_code te maken </span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -346,7 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Voer het volledige script uit door te klikken op het pijl-icoon <img src="figures/python_vs_code/Run_button.png" style="width:0.6cm;height:0.3cm"></p></li>
 <li><p>Controleer of je onderstaande output krijgt</p></li>
 </ol>
-<div id="c66bf015" class="cell" data-execution_count="2">
+<div id="ad72bede" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-stdout">
 <pre><code>Gemiddelde dagelijkse neerslaghoogte: 2.5 mm</code></pre>
 </div>
@@ -384,14 +384,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="8" type="1">
 <li>Pas dan alleen het print commando in het py-bestand aan</li>
 </ol>
-<div id="abe3e3f1" class="cell" data-execution_count="3">
+<div id="52e0721e" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Totale neerslaghoogte: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">sum</span>(P)<span class="sc">:.1f}</span><span class="ss"> mm'</span>) <span class="co"># Toon de totale neerslaghoogte over de meetperiode</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="9" type="1">
 <li><p>Selecteer alleen het aangepaste commando met je cursor en toets <em>shift + enter</em></p></li>
 <li><p>Controleer of je onderstaande output ziet in de <em>Jupyter Interactive Window</em></p></li>
 </ol>
-<div id="a9201d02" class="cell" data-execution_count="4">
+<div id="e560ea54" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
 <pre><code>Totale neerslaghoogte: 17.5 mm</code></pre>
 </div>
@@ -404,7 +404,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Gebruik het ingebouwde help-commando als je niet weet welke input parameters een functie verwacht of hoe deze werkt. Meestal helpen de ‘Examples’ onderaan het best om de basiswerking van een functie snel te begrijpen.</li>
 </ol>
-<div id="9aa9a5a2" class="cell" data-execution_count="5">
+<div id="5b81aa97" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(np.<span class="bu">sum</span>)</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Output">
@@ -419,7 +419,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="d7c69419" class="cell" data-execution_count="6">
+<div id="1f1e35f5" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on method descriptor sum in module numpy:
 
@@ -549,7 +549,7 @@ sum(
 <ol start="2" type="1">
 <li>Test commando’s op kleine, fictieve datasets voordat je ze toepast op grote datasets om te begrijpen wat ze doen</li>
 </ol>
-<div id="3808aad9" class="cell" data-execution_count="7">
+<div id="717e0532" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>np.array([<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>]) <span class="op">&gt;</span> <span class="dv">0</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Output">
@@ -564,7 +564,7 @@ sum(
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="7ccd8c29" class="cell" data-execution_count="8">
+<div id="89d88a80" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>array([False, False,  True])</code></pre>
 </div>

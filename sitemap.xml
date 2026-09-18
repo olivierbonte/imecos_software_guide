@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://olivierbonte.github.io/imecos_software_guide/python_vs_code.html</loc>
-    <lastmod>2026-09-18T10:11:07.784Z</lastmod>
-  </url>
-  <url>
-    <loc>https://olivierbonte.github.io/imecos_software_guide/index.html</loc>
-    <lastmod>2026-09-18T10:11:07.784Z</lastmod>
+    <loc>https://olivierbonte.github.io/imecos_software_guide/r_rstudio.html</loc>
+    <lastmod>2026-09-18T13:25:50.269Z</lastmod>
   </url>
   <url>
     <loc>https://olivierbonte.github.io/imecos_software_guide/genai.html</loc>
-    <lastmod>2026-09-18T10:11:07.784Z</lastmod>
+    <lastmod>2026-09-18T13:25:50.268Z</lastmod>
+  </url>
+  <url>
+    <loc>https://olivierbonte.github.io/imecos_software_guide/index.html</loc>
+    <lastmod>2026-09-18T13:25:50.268Z</lastmod>
+  </url>
+  <url>
+    <loc>https://olivierbonte.github.io/imecos_software_guide/python_vs_code.html</loc>
+    <lastmod>2026-09-18T13:25:50.268Z</lastmod>
   </url>
 </urlset>
