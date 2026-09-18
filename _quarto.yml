@@ -12,6 +12,9 @@ website:
       - r_rstudio.qmd
       - quarto.qmd
       - genai.qmd
+    tools:
+      - icon: github
+        href: https://github.com/olivierbonte/imecos_software_guide
 
 
 format:
