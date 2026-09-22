@@ -4,7 +4,7 @@ author: Olivier Bonte
 jupyter: python3
 ---
 
-# What is Quarto?
+# What is Quarto? {#sec-what-is-quarto}
 
 [Quarto](https://quarto.org/) is a publishing system that lets you write formatted text (Markdown), code (Python, R, Julia) and the output of that code (figures, tables) together in a single document (`.qmd`). You then render that document to HTML, PDF or Word. This tutorial itself is written in Quarto.
 
@@ -152,3 +152,17 @@ pd.DataFrame({"Mean": [np.mean(P)], "Sum": [np.sum(P)]})
 ## Referencing a table
 
 Reference a labelled table with `@tbl-label`, e.g. `@tbl-summary` gives @tbl-summary.
+
+# PDF output
+
+As mentioned in @sec-what-is-quarto, your Quarto document can be rendered to different output formats. The default is HTML (aka web page format), which works out of the box with Quarto installed. 
+
+For PDF output, you need to have a [LaTeX](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes#What_is_LaTeX?) distribution installed on your computer. The easiest (and recommended) way do this is is to install [TinyTeX](https://yihui.org/tinytex/) by opening the command line and typing:
+```
+quarto install tinytex
+```
+You can subsequently check if the installation was successful by typing:
+```
+quarto tools
+```
+You should see a version (e.g. `v2026.09`) mentioned under `Installed` for TinyTex. For more info on PDF output in Quarto, see [the documentation](https://quarto.org/docs/output-formats/pdf-basics.html).
