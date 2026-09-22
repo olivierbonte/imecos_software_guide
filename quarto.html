@@ -171,7 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#what-is-quarto" id="toc-what-is-quarto" class="nav-link active" data-scroll-target="#what-is-quarto"><span class="header-section-number">1</span> What is Quarto?</a></li>
+  <li><a href="#sec-what-is-quarto" id="toc-sec-what-is-quarto" class="nav-link active" data-scroll-target="#sec-what-is-quarto"><span class="header-section-number">1</span> What is Quarto?</a></li>
   <li><a href="#previewing-in-vs-code" id="toc-previewing-in-vs-code" class="nav-link" data-scroll-target="#previewing-in-vs-code"><span class="header-section-number">2</span> Previewing in VS Code</a></li>
   <li><a href="#python-code-blocks" id="toc-python-code-blocks" class="nav-link" data-scroll-target="#python-code-blocks"><span class="header-section-number">3</span> Python code blocks</a></li>
   <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures"><span class="header-section-number">4</span> Figures</a>
@@ -186,6 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#python-tables" id="toc-python-tables" class="nav-link" data-scroll-target="#python-tables"><span class="header-section-number">5.2</span> Python tables</a></li>
   <li><a href="#referencing-a-table" id="toc-referencing-a-table" class="nav-link" data-scroll-target="#referencing-a-table"><span class="header-section-number">5.3</span> Referencing a table</a></li>
   </ul></li>
+  <li><a href="#pdf-output" id="toc-pdf-output" class="nav-link" data-scroll-target="#pdf-output"><span class="header-section-number">6</span> PDF output</a></li>
   </ul>
 </nav>
     </div>
@@ -217,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="what-is-quarto" class="level1" data-number="1">
+<section id="sec-what-is-quarto" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> What is Quarto?</h1>
 <p><a href="https://quarto.org/">Quarto</a> is a publishing system that lets you write formatted text (Markdown), code (Python, R, Julia) and the output of that code (figures, tables) together in a single document (<code>.qmd</code>). You then render that document to HTML, PDF or Word. This tutorial itself is written in Quarto.</p>
 <p>For basic text formatting (headings, bold text, lists, links, …) you use <a href="https://quarto.org/docs/authoring/markdown-basics.html">Markdown</a> syntax; the details of which will not be repeated here.</p>
@@ -243,16 +244,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mean precipitation: </span><span class="sc">{</span>np<span class="sc">.</span>mean(P)<span class="sc">:.1f}</span><span class="ss"> mm/d"</span>)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>See the <a href="https://quarto.org/docs/computations/python.html">full documentation</a> for all available chunk options. Rendered, the chunk above looks like this:</p>
-<div id="57da97ca" class="cell" data-execution_count="1">
+<div id="81298c00" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> np.array([<span class="fl">1.8</span>, <span class="fl">2.1</span>, <span class="fl">2.7</span>, <span class="fl">3.4</span>])  <span class="co"># [mm/d] precipitation</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mean precipitation: </span><span class="sc">{</span>np<span class="sc">.</span>mean(P)<span class="sc">:.1f}</span><span class="ss"> mm/d"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>mean_P <span class="op">=</span> np.mean(P)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mean precipitation: </span><span class="sc">{</span>mean_P<span class="sc">:.1f}</span><span class="ss"> mm/d"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Mean precipitation: 2.5 mm/d</code></pre>
 </div>
 </div>
 <p>Before trying this yourself, make sure you have installed Python via Conda and configured it correctly, as outlined in the <a href="./python_vs_code.html">Python and VS Code</a> tutorial.</p>
+<p>Additionally, it can also be useful to include variables from your Python code blocks in your text. For example, to include the numeric output of <code>mean_P</code> in your text, you can do so by adding <code>{python} f"{mean_P}"</code>, where we use the so-called <a href="https://www.geeksforgeeks.org/python/formatted-string-literals-f-strings-python/">f-string syntax</a>. This will then render as 2.5.</p>
 </section>
 <section id="figures" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Figures</h1>
@@ -405,9 +408,18 @@ Table&nbsp;2: Summary of the precipitation data.
 <section id="referencing-a-table" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="referencing-a-table"><span class="header-section-number">5.3</span> Referencing a table</h2>
 <p>Reference a labelled table with <code>@tbl-label</code>, e.g.&nbsp;<code>@tbl-summary</code> gives <a href="#tbl-summary" class="quarto-xref">Table&nbsp;2</a>.</p>
-
-
 </section>
+</section>
+<section id="pdf-output" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> PDF output</h1>
+<p>As mentioned in <a href="#sec-what-is-quarto" class="quarto-xref">Section&nbsp;1</a>, your Quarto document can be rendered to different output formats. The default is HTML (aka web page format), which works out of the box with Quarto installed.</p>
+<p>For PDF output, you need to have a <a href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes#What_is_LaTeX?">LaTeX</a> distribution installed on your computer. The easiest (and recommended) way do this is is to install <a href="https://yihui.org/tinytex/">TinyTeX</a> by opening the command line and typing:</p>
+<pre><code>quarto install tinytex</code></pre>
+<p>You can subsequently check if the installation was successful by typing:</p>
+<pre><code>quarto tools</code></pre>
+<p>You should see a version (e.g.&nbsp;<code>v2026.09</code>) mentioned under <code>Installed</code> for TinyTex. For more info on PDF output in Quarto, see <a href="https://quarto.org/docs/output-formats/pdf-basics.html">the documentation</a>.</p>
+
+
 </section>
 
 </main> <!-- /main -->
