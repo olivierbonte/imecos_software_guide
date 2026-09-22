@@ -42,10 +42,13 @@ See the [full documentation](https://quarto.org/docs/computations/python.html) f
 import numpy as np
 
 P = np.array([1.8, 2.1, 2.7, 3.4])  # [mm/d] precipitation
-print(f"Mean precipitation: {np.mean(P):.1f} mm/d")
+mean_P = np.mean(P)
+print(f"Mean precipitation: {mean_P:.1f} mm/d")
 ```
 
 Before trying this yourself, make sure you have installed Python via Conda and configured it correctly, as outlined in the [Python and VS Code](python_vs_code.qmd) tutorial.
+
+Additionally, it can also be useful to include variables from your Python code blocks in your text. For example, to include the numeric output of `mean_P` in your text, you can do so by adding ``{python} f"{mean_P}"``, where we use the so-called [f-string syntax](https://www.geeksforgeeks.org/python/formatted-string-literals-f-strings-python/). This will then render as `{python} f"{mean_P}"`.
 
 # Figures
 
