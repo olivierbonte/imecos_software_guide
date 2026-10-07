@@ -19,8 +19,23 @@ A basic intro to on how to use Quarto in VS Code can be found [here](https://qua
 1.  Install the [Quarto VS Code extension](https://marketplace.visualstudio.com/items?itemName=quarto.quarto).
 2.  With a `.qmd` file open, run the **Quarto: Preview** command (`Ctrl+Shift+K`, or the **Preview** button top-right of the editor) to render the document and open a live preview next to your source.
 
-
 See [Render and Preview](https://quarto.org/docs/get-started/hello/vscode.html#render-and-preview) for details. Note that VS Code is not the only way to interact with Quarto documents, as you can for example also use it from [RStudio](https://quarto.org/docs/get-started/hello/rstudio.html).
+
+::: {.callout-caution}
+
+If you have problems with running the preview via the button or `Ctrl+Shift+k` command in VS Code, you can also manually launch it via the terminal:
+
+1. Open a terminal and make sure you are in the correct computational environment (Conda environment for Python)
+2. Run the command `quarto preview --no-browser`, which returns output similar to (`xxxx` is used to denote the port number, which may vary):
+```{bash}
+Preparing to preview
+
+Watching files for changes
+Browse at http://localhost:xxxx/
+Listening on http://127.0.0.1:xxxx/
+```
+3. Click on the url `http://localhost:xxxx/` to open the preview in VS Code. 
+:::
 
 # Python code blocks
 A code block (*chunk*) starts and ends with three backticks, with `{python}` right after the opening backticks. Extra chunk options go on separate lines starting with `#|`, right at the top of the chunk. Type this yourself in a `.qmd` file:
