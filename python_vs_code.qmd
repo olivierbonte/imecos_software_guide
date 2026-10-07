@@ -34,14 +34,35 @@ Installeer Anaconda via deze stappen:
 
 3.  Open de installer
 
-4.  Klik op *I Agree*, *Next* en uiteindelijk *Install* 
+4.  Klik op *I Agree*, *Next* en uiteindelijk *Install* (volg alle standaardinstellingen)
 
-5.  Open de software *Anaconda Prompt*
+5. De volgende stappen zijn afhankelijk van je besturingssysteem. Meer uitgebreide info vind je door de links te volgen:
+    1. [Windows](https://www.anaconda.com/docs/getting-started/anaconda/install/windows-gui-install):
+        1. Open de *Anaconda Prompt* software 
+        2. Voer het commando `conda init powershell cmd.exe` uit
+        3. Sluit *Anaconda Prompt*
 
-6. Voor een Windows systeem, voer het commando `conda init powershell`
-  uit. Voor Mac/Linux gebruikers, gebruik het commando `conda init bash`. 
+    2. [MacOS](https://www.anaconda.com/docs/getting-started/anaconda/install/mac-gui-install) en [Linux](https://www.anaconda.com/docs/getting-started/anaconda/install/linux-install):
+        1. Open de terminal
+        2. Check of `conda --version` werkt. Werkt dit niet, zie dan @cau-conda
 
-7.  Sluit *Anaconda Prompt*
+::: {#cau-conda .callout-caution collapse="true" title="Troubleshooting `command not found: conda`"}
+
+De officiële Anaconda-documentatie hierover (gefocust op Linux en MacOS) vind je [hier](https://www.anaconda.com/docs/reference/troubleshooting#command-not-found-conda). De fix bestaat uit 
+
+1. Vind het pad waar Anaconda geïnstalleerd is 
+2. Voer het commando `<PATH_to_anaconda>/bin/conda init` uit in de terminal, waarbij je `<PATH_to_anaconda>` vervangt door het pad dat je in stap 1 vond.
+3. Sluit de terminal, open een nieuwe terminal en check of `conda --version` werkt.
+
+De meeste voorkomende paden (op MacOS en Linux) waar Anaconda geïnstalleerd staat:
+
+-  `~/anaconda3` 
+-  `/opt/anaconda3`
+
+Voor Windows, zou de workflow via *Anaconda Prompt* die hierboven beschreven staat, moeten volstaan. 
+
+:::
+
 
 ## VS Code
 
@@ -93,7 +114,7 @@ conda --version
 
 ![](figures/python_vs_code/Conda_version.png){width="8.7cm"}
 
-7.  Als het antwoord *command not found: conda* is, volg dan de instructies op [anaconda.com/docs/getting-started/working-with-conda/environments#troubleshooting](https://www.anaconda.com/docs/getting-started/working-with-conda/environments#troubleshooting)
+7.  Als het antwoord *command not found: conda* is, volg dan de instructies in @cau-conda
 
 # Configureer VS Code
 
