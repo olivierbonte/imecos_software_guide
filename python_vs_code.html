@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3e9b1289f5f353c49b617ce48ad2bc38.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -244,11 +244,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Surf naar <a href="https://www.anaconda.com/download/success">anaconda.com/download/success</a>;</p></li>
 <li><p>Download de juiste <em>Anaconda Distribution Graphical Installer</em> voor jouw besturingssysteem</p></li>
 <li><p>Open de installer</p></li>
-<li><p>Klik op <em>I Agree</em>, <em>Next</em> en uiteindelijk <em>Install</em></p></li>
-<li><p>Open de software <em>Anaconda Prompt</em></p></li>
-<li><p>Voor een Windows systeem, voer het commando <code>conda init powershell</code> uit. Voor Mac/Linux gebruikers, gebruik het commando <code>conda init bash</code>.</p></li>
-<li><p>Sluit <em>Anaconda Prompt</em></p></li>
+<li><p>Klik op <em>I Agree</em>, <em>Next</em> en uiteindelijk <em>Install</em> (volg alle standaardinstellingen)</p></li>
+<li><p>De volgende stappen zijn afhankelijk van je besturingssysteem. Meer uitgebreide info vind je door de links te volgen:</p>
+<ol type="1">
+<li><a href="https://www.anaconda.com/docs/getting-started/anaconda/install/windows-gui-install">Windows</a>:
+<ol type="1">
+<li>Open de <em>Anaconda Prompt</em> software</li>
+<li>Voer het commando <code>conda init powershell cmd.exe</code> uit</li>
+<li>Sluit <em>Anaconda Prompt</em></li>
+</ol></li>
+<li><a href="https://www.anaconda.com/docs/getting-started/anaconda/install/mac-gui-install">MacOS</a> en <a href="https://www.anaconda.com/docs/getting-started/anaconda/install/linux-install">Linux</a>:
+<ol type="1">
+<li>Open de terminal</li>
+<li>Check of <code>conda --version</code> werkt. Werkt dit niet, zie dan <a href="#cau-conda" class="quarto-xref">Caution&nbsp;1</a></li>
+</ol></li>
+</ol></li>
 </ol>
+<div id="cau-conda" class="callout callout-style-default callout-caution callout-titled" title="Troubleshooting `command not found: conda`">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Opgelet&nbsp;1: Troubleshooting <code>command not found: conda</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>De officiële Anaconda-documentatie hierover (gefocust op Linux en MacOS) vind je <a href="https://www.anaconda.com/docs/reference/troubleshooting#command-not-found-conda">hier</a>. De fix bestaat uit</p>
+<ol type="1">
+<li>Vind het pad waar Anaconda geïnstalleerd is</li>
+<li>Voer het commando <code>&lt;PATH_to_anaconda&gt;/bin/conda init</code> uit in de terminal, waarbij je <code>&lt;PATH_to_anaconda&gt;</code> vervangt door het pad dat je in stap 1 vond.</li>
+<li>Sluit de terminal, open een nieuwe terminal en check of <code>conda --version</code> werkt.</li>
+</ol>
+<p>De meeste voorkomende paden (op MacOS en Linux) waar Anaconda geïnstalleerd staat:</p>
+<ul>
+<li><code>~/anaconda3</code></li>
+<li><code>/opt/anaconda3</code></li>
+</ul>
+<p>Voor Windows, zou de workflow via <em>Anaconda Prompt</em> die hierboven beschreven staat, moeten volstaan.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="vs-code" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="vs-code"><span class="header-section-number">2.2</span> VS Code</h2>
@@ -290,7 +328,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p><img src="figures/python_vs_code/Conda_version.png" class="img-fluid" style="width:8.7cm"></p>
 <ol start="7" type="1">
-<li>Als het antwoord <em>command not found: conda</em> is, volg dan de instructies op <a href="https://www.anaconda.com/docs/getting-started/working-with-conda/environments#troubleshooting">anaconda.com/docs/getting-started/working-with-conda/environments#troubleshooting</a></li>
+<li>Als het antwoord <em>command not found: conda</em> is, volg dan de instructies in <a href="#cau-conda" class="quarto-xref">Caution&nbsp;1</a></li>
 </ol>
 </section>
 </section>
@@ -336,7 +374,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Kopieer deze Python-code in het py-bestand via het klembord-icoon</li>
 </ol>
-<div id="7932038d" class="cell" data-execution_count="1">
+<div id="95c2ba7d" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># Open een pakket om te werken met vectoren/matrices </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># Open een pakket om figures/python_vs_code te maken </span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -355,7 +393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Voer het volledige script uit door te klikken op het pijl-icoon <img src="figures/python_vs_code/Run_button.png" style="width:0.6cm;height:0.3cm"></p></li>
 <li><p>Controleer of je onderstaande output krijgt</p></li>
 </ol>
-<div id="abfe7fe3" class="cell" data-execution_count="2">
+<div id="4826077f" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-stdout">
 <pre><code>Gemiddelde dagelijkse neerslaghoogte: 2.5 mm</code></pre>
 </div>
@@ -393,14 +431,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="8" type="1">
 <li>Pas dan alleen het print commando in het py-bestand aan</li>
 </ol>
-<div id="749b03df" class="cell" data-execution_count="3">
+<div id="21bcb2d1" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Totale neerslaghoogte: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">sum</span>(P)<span class="sc">:.1f}</span><span class="ss"> mm'</span>) <span class="co"># Toon de totale neerslaghoogte over de meetperiode</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="9" type="1">
 <li><p>Selecteer alleen het aangepaste commando met je cursor en toets <em>shift + enter</em></p></li>
 <li><p>Controleer of je onderstaande output ziet in de <em>Jupyter Interactive Window</em></p></li>
 </ol>
-<div id="1d1d76e3" class="cell" data-execution_count="4">
+<div id="368710f4" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
 <pre><code>Totale neerslaghoogte: 17.5 mm</code></pre>
 </div>
@@ -413,11 +451,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Gebruik het ingebouwde help-commando als je niet weet welke input parameters een functie verwacht of hoe deze werkt. Meestal helpen de ‘Examples’ onderaan het best om de basiswerking van een functie snel te begrijpen.</li>
 </ol>
-<div id="4412e111" class="cell" data-execution_count="5">
+<div id="42b8f103" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(np.<span class="bu">sum</span>)</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Output">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -426,9 +464,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="8afb7868" class="cell" data-execution_count="6">
+<div id="28208adb" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on method descriptor sum in module numpy:
 
@@ -558,11 +596,11 @@ sum(
 <ol start="2" type="1">
 <li>Test commando’s op kleine, fictieve datasets voordat je ze toepast op grote datasets om te begrijpen wat ze doen</li>
 </ol>
-<div id="ec734391" class="cell" data-execution_count="7">
+<div id="40ff0276" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>np.array([<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>]) <span class="op">&gt;</span> <span class="dv">0</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Output">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -571,9 +609,9 @@ sum(
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="d9239b7e" class="cell" data-execution_count="8">
+<div id="ac68cb63" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>array([False, False,  True])</code></pre>
 </div>

@@ -28,76 +28,6 @@
     "text": "9.1 ggplot2\nggplot2 is gebaseerd op the grammar of graphics, het idee dat je elke grafiek uit dezelfde componenten kunt bouwen: een dataset, een coördinatensysteem en geoms: visuele markeringen die datapunten vertegenwoordigen. Om waarden weer te geven, wijs je variabelen in de gegevens toe aan visuele eigenschappen van het geom (aesthetics), zoals grootte, kleur en x- en y-locaties. Het onderstaande sjabloon kan gebruikt worden om een grafiek te maken.\nggplot(data = &lt;Data&gt;) +\n  &lt;Geom_Function&gt;(mapping = aes(&lt;Mappings&gt;),\n  stat = &lt;Stat&gt;,\n  position = &lt;Position&gt;) +\n  &lt;Coordinate_Function&gt; +\n  &lt;Facet_Function&gt; +\n  &lt;Scale_Function&gt; +\n  &lt;Theme_Function&gt;\nGegevens, een Geom-functie en Aes-toewijzingen zijn vereist. Stat-, Positie- en Coördinaat-, Facet-, Schaal- en Thema-functies zijn niet vereist en bieden goede standaardinstellingen. In het volgende voorbeeld maken we een scatterplot die DBH en hoogte tegen elkaar uit zet, met een kleur per soort.\n\nplot1 &lt;- ggplot(M_voorbeeld, aes(x = DBH_cm, y = Hoogte_m, color = Soort)) +\n  geom_point()\nplot1\n\n\n\n\n\n\n\n\nWe kunnen verschillende geoms aan deze grafiek toe voegen die de zelfde data gebruiken, zoals een trendlijn per soort:\n\nplot1 &lt;- plot1 + geom_smooth(method = \"lm\")\nplot1\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nDe opmaak van deze figuren is ook makkelijk te veranderen:\n\nplot1 &lt;- plot1 + \n  xlab(\"Diameter op borsthoogte (cm)\") +\n  ylab(\"Hoogte (m)\") +\n  ggtitle(\"Hoogte vs Diameter\") +\n  theme_minimal() +\n  theme(legend.position = \"bottom\")\nplot1\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nVoor een volledig overzicht van alle mogelijkheden binnen ggplot2 bekijk je best eens de volgende cheatsheets: https://rstudio.github.io/cheatsheets/data-visualization.pdf\nMaak nu zelf een violin plot die de volumes van de twee soorten naast elkaar weer geeft."
   },
   {
-    "objectID": "genai.html",
-    "href": "genai.html",
-    "title": "Generative AI",
-    "section": "",
-    "text": "Wat betreft het gebruik van (generatieve) AI:\nZie ook het Universiteitsbreed ricthkader voor het verantwoord gebruik van AI aan de UGent"
-  },
-  {
-    "objectID": "genai.html#footnotes",
-    "href": "genai.html#footnotes",
-    "title": "Generative AI",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nDit VN rapport geeft interestante achtergrondinformatie hierover↩︎"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "IMECOS software guide",
-    "section": "",
-    "text": "Welcome to the IMECOS software guide. On this website, you will find following information:\n\nUsing Python and VS Code\nUsing R and RStudio\nWriting and coding in Quarto\nAdvice and guidelines on Generative AI"
-  },
-  {
-    "objectID": "quarto.html",
-    "href": "quarto.html",
-    "title": "Quarto",
-    "section": "",
-    "text": "Quarto is a publishing system that lets you write formatted text (Markdown), code (Python, R, Julia) and the output of that code (figures, tables) together in a single document (.qmd). You then render that document to HTML, PDF or Word. This tutorial itself is written in Quarto.\nFor basic text formatting (headings, bold text, lists, links, …) you use Markdown syntax; the details of which will not be repeated here.\nTo get started, follow the installations instructions at https://quarto.org/docs/get-started/"
-  },
-  {
-    "objectID": "quarto.html#imported-figures",
-    "href": "quarto.html#imported-figures",
-    "title": "Quarto",
-    "section": "4.1 Imported figures",
-    "text": "4.1 Imported figures\nInsert an existing image with Markdown syntax. For a label (needed to reference it) and a caption, use:\n![A very scientific cat.](figures/quarto/cat.jpg){#fig-cat}\nRendered, this gives Figure 1:\n\n\n\n\n\n\nFigure 1: A very scientific cat."
-  },
-  {
-    "objectID": "quarto.html#python-figures",
-    "href": "quarto.html#python-figures",
-    "title": "Quarto",
-    "section": "4.2 Python figures",
-    "text": "4.2 Python figures\nFor a figure produced by Python code, set the label and caption as chunk options label (must start with fig-) and fig-cap:\n```{python}\n#| label: fig-precipitation\n#| fig-cap: \"Precipitation over time.\"\nimport matplotlib.pyplot as plt\n\nplt.plot(P)\nplt.xlabel(\"Time (days)\")\nplt.ylabel(\"Precipitation [mm/d]\")\n```\nRendered, this produces Figure 2:\n\nimport matplotlib.pyplot as plt\n\nplt.plot(P)\nplt.xlabel(\"Time (days)\")\nplt.ylabel(\"Precipitation [mm/d]\")\nplt.show()\n\n\n\n\n\n\n\nFigure 2: Precipitation over time."
-  },
-  {
-    "objectID": "quarto.html#referencing-a-figure",
-    "href": "quarto.html#referencing-a-figure",
-    "title": "Quarto",
-    "section": "4.3 Referencing a figure",
-    "text": "4.3 Referencing a figure\nReference a labelled figure anywhere in your text with @fig-label, e.g. @fig-precipitation gives Figure 2."
-  },
-  {
-    "objectID": "quarto.html#manual-tables",
-    "href": "quarto.html#manual-tables",
-    "title": "Quarto",
-    "section": "5.1 Manual tables",
-    "text": "5.1 Manual tables\nType a table directly in Markdown. Add a label (must start with tbl-) and caption on the line right after the table, preceded by a ::\n| Variable | Unit |\n|----------|------|\n| P        | mm/d |\n| Q        | mm/d |\n\n: Overview of the variables used {#tbl-variables}\nRendered, this gives Table 1:\n\n\n\nTable 1: Overview of the variables used\n\n\n\n\n\nVariable\nUnit\n\n\n\n\nP\nmm/d\n\n\nQ\nmm/d"
-  },
-  {
-    "objectID": "quarto.html#python-tables",
-    "href": "quarto.html#python-tables",
-    "title": "Quarto",
-    "section": "5.2 Python tables",
-    "text": "5.2 Python tables\nFor a table produced by Python code (e.g. a pandas.DataFrame), again use the chunk options label (starting with tbl-) and tbl-cap:\n```{python}\n#| label: tbl-summary\n#| tbl-cap: \"Summary of the precipitation data.\"\nimport pandas as pd\n\npd.DataFrame({\"Mean\": [np.mean(P)], \"Sum\": [np.sum(P)]})\n```\nRendered, this produces Table 2:\n\nimport pandas as pd\n\npd.DataFrame({\"Mean\": [np.mean(P)], \"Sum\": [np.sum(P)]})\n\n\n\nTable 2: Summary of the precipitation data.\n\n\n\n\n\n\n\n\n\n\nMean\nSum\n\n\n\n\n0\n2.5\n10.0"
-  },
-  {
-    "objectID": "quarto.html#referencing-a-table",
-    "href": "quarto.html#referencing-a-table",
-    "title": "Quarto",
-    "section": "5.3 Referencing a table",
-    "text": "5.3 Referencing a table\nReference a labelled table with @tbl-label, e.g. @tbl-summary gives Table 2."
-  },
-  {
     "objectID": "python_vs_code.html",
     "href": "python_vs_code.html",
     "title": "Python and VS Code",
@@ -109,7 +39,7 @@
     "href": "python_vs_code.html#anaconda-python-interpreter",
     "title": "Python and VS Code",
     "section": "2.1 Anaconda + Python interpreter",
-    "text": "2.1 Anaconda + Python interpreter\nEen Python Interpreter is een programma dat Python code kan uitvoeren. Anaconda is een populair softwareplatform voor wetenschappelijk programmeren dat automatisch een Python en R interpreter installeert, maar ook het beheer van pakketten vergemakkelijkt. Als je Anaconda installeert, hoef je dus niet apart een Python Interpreter te installeren.\nInstalleer Anaconda via deze stappen:\n\nSurf naar anaconda.com/download/success;\nDownload de juiste Anaconda Distribution Graphical Installer voor jouw besturingssysteem\nOpen de installer\nKlik op I Agree, Next en uiteindelijk Install\nOpen de software Anaconda Prompt\nVoor een Windows systeem, voer het commando conda init powershell uit. Voor Mac/Linux gebruikers, gebruik het commando conda init bash.\nSluit Anaconda Prompt"
+    "text": "2.1 Anaconda + Python interpreter\nEen Python Interpreter is een programma dat Python code kan uitvoeren. Anaconda is een populair softwareplatform voor wetenschappelijk programmeren dat automatisch een Python en R interpreter installeert, maar ook het beheer van pakketten vergemakkelijkt. Als je Anaconda installeert, hoef je dus niet apart een Python Interpreter te installeren.\nInstalleer Anaconda via deze stappen:\n\nSurf naar anaconda.com/download/success;\nDownload de juiste Anaconda Distribution Graphical Installer voor jouw besturingssysteem\nOpen de installer\nKlik op I Agree, Next en uiteindelijk Install (volg alle standaardinstellingen)\nDe volgende stappen zijn afhankelijk van je besturingssysteem. Meer uitgebreide info vind je door de links te volgen:\n\nWindows:\n\nOpen de Anaconda Prompt software\nVoer het commando conda init powershell cmd.exe uit\nSluit Anaconda Prompt\n\nMacOS en Linux:\n\nOpen de terminal\nCheck of conda --version werkt. Werkt dit niet, zie dan Caution 1\n\n\n\n\n\n\n\n\n\nOpgelet 1: Troubleshooting command not found: conda\n\n\n\n\n\nDe officiële Anaconda-documentatie hierover (gefocust op Linux en MacOS) vind je hier. De fix bestaat uit\n\nVind het pad waar Anaconda geïnstalleerd is\nVoer het commando &lt;PATH_to_anaconda&gt;/bin/conda init uit in de terminal, waarbij je &lt;PATH_to_anaconda&gt; vervangt door het pad dat je in stap 1 vond.\nSluit de terminal, open een nieuwe terminal en check of conda --version werkt.\n\nDe meeste voorkomende paden (op MacOS en Linux) waar Anaconda geïnstalleerd staat:\n\n~/anaconda3\n/opt/anaconda3\n\nVoor Windows, zou de workflow via Anaconda Prompt die hierboven beschreven staat, moeten volstaan."
   },
   {
     "objectID": "python_vs_code.html#vs-code",
@@ -130,7 +60,7 @@
     "href": "python_vs_code.html#controleer-de-installatie-van-conda",
     "title": "Python and VS Code",
     "section": "2.4 Controleer de installatie van conda",
-    "text": "2.4 Controleer de installatie van conda\nSoms moet je bewerkingen doen die niet ‘in’ je Python- of R-code staan, maar die daarbuiten gebeuren, zoals een specifiek script uitvoeren, pakketten installeren of environments creëren. VS Code voorziet daarvoor een terminal, een venster waarmee je commando’s kan geven aan jouw besturingssysteem, zonder je muis te gebruiken. Zo kan je bijvoorbeeld de software conda aansturen via de terminal om pakketten en environments te beheren. Voer deze stappen uit om een terminal te openen en hiermee te controleren of de software conda correct geïnstalleerd is:\n\nGa naar View &gt; Command Palette…\nTyp Terminal: Create New Terminal\nKlik op de pop-up die verschijnt\nControleer of er onderaan een scherm opent dat lijkt op de onderstaande schermopname1.\n\n\n\nVoer deze code uit in de terminal\n\nconda --version\n\nControleer of je conda xx.x.x als antwoord krijgt, vergelijkbaar met de onderstaande schermopname\n\n\n\nAls het antwoord command not found: conda is, volg dan de instructies op anaconda.com/docs/getting-started/working-with-conda/environments#troubleshooting"
+    "text": "2.4 Controleer de installatie van conda\nSoms moet je bewerkingen doen die niet ‘in’ je Python- of R-code staan, maar die daarbuiten gebeuren, zoals een specifiek script uitvoeren, pakketten installeren of environments creëren. VS Code voorziet daarvoor een terminal, een venster waarmee je commando’s kan geven aan jouw besturingssysteem, zonder je muis te gebruiken. Zo kan je bijvoorbeeld de software conda aansturen via de terminal om pakketten en environments te beheren. Voer deze stappen uit om een terminal te openen en hiermee te controleren of de software conda correct geïnstalleerd is:\n\nGa naar View &gt; Command Palette…\nTyp Terminal: Create New Terminal\nKlik op de pop-up die verschijnt\nControleer of er onderaan een scherm opent dat lijkt op de onderstaande schermopname1.\n\n\n\nVoer deze code uit in de terminal\n\nconda --version\n\nControleer of je conda xx.x.x als antwoord krijgt, vergelijkbaar met de onderstaande schermopname\n\n\n\nAls het antwoord command not found: conda is, volg dan de instructies in Caution 1"
   },
   {
     "objectID": "python_vs_code.html#selecteer-de-working-directory",
@@ -187,5 +117,75 @@
     "title": "Python and VS Code",
     "section": "Voetnoten",
     "text": "Voetnoten\n\n\nOnderstaande afbeelding is voor Windows, voor Mac/Linux kan dit er licht anders uitzien↩︎"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "IMECOS software guide",
+    "section": "",
+    "text": "Welcome to the IMECOS software guide. On this website, you will find following information:\n\nUsing Python and VS Code\nUsing R and RStudio\nWriting and coding in Quarto\nAdvice and guidelines on Generative AI"
+  },
+  {
+    "objectID": "genai.html",
+    "href": "genai.html",
+    "title": "Generative AI",
+    "section": "",
+    "text": "Wat betreft het gebruik van (generatieve) AI:\nZie ook het Universiteitsbreed ricthkader voor het verantwoord gebruik van AI aan de UGent"
+  },
+  {
+    "objectID": "genai.html#footnotes",
+    "href": "genai.html#footnotes",
+    "title": "Generative AI",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nDit VN rapport geeft interestante achtergrondinformatie hierover↩︎"
+  },
+  {
+    "objectID": "quarto.html",
+    "href": "quarto.html",
+    "title": "Quarto",
+    "section": "",
+    "text": "Quarto is a publishing system that lets you write formatted text (Markdown), code (Python, R, Julia) and the output of that code (figures, tables) together in a single document (.qmd). You then render that document to HTML, PDF or Word. This tutorial itself is written in Quarto.\nFor basic text formatting (headings, bold text, lists, links, …) you use Markdown syntax; the details of which will not be repeated here.\nTo get started, follow the installations instructions at https://quarto.org/docs/get-started/"
+  },
+  {
+    "objectID": "quarto.html#imported-figures",
+    "href": "quarto.html#imported-figures",
+    "title": "Quarto",
+    "section": "4.1 Imported figures",
+    "text": "4.1 Imported figures\nInsert an existing image with Markdown syntax. For a label (needed to reference it) and a caption, use:\n![A very scientific cat.](figures/quarto/cat.jpg){#fig-cat}\nRendered, this gives Figure 1:\n\n\n\n\n\n\nFigure 1: A very scientific cat."
+  },
+  {
+    "objectID": "quarto.html#python-figures",
+    "href": "quarto.html#python-figures",
+    "title": "Quarto",
+    "section": "4.2 Python figures",
+    "text": "4.2 Python figures\nFor a figure produced by Python code, set the label and caption as chunk options label (must start with fig-) and fig-cap:\n```{python}\n#| label: fig-precipitation\n#| fig-cap: \"Precipitation over time.\"\nimport matplotlib.pyplot as plt\n\nplt.plot(P)\nplt.xlabel(\"Time (days)\")\nplt.ylabel(\"Precipitation [mm/d]\")\n```\nRendered, this produces Figure 2:\n\nimport matplotlib.pyplot as plt\n\nplt.plot(P)\nplt.xlabel(\"Time (days)\")\nplt.ylabel(\"Precipitation [mm/d]\")\nplt.show()\n\n\n\n\n\n\n\nFigure 2: Precipitation over time."
+  },
+  {
+    "objectID": "quarto.html#referencing-a-figure",
+    "href": "quarto.html#referencing-a-figure",
+    "title": "Quarto",
+    "section": "4.3 Referencing a figure",
+    "text": "4.3 Referencing a figure\nReference a labelled figure anywhere in your text with @fig-label, e.g. @fig-precipitation gives Figure 2."
+  },
+  {
+    "objectID": "quarto.html#manual-tables",
+    "href": "quarto.html#manual-tables",
+    "title": "Quarto",
+    "section": "5.1 Manual tables",
+    "text": "5.1 Manual tables\nType a table directly in Markdown. Add a label (must start with tbl-) and caption on the line right after the table, preceded by a ::\n| Variable | Unit |\n|----------|------|\n| P        | mm/d |\n| Q        | mm/d |\n\n: Overview of the variables used {#tbl-variables}\nRendered, this gives Table 1:\n\n\n\nTable 1: Overview of the variables used\n\n\n\n\n\nVariable\nUnit\n\n\n\n\nP\nmm/d\n\n\nQ\nmm/d"
+  },
+  {
+    "objectID": "quarto.html#python-tables",
+    "href": "quarto.html#python-tables",
+    "title": "Quarto",
+    "section": "5.2 Python tables",
+    "text": "5.2 Python tables\nFor a table produced by Python code (e.g. a pandas.DataFrame), again use the chunk options label (starting with tbl-) and tbl-cap:\n```{python}\n#| label: tbl-summary\n#| tbl-cap: \"Summary of the precipitation data.\"\nimport pandas as pd\n\npd.DataFrame({\"Mean\": [np.mean(P)], \"Sum\": [np.sum(P)]})\n```\nRendered, this produces Table 2:\n\nimport pandas as pd\n\npd.DataFrame({\"Mean\": [np.mean(P)], \"Sum\": [np.sum(P)]})\n\n\n\nTable 2: Summary of the precipitation data.\n\n\n\n\n\n\n\n\n\n\nMean\nSum\n\n\n\n\n0\n2.5\n10.0"
+  },
+  {
+    "objectID": "quarto.html#referencing-a-table",
+    "href": "quarto.html#referencing-a-table",
+    "title": "Quarto",
+    "section": "5.3 Referencing a table",
+    "text": "5.3 Referencing a table\nReference a labelled table with @tbl-label, e.g. @tbl-summary gives Table 2."
   }
 ]
