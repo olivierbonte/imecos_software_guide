@@ -156,13 +156,13 @@ De werkmap (*Working Directory*) is de map op je computer waarin VS Code momente
 
 ## Creëer een *environment* via een YAML-bestand
 
-De Python-pakketten die nodig zijn om een bepaald script uit te kunnen voeren kunnen gedeeld worden tussen gebruikers via een YAML-bestand (`.yml` of `.yaml` extensie). Dit bestand bevat een overzicht van de nodige pakketten en versies om een *environment* aan te maken. Nadat je een *environment* hebt gecreëerd op je computer, blijft het beschikbaar binnen VS Code. Hieronder wordt als voorbeeld uitgelegd hoe je het *environment* kan aanmaken dat je voor alle werkcolleges en taken van het vak hydrologie moet gebruiken:
+De Python-pakketten die nodig zijn om een bepaald script uit te kunnen voeren kunnen gedeeld worden tussen gebruikers via een YAML-bestand (`.yml` of `.yaml` extensie). Dit bestand bevat een overzicht van de nodige pakketten en versies om een *environment* aan te maken. Nadat je een *environment* hebt gecreëerd op je computer, blijft het beschikbaar binnen VS Code. Hieronder wordt als **voorbeeld** uitgelegd hoe je het *environment* kan aanmaken dat je voor alle werkcolleges en taken van het vak Hydrologie moet gebruiken. Voor andere vakken, zullen de lesgevers gelijkaardige YAML-bestanden^[Ook deze documentatie heeft een YAML-bestand om de computationele *environment* te beschrijven. Deze vind je [hier](https://github.com/olivierbonte/imecos_software_guide/blob/main/hydrologie_env.yml) en kan je gebruiken als voorbeeld bestand in onderstaand stappenplan.] voorzien, moet stap 1 dus niet letterlijk gevolgd worden en vervang je `hydrologie_env.yml` met de naam van het bestand dat de lesgever voorziet. 
 
 1.  Download het bestand `hydrologie_env.yml` van Ufora
 
 2.  Kies de map met dit bestand als *Working Directory*
 
-3.  Voer deze code uit in de terminal van VS Code en wacht tot de *environment* gecreëerd is
+3.  Voer deze code uit in de terminal van VS Code en wacht tot de *environment* gecreëerd is. De naam van de *environment* is gedefinieerd in het YAML-bestand als `name: ENVIRONMENT_NAAM`. In dit geval is `ENVIRONMENT_NAAM` dus `hydrologie_env`.
 
 ``` powershell
 conda env create -f hydrologie_env.yml
@@ -176,7 +176,7 @@ conda env create -f hydrologie_env.yml
 
 7.  Typ *Python: Select Interpreter*
 
-8.  Klik op de net gecreëerde `hydrologie_env` om deze *environment* te gebruiken voor dit py-bestand
+8.  Klik op de net gecreëerde `hydrologie_env`^[Deze naam geldt enkel voor dit voorbeeld, voor andere YAML-bestanden selecteer de naam zoals gedefeinieerd onder de `name`-regel in het YAML-bestand] om deze *environment* te gebruiken voor dit `.py`-bestand
 
 9.  Controleer of je rechts onderaan het VS Code scherm de naam van de gekozen environment ziet, zoals in de schermopname hieronder. Als je hier *base* ziet staan, dan is de standaard Python-*environment* die meekomt met Anaconda nog geactiveerd. Controleer de gebruikte *environment* telkens voordat je een script runt
 
