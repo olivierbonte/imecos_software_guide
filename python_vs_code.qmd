@@ -78,7 +78,7 @@ Voor Windows, zou de workflow via *Anaconda Prompt* die hierboven beschreven sta
 
 :::
 
-Als nog @cau-conda-powershell of @cau-conda je probleem verhelpt, bekijk dan zeker eens de [algemen troubleshooting guide van Anaconda](https://www.anaconda.com/docs/reference/troubleshooting).
+Als noch @cau-conda-powershell noch @cau-conda je probleem verhelpt, bekijk dan zeker eens de [algemen troubleshooting guide van Anaconda](https://www.anaconda.com/docs/reference/troubleshooting).
 
 ## VS Code
 
@@ -100,7 +100,7 @@ VS Code kan uitgebreid worden met extensies die het programmeren vergemakkelijke
 
 2.  Ga naar *View* \> *Extensions*
 
-3.  Zoek voor het vak hydrologie minstens de extensies *Python*, *Pylance*, *Jupyter* en *Data Wrangler*
+3.  Zoek minstens de extensies [*Python*](https://marketplace.visualstudio.com/items?itemName=ms-python.python), [*Pylance*](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance), [*Jupyter*](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) en [*Data Wrangler*](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.datawrangler). Deze zijn essentieel voor het vak Hydrologie, maar zullen ook in veel andere vakken in de opleiding Ecosysteembeheer gebruikt worden. 
 
 4.  Klik telkens op *Install*
 
@@ -184,7 +184,7 @@ conda env create -f hydrologie_env.yml
 
 ## Voer een volledig Python script uit
 
-1.  Kopieer deze Python-code in het py-bestand via het klembord-icoon
+1.  Kopieer deze Python-code in het `.py`-bestand via het klembord-icoon
 
 ```{python}
 #| output: false 
@@ -215,7 +215,7 @@ fig
 
 ## Voer een selectie van een Python script uit en bekijk variabelen
 
-Bij lange of rekenintensieve scripts is het tijdrovend om bij elke aanpassing het volledige script opnieuw uit te voeren. Met de *Jupyter* extensie kan je een selectie van je code uitvoeren om snel iets te testen. *Jupyter* laat ook toe om de waarde(n) van variabelen te bekijken, zelfs als ze niet in de output van het script terecht komen. De extensie *Data Wrangler* stelt je bovendien in staat om variabelen met veel data in tabelvorm te bekijken. Voer hiervoor de volgende stappen uit:
+Bij lange of rekenintensieve scripts is het tijdrovend om bij elke aanpassing het volledige script opnieuw uit te voeren. Met de [*Jupyter* extensie](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) kan je een selectie van je code uitvoeren om snel iets te testen. *Jupyter* laat ook toe om de waarde(n) van variabelen te bekijken, zelfs als ze niet in de output van het script terecht komen. De extensie *Data Wrangler* stelt je bovendien in staat om variabelen met veel data in tabelvorm te bekijken. Voer hiervoor de volgende stappen uit:
 
 1.  Ga naar *File* \> *Preferences* \> *Settings*
 
@@ -254,6 +254,19 @@ print(f'Totale neerslaghoogte: {np.sum(P):.1f} mm') # Toon de totale neerslaghoo
 #| echo: false
 print(f'Totale neerslaghoogte: {np.sum(P):.1f} mm') # Toon de totale neerslaghoogte over de meetperiode
 ```
+
+Bij problemen met de *Jupyter Interactive Window*, zie @cau-jupyter.
+
+::: {#cau-jupyter .callout-caution collapse="true" title="TroubleShooting Jupyter Interactive Window"}
+
+Hoewel de *Jupyter Interactive Window* een handige tool is, kan het soms problemen geven bij het uitvoeren van code. Typische probelmen zijn `Kernel died` en `matplotlib` dat niet werkt. Mogelijke oplossingen zijn:
+
+1. In extensies, ga naar [*Python Environments*](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-python-envs) en klik op *Disable*. Sluit VS Code af, open het opnieuw en probeer de *Jupyter Interactive Window* opnieuw te gebruiken.
+2. Er is een alternatief voor de *Jupyter Interactive Window* extensie, genaamd de [interacitve Python REPL (Read-Evaluate-Print Loop)](https://code.visualstudio.com/docs/python/run#_native-repl). Om deze te gebruiken, start met *Jupyter Interactive Window Text Editor Execute Selection* uit stap 3 te ontvinken. Zoek in *Settings* naar *Python.REPL: Send To Native REPL* en vink deze optie aan. Om een selectie code uit te voeren, kan je opnieuw *shift + enter* gebruiken. De output verschijnt dan in de *Python REPL* terminal, waarvan hieronder een voorbeeld wordt gegeven: 
+
+![](figures/python_vs_code/repl_screenshot.png)
+
+:::
 
 # Tips voor programmeren
 
