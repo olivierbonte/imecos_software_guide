@@ -41,10 +41,25 @@ Installeer Anaconda via deze stappen:
         1. Open de *Anaconda Prompt* software 
         2. Voer het commando `conda init powershell cmd.exe` uit
         3. Sluit *Anaconda Prompt*
+        4. Open powershell en check of `conda --version` werkt. Werkt dit niet, zie dan @cau-conda-powershell. 
 
     2. [MacOS](https://www.anaconda.com/docs/getting-started/anaconda/install/mac-gui-install) en [Linux](https://www.anaconda.com/docs/getting-started/anaconda/install/linux-install):
         1. Open de terminal
         2. Check of `conda --version` werkt. Werkt dit niet, zie dan @cau-conda
+
+::: {#cau-conda-powershell .callout-caution collapse="true" title="Troubleshooting powershell"}
+
+Een veelverkomende foutmelding bij het openen van powershell en/of proberen activeren van de conda *environment*, is:
+```
+ps1 cannot be loaded because running scripts is disabled on this system
+```
+Dit kan opgelost worden door in powershell 
+```
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+in te geven. Zie [hier] voor meer achtergrondinformatie. 
+:::
+
 
 ::: {#cau-conda .callout-caution collapse="true" title="Troubleshooting `command not found: conda`"}
 
@@ -63,6 +78,7 @@ Voor Windows, zou de workflow via *Anaconda Prompt* die hierboven beschreven sta
 
 :::
 
+Als nog @cau-conda-powershell of @cau-conda je probleem verhelpt, bekijk dan zeker eens de [algemen troubleshooting guide van Anaconda](https://www.anaconda.com/docs/reference/troubleshooting).
 
 ## VS Code
 
