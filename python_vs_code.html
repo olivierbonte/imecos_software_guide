@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-166690b9c768161ed89deb9505a7d440.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -252,25 +252,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Open de <em>Anaconda Prompt</em> software</li>
 <li>Voer het commando <code>conda init powershell cmd.exe</code> uit</li>
 <li>Sluit <em>Anaconda Prompt</em></li>
+<li>Open powershell en check of <code>conda --version</code> werkt. Werkt dit niet, zie dan <a href="#cau-conda-powershell" class="quarto-xref">Caution&nbsp;1</a>.</li>
 </ol></li>
 <li><a href="https://www.anaconda.com/docs/getting-started/anaconda/install/mac-gui-install">MacOS</a> en <a href="https://www.anaconda.com/docs/getting-started/anaconda/install/linux-install">Linux</a>:
 <ol type="1">
 <li>Open de terminal</li>
-<li>Check of <code>conda --version</code> werkt. Werkt dit niet, zie dan <a href="#cau-conda" class="quarto-xref">Caution&nbsp;1</a></li>
+<li>Check of <code>conda --version</code> werkt. Werkt dit niet, zie dan <a href="#cau-conda" class="quarto-xref">Caution&nbsp;2</a></li>
 </ol></li>
 </ol></li>
 </ol>
-<div id="cau-conda" class="callout callout-style-default callout-caution callout-titled" title="Troubleshooting `command not found: conda`">
+<div id="cau-conda-powershell" class="callout callout-style-default callout-caution callout-titled" title="Troubleshooting powershell">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Opgelet&nbsp;1: Troubleshooting <code>command not found: conda</code>
+Opgelet&nbsp;1: Troubleshooting powershell
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Een veelverkomende foutmelding bij het openen van powershell en/of proberen activeren van de conda <em>environment</em>, is:</p>
+<pre><code>ps1 cannot be loaded because running scripts is disabled on this system</code></pre>
+<p>Dit kan opgelost worden door in powershell</p>
+<pre><code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser</code></pre>
+<p>in te geven. Zie [hier] voor meer achtergrondinformatie.</p>
+</div>
+</div>
+</div>
+<div id="cau-conda" class="callout callout-style-default callout-caution callout-titled" title="Troubleshooting `command not found: conda`">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Opgelet&nbsp;2: Troubleshooting <code>command not found: conda</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>De officiële Anaconda-documentatie hierover (gefocust op Linux en MacOS) vind je <a href="https://www.anaconda.com/docs/reference/troubleshooting#command-not-found-conda">hier</a>. De fix bestaat uit</p>
 <ol type="1">
@@ -287,6 +308,7 @@ Opgelet&nbsp;1: Troubleshooting <code>command not found: conda</code>
 </div>
 </div>
 </div>
+<p>Als noch <a href="#cau-conda-powershell" class="quarto-xref">Caution&nbsp;1</a> noch <a href="#cau-conda" class="quarto-xref">Caution&nbsp;2</a> je probleem verhelpt, bekijk dan zeker eens de <a href="https://www.anaconda.com/docs/reference/troubleshooting">algemen troubleshooting guide van Anaconda</a>.</p>
 </section>
 <section id="vs-code" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="vs-code"><span class="header-section-number">2.2</span> VS Code</h2>
@@ -304,7 +326,7 @@ Opgelet&nbsp;1: Troubleshooting <code>command not found: conda</code>
 <ol type="1">
 <li><p>Start VS Code</p></li>
 <li><p>Ga naar <em>View</em> &gt; <em>Extensions</em></p></li>
-<li><p>Zoek voor het vak hydrologie minstens de extensies <em>Python</em>, <em>Pylance</em>, <em>Jupyter</em> en <em>Data Wrangler</em></p></li>
+<li><p>Zoek minstens de extensies <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python"><em>Python</em></a>, <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance"><em>Pylance</em></a>, <a href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter"><em>Jupyter</em></a> en <a href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.datawrangler"><em>Data Wrangler</em></a>. Deze zijn essentieel voor het vak Hydrologie, maar zullen ook in veel andere vakken in de opleiding Ecosysteembeheer gebruikt worden.</p></li>
 <li><p>Klik telkens op <em>Install</em></p></li>
 </ol>
 <p><img src="figures/python_vs_code/VSCode_extensions.png" class="img-fluid" style="width:7.5cm"></p>
@@ -322,13 +344,13 @@ Opgelet&nbsp;1: Troubleshooting <code>command not found: conda</code>
 <ol start="5" type="1">
 <li>Voer deze code uit in de terminal</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>conda <span class="op">--</span>version</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>conda <span class="op">--</span>version</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="6" type="1">
 <li>Controleer of je <em>conda xx.x.x</em> als antwoord krijgt, vergelijkbaar met de onderstaande schermopname</li>
 </ol>
 <p><img src="figures/python_vs_code/Conda_version.png" class="img-fluid" style="width:8.7cm"></p>
 <ol start="7" type="1">
-<li>Als het antwoord <em>command not found: conda</em> is, volg dan de instructies in <a href="#cau-conda" class="quarto-xref">Caution&nbsp;1</a></li>
+<li>Als het antwoord <em>command not found: conda</em> is, volg dan de instructies in <a href="#cau-conda" class="quarto-xref">Caution&nbsp;2</a></li>
 </ol>
 </section>
 </section>
@@ -352,19 +374,19 @@ Opgelet&nbsp;1: Troubleshooting <code>command not found: conda</code>
 </section>
 <section id="creëer-een-environment-via-een-yaml-bestand" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="creëer-een-environment-via-een-yaml-bestand"><span class="header-section-number">3.2</span> Creëer een <em>environment</em> via een YAML-bestand</h2>
-<p>De Python-pakketten die nodig zijn om een bepaald script uit te kunnen voeren kunnen gedeeld worden tussen gebruikers via een YAML-bestand (<code>.yml</code> of <code>.yaml</code> extensie). Dit bestand bevat een overzicht van de nodige pakketten en versies om een <em>environment</em> aan te maken. Nadat je een <em>environment</em> hebt gecreëerd op je computer, blijft het beschikbaar binnen VS Code. Hieronder wordt als voorbeeld uitgelegd hoe je het <em>environment</em> kan aanmaken dat je voor alle werkcolleges en taken van het vak hydrologie moet gebruiken:</p>
+<p>De Python-pakketten die nodig zijn om een bepaald script uit te kunnen voeren kunnen gedeeld worden tussen gebruikers via een YAML-bestand (<code>.yml</code> of <code>.yaml</code> extensie). Dit bestand bevat een overzicht van de nodige pakketten en versies om een <em>environment</em> aan te maken. Nadat je een <em>environment</em> hebt gecreëerd op je computer, blijft het beschikbaar binnen VS Code. Hieronder wordt als <strong>voorbeeld</strong> uitgelegd hoe je het <em>environment</em> kan aanmaken dat je voor alle werkcolleges en taken van het vak Hydrologie moet gebruiken. Voor andere vakken, zullen de lesgevers gelijkaardige YAML-bestanden<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> voorzien, moet stap 1 dus niet letterlijk gevolgd worden en vervang je <code>hydrologie_env.yml</code> met de naam van het bestand dat de lesgever voorziet.</p>
 <ol type="1">
 <li><p>Download het bestand <code>hydrologie_env.yml</code> van Ufora</p></li>
 <li><p>Kies de map met dit bestand als <em>Working Directory</em></p></li>
-<li><p>Voer deze code uit in de terminal van VS Code en wacht tot de <em>environment</em> gecreëerd is</p></li>
+<li><p>Voer deze code uit in de terminal van VS Code en wacht tot de <em>environment</em> gecreëerd is. De naam van de <em>environment</em> is gedefinieerd in het YAML-bestand als <code>name: ENVIRONMENT_NAAM</code>. In dit geval is <code>ENVIRONMENT_NAAM</code> dus <code>hydrologie_env</code>.</p></li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>conda env create <span class="op">-</span>f hydrologie_env<span class="op">.</span><span class="fu">yml</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>conda env create <span class="op">-</span>f hydrologie_env<span class="op">.</span><span class="fu">yml</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="4" type="1">
 <li><p>Maak een nieuw <code>.py</code>-bestand aan: <em>File &gt; New File… &gt; Python File</em></p></li>
 <li><p>Sla het <code>.py</code>-bestand op onder een naam naar keuze in je working directory</p></li>
 <li><p>Ga naar <em>View</em> &gt; <em>Command Palette…</em></p></li>
 <li><p>Typ <em>Python: Select Interpreter</em></p></li>
-<li><p>Klik op de net gecreëerde <code>hydrologie_env</code>&nbsp;om deze <em>environment</em> te gebruiken voor dit py-bestand</p></li>
+<li><p>Klik op de net gecreëerde <code>hydrologie_env</code><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>&nbsp;om deze <em>environment</em> te gebruiken voor dit <code>.py</code>-bestand</p></li>
 <li><p>Controleer of je rechts onderaan het VS Code scherm de naam van de gekozen environment ziet, zoals in de schermopname hieronder. Als je hier <em>base</em> ziet staan, dan is de standaard Python-<em>environment</em> die meekomt met Anaconda nog geactiveerd. Controleer de gebruikte <em>environment</em> telkens voordat je een script runt</p></li>
 </ol>
 <p><img src="figures/python_vs_code/VSCode_bottom_right.png" style="width:14cm;height:0.7cm"></p>
@@ -372,28 +394,28 @@ Opgelet&nbsp;1: Troubleshooting <code>command not found: conda</code>
 <section id="voer-een-volledig-python-script-uit" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="voer-een-volledig-python-script-uit"><span class="header-section-number">3.3</span> Voer een volledig Python script uit</h2>
 <ol type="1">
-<li>Kopieer deze Python-code in het py-bestand via het klembord-icoon</li>
+<li>Kopieer deze Python-code in het <code>.py</code>-bestand via het klembord-icoon</li>
 </ol>
-<div id="4743e858" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># Open een pakket om te werken met vectoren/matrices </span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># Open een pakket om figures/python_vs_code te maken </span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">8</span>) <span class="co">#[d] Maak een vector met dagen tussen 1 en 8 (excl. 8)</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> np.array([<span class="fl">1.8</span>, <span class="fl">2.1</span>, <span class="fl">2.7</span>, <span class="fl">3.4</span>, <span class="fl">3.0</span>, <span class="fl">2.5</span>, <span class="fl">2.0</span>]) <span class="co">#[mm/d] Maak een vector met dagelijkse nee rslaghoogtes</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Gemiddelde dagelijkse neerslaghoogte: </span><span class="sc">{</span>np<span class="sc">.</span>mean(P)<span class="sc">:.1f}</span><span class="ss"> mm'</span>) <span class="co"># Toon de gemiddelde dagelijkse neerslaghoogte</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure() <span class="co"># Maak een nieuwe figuur</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.plot(t, P, marker <span class="op">=</span> <span class="st">'.'</span>, linestyle <span class="op">=</span> <span class="st">'None'</span>, color <span class="op">=</span> <span class="st">'black'</span>) <span class="co"># Maak een spreidingsdiagram met zwarte punten </span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Tijd (dagen)'</span>) <span class="co"># Maak een titel voor de x-as</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Dagelijkse neerslaghoogte [mm]'</span>) <span class="co"># Maak een titel voor de y-as</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>plt.show() <span class="co"># Toon de grafiek in de output</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="1570cb2f" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># Open een pakket om te werken met vectoren/matrices </span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># Open een pakket om figures/python_vs_code te maken </span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">8</span>) <span class="co">#[d] Maak een vector met dagen tussen 1 en 8 (excl. 8)</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> np.array([<span class="fl">1.8</span>, <span class="fl">2.1</span>, <span class="fl">2.7</span>, <span class="fl">3.4</span>, <span class="fl">3.0</span>, <span class="fl">2.5</span>, <span class="fl">2.0</span>]) <span class="co">#[mm/d] Maak een vector met dagelijkse nee rslaghoogtes</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Gemiddelde dagelijkse neerslaghoogte: </span><span class="sc">{</span>np<span class="sc">.</span>mean(P)<span class="sc">:.1f}</span><span class="ss"> mm'</span>) <span class="co"># Toon de gemiddelde dagelijkse neerslaghoogte</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure() <span class="co"># Maak een nieuwe figuur</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>plt.plot(t, P, marker <span class="op">=</span> <span class="st">'.'</span>, linestyle <span class="op">=</span> <span class="st">'None'</span>, color <span class="op">=</span> <span class="st">'black'</span>) <span class="co"># Maak een spreidingsdiagram met zwarte punten </span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Tijd (dagen)'</span>) <span class="co"># Maak een titel voor de x-as</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Dagelijkse neerslaghoogte [mm]'</span>) <span class="co"># Maak een titel voor de y-as</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>plt.show() <span class="co"># Toon de grafiek in de output</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="2" type="1">
 <li><p>Voer het volledige script uit door te klikken op het pijl-icoon <img src="figures/python_vs_code/Run_button.png" style="width:0.6cm;height:0.3cm"></p></li>
 <li><p>Controleer of je onderstaande output krijgt</p></li>
 </ol>
-<div id="5f261d47" class="cell" data-execution_count="2">
+<div id="ddaaccb3" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-stdout">
 <pre><code>Gemiddelde dagelijkse neerslaghoogte: 2.5 mm</code></pre>
 </div>
@@ -408,7 +430,7 @@ Opgelet&nbsp;1: Troubleshooting <code>command not found: conda</code>
 </section>
 <section id="voer-een-selectie-van-een-python-script-uit-en-bekijk-variabelen" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="voer-een-selectie-van-een-python-script-uit-en-bekijk-variabelen"><span class="header-section-number">3.4</span> Voer een selectie van een Python script uit en bekijk variabelen</h2>
-<p>Bij lange of rekenintensieve scripts is het tijdrovend om bij elke aanpassing het volledige script opnieuw uit te voeren. Met de <em>Jupyter</em> extensie kan je een selectie van je code uitvoeren om snel iets te testen. <em>Jupyter</em> laat ook toe om de waarde(n) van variabelen te bekijken, zelfs als ze niet in de output van het script terecht komen. De extensie <em>Data Wrangler</em> stelt je bovendien in staat om variabelen met veel data in tabelvorm te bekijken. Voer hiervoor de volgende stappen uit:</p>
+<p>Bij lange of rekenintensieve scripts is het tijdrovend om bij elke aanpassing het volledige script opnieuw uit te voeren. Met de <a href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter"><em>Jupyter</em> extensie</a> kan je een selectie van je code uitvoeren om snel iets te testen. <em>Jupyter</em> laat ook toe om de waarde(n) van variabelen te bekijken, zelfs als ze niet in de output van het script terecht komen. De extensie <em>Data Wrangler</em> stelt je bovendien in staat om variabelen met veel data in tabelvorm te bekijken. Voer hiervoor de volgende stappen uit:</p>
 <ol type="1">
 <li><p>Ga naar <em>File</em> &gt; <em>Preferences</em> &gt; <em>Settings</em></p></li>
 <li><p>Zoek naar <em>Jupyter Interactive Window Text Editor Execute Selection</em></p></li>
@@ -431,16 +453,38 @@ Opgelet&nbsp;1: Troubleshooting <code>command not found: conda</code>
 <ol start="8" type="1">
 <li>Pas dan alleen het print commando in het py-bestand aan</li>
 </ol>
-<div id="859b8c3f" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Totale neerslaghoogte: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">sum</span>(P)<span class="sc">:.1f}</span><span class="ss"> mm'</span>) <span class="co"># Toon de totale neerslaghoogte over de meetperiode</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="d2b5f40a" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Totale neerslaghoogte: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">sum</span>(P)<span class="sc">:.1f}</span><span class="ss"> mm'</span>) <span class="co"># Toon de totale neerslaghoogte over de meetperiode</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="9" type="1">
 <li><p>Selecteer alleen het aangepaste commando met je cursor en toets <em>shift + enter</em></p></li>
 <li><p>Controleer of je onderstaande output ziet in de <em>Jupyter Interactive Window</em></p></li>
 </ol>
-<div id="460188c9" class="cell" data-execution_count="4">
+<div id="8d6ea300" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
 <pre><code>Totale neerslaghoogte: 17.5 mm</code></pre>
+</div>
+</div>
+<p>Bij problemen met de <em>Jupyter Interactive Window</em>, zie <a href="#cau-jupyter" class="quarto-xref">Caution&nbsp;3</a>.</p>
+<div id="cau-jupyter" class="callout callout-style-default callout-caution callout-titled" title="TroubleShooting Jupyter Interactive Window">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Opgelet&nbsp;3: TroubleShooting Jupyter Interactive Window
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Hoewel de <em>Jupyter Interactive Window</em> een handige tool is, kan het soms problemen geven bij het uitvoeren van code. Typische probelmen zijn <code>Kernel died</code> en <code>matplotlib</code> dat niet werkt. Mogelijke oplossingen zijn:</p>
+<ol type="1">
+<li>In extensies, ga naar <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-python-envs"><em>Python Environments</em></a> en klik op <em>Disable</em>. Sluit VS Code af, open het opnieuw en probeer de <em>Jupyter Interactive Window</em> opnieuw te gebruiken.</li>
+<li>Er is een alternatief voor de <em>Jupyter Interactive Window</em> extensie, genaamd de <a href="https://code.visualstudio.com/docs/python/run#_native-repl">interacitve Python REPL (Read-Evaluate-Print Loop)</a>. Om deze te gebruiken, start met <em>Jupyter Interactive Window Text Editor Execute Selection</em> uit stap 3 te ontvinken. Zoek in <em>Settings</em> naar <em>Python.REPL: Send To Native REPL</em> en vink deze optie aan. Om een selectie code uit te voeren, kan je opnieuw <em>shift + enter</em> gebruiken. De output verschijnt dan in de <em>Python REPL</em> terminal, waarvan hieronder een voorbeeld wordt gegeven:</li>
+</ol>
+<p><img src="figures/python_vs_code/repl_screenshot.png" class="img-fluid"></p>
+</div>
 </div>
 </div>
 </section>
@@ -451,11 +495,11 @@ Opgelet&nbsp;1: Troubleshooting <code>command not found: conda</code>
 <ol type="1">
 <li>Gebruik het ingebouwde help-commando als je niet weet welke input parameters een functie verwacht of hoe deze werkt. Meestal helpen de ‘Examples’ onderaan het best om de basiswerking van een functie snel te begrijpen.</li>
 </ol>
-<div id="0fd53b8b" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(np.<span class="bu">sum</span>)</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="703a3180" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(np.<span class="bu">sum</span>)</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Output">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -464,9 +508,9 @@ Opgelet&nbsp;1: Troubleshooting <code>command not found: conda</code>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="2a1cb30b" class="cell" data-execution_count="6">
+<div id="dc5f31a1" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on method descriptor sum in module numpy:
 
@@ -596,11 +640,11 @@ sum(
 <ol start="2" type="1">
 <li>Test commando’s op kleine, fictieve datasets voordat je ze toepast op grote datasets om te begrijpen wat ze doen</li>
 </ol>
-<div id="e951dcd0" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>np.array([<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>]) <span class="op">&gt;</span> <span class="dv">0</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="25515a5a" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>np.array([<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>]) <span class="op">&gt;</span> <span class="dv">0</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Output">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -609,9 +653,9 @@ sum(
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="53d611b7" class="cell" data-execution_count="8">
+<div id="939d032c" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>array([False, False,  True])</code></pre>
 </div>
@@ -641,21 +685,21 @@ sum(
 <li><p>Ga naar <em>File</em> &gt; <em>New Text File</em> &gt; <em>Save as</em> &gt; Zoek de huidige <em>Working Directory</em> &gt; Kies als naam bijvoorbeeld <code>example_env</code> en kies bij <em>Opslaan als YAML</em></p></li>
 <li><p>Gebruik onderstaande syntax en vul de lijst met pakketten aan naar wens</p></li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> example_env</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">channels</span><span class="kw">:</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> conda-forge</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dependencies</span><span class="kw">:</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> python</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> numpy</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> matplotlib</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> example_env</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">channels</span><span class="kw">:</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> conda-forge</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dependencies</span><span class="kw">:</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> python</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> numpy</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> matplotlib</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="3" type="1">
 <li>Voer onderstaande code uit in de terminal van VS Code en wacht tot de <em>environment</em> gecreëerd is</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>conda env create <span class="op">-</span>f example_env<span class="op">.</span><span class="fu">yml</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>conda env create <span class="op">-</span>f example_env<span class="op">.</span><span class="fu">yml</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="4" type="1">
 <li>Voer deze code uit in de terminal om de <em>environment</em> te activeren (hiermee wordt je openstaande python script niet per sé uitgevoerd via deze <em>environment</em>, maar kan je via de terminal aanpassingen maken aan deze <em>environment</em>)</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>conda activate example_env</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>conda activate example_env</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="deel-environments-transparant-en-reproduceerbaar" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="deel-environments-transparant-en-reproduceerbaar"><span class="header-section-number">5.2</span> Deel <em>environments</em> transparant en reproduceerbaar</h2>
@@ -663,17 +707,17 @@ sum(
 <ol type="1">
 <li>Voer onderstaande code uit in de terminal om te zien welke versies in je actieve environment staan</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>conda list</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>conda list</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="2" type="1">
 <li>Zoek de pakketten die in je YAML-bestand staan en kopieer hun hoofd- en onderversie (de eerste 2 cijfers) naar het YAML-bestand, zoals in het voorbeeld hieronder</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> example_env</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">channels</span><span class="kw">:</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> conda-forge</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dependencies</span><span class="kw">:</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> python=3.13</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> numpy=2.3</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> matplotlib=3.10</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> example_env</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">channels</span><span class="kw">:</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> conda-forge</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dependencies</span><span class="kw">:</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> python=3.13</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> numpy=2.3</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> matplotlib=3.10</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="3" type="1">
 <li>Bewaar en deel dit bestand samen met het programmeerproject waarvoor je het gebruikt</li>
 </ol>
@@ -684,11 +728,11 @@ sum(
 <ol type="1">
 <li>Voer onderstaande code uit in de terminal om alle <em>environments</em> te deactiveren</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>conda deactivate</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>conda deactivate</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="2" type="1">
 <li>Voer onderstaande code uit in de terminal om de <em>environment</em> met naam <em>example_env</em> te verwijderen van je computer</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>conda remove <span class="op">--</span>name example_env <span class="op">--</span>all</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>conda remove <span class="op">--</span>name example_env <span class="op">--</span>all</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="pandas-optioneel" class="level1" data-number="6">
@@ -707,6 +751,8 @@ sum(
 
 <ol>
 <li id="fn1"><p>Onderstaande afbeelding is voor Windows, voor Mac/Linux kan dit er licht anders uitzien<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Ook deze documentatie heeft een YAML-bestand om de computationele <em>environment</em> te beschrijven. Deze vind je <a href="https://github.com/olivierbonte/imecos_software_guide/blob/main/hydrologie_env.yml">hier</a> en kan je gebruiken als voorbeeld bestand in onderstaand stappenplan.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Deze naam geldt enkel voor dit voorbeeld, voor andere YAML-bestanden selecteer de naam zoals gedefeinieerd onder de <code>name</code>-regel in het YAML-bestand<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
