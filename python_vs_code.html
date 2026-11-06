@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-166690b9c768161ed89deb9505a7d440.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-7d8f8980687bae4b33d568d349153310.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -308,7 +308,23 @@ Opgelet&nbsp;2: Troubleshooting <code>command not found: conda</code>
 </div>
 </div>
 </div>
-<p>Als noch <a href="#cau-conda-powershell" class="quarto-xref">Caution&nbsp;1</a> noch <a href="#cau-conda" class="quarto-xref">Caution&nbsp;2</a> je probleem verhelpt, bekijk dan zeker eens de <a href="https://www.anaconda.com/docs/reference/troubleshooting">algemen troubleshooting guide van Anaconda</a>.</p>
+<div id="cau-conda-permission" class="callout callout-style-default callout-caution callout-titled" title="`Permission denied` op `python.exe`">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Opgelet&nbsp;3: <code>Permission denied</code> op <code>python.exe</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Soms kan het antivirus programma op je computer de installatie van conda environment blokkeren, waardoor je <code>Permission denied</code> krijgt op <code>python.exe</code>. Als dit gebeurt, probeer dan het antivirus programma tijdelijk uit te schakelen en de installatie opnieuw te doen.</p>
+</div>
+</div>
+</div>
+<p>Als <a href="#cau-conda-powershell" class="quarto-xref">Caution&nbsp;1</a>, <a href="#cau-conda" class="quarto-xref">Caution&nbsp;2</a> en <a href="#cau-conda-permission" class="quarto-xref">Caution&nbsp;3</a> niet helpen bij het oplossen van je problemen, bekijk dan zeker eens de <a href="https://www.anaconda.com/docs/reference/troubleshooting">algemen troubleshooting guide van Anaconda</a>.</p>
 </section>
 <section id="vs-code" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="vs-code"><span class="header-section-number">2.2</span> VS Code</h2>
@@ -396,26 +412,32 @@ Opgelet&nbsp;2: Troubleshooting <code>command not found: conda</code>
 <ol type="1">
 <li>Kopieer deze Python-code in het <code>.py</code>-bestand via het klembord-icoon</li>
 </ol>
-<div id="1570cb2f" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># Open een pakket om te werken met vectoren/matrices </span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># Open een pakket om figures/python_vs_code te maken </span></span>
+<div id="60219b13" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np  <span class="co"># Open een pakket om te werken met vectoren/matrices</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt  <span class="co"># Open een pakket om figures/python_vs_code te maken</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">8</span>) <span class="co">#[d] Maak een vector met dagen tussen 1 en 8 (excl. 8)</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> np.array([<span class="fl">1.8</span>, <span class="fl">2.1</span>, <span class="fl">2.7</span>, <span class="fl">3.4</span>, <span class="fl">3.0</span>, <span class="fl">2.5</span>, <span class="fl">2.0</span>]) <span class="co">#[mm/d] Maak een vector met dagelijkse nee rslaghoogtes</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Gemiddelde dagelijkse neerslaghoogte: </span><span class="sc">{</span>np<span class="sc">.</span>mean(P)<span class="sc">:.1f}</span><span class="ss"> mm'</span>) <span class="co"># Toon de gemiddelde dagelijkse neerslaghoogte</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">8</span>)  <span class="co"># [d] Maak een vector met dagen tussen 1 en 8 (excl. 8)</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> np.array(</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">1.8</span>, <span class="fl">2.1</span>, <span class="fl">2.7</span>, <span class="fl">3.4</span>, <span class="fl">3.0</span>, <span class="fl">2.5</span>, <span class="fl">2.0</span>]</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>)  <span class="co"># [mm/d] Maak een vector met dagelijkse nee rslaghoogtes</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure() <span class="co"># Maak een nieuwe figuur</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>plt.plot(t, P, marker <span class="op">=</span> <span class="st">'.'</span>, linestyle <span class="op">=</span> <span class="st">'None'</span>, color <span class="op">=</span> <span class="st">'black'</span>) <span class="co"># Maak een spreidingsdiagram met zwarte punten </span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Tijd (dagen)'</span>) <span class="co"># Maak een titel voor de x-as</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Dagelijkse neerslaghoogte [mm]'</span>) <span class="co"># Maak een titel voor de y-as</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>plt.show() <span class="co"># Toon de grafiek in de output</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"Gemiddelde dagelijkse neerslaghoogte: </span><span class="sc">{</span>np<span class="sc">.</span>mean(P)<span class="sc">:.1f}</span><span class="ss"> mm"</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>)  <span class="co"># Toon de gemiddelde dagelijkse neerslaghoogte</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure()  <span class="co"># Maak een nieuwe figuur</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>plt.plot(</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    t, P, marker<span class="op">=</span><span class="st">"."</span>, linestyle<span class="op">=</span><span class="st">"None"</span>, color<span class="op">=</span><span class="st">"black"</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>)  <span class="co"># Maak een spreidingsdiagram met zwarte punten</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Tijd (dagen)"</span>)  <span class="co"># Maak een titel voor de x-as</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Dagelijkse neerslaghoogte [mm]"</span>)  <span class="co"># Maak een titel voor de y-as</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>plt.show()  <span class="co"># Toon de grafiek in de output</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="2" type="1">
 <li><p>Voer het volledige script uit door te klikken op het pijl-icoon <img src="figures/python_vs_code/Run_button.png" style="width:0.6cm;height:0.3cm"></p></li>
 <li><p>Controleer of je onderstaande output krijgt</p></li>
 </ol>
-<div id="ddaaccb3" class="cell" data-execution_count="2">
+<div id="7e299bf8" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-stdout">
 <pre><code>Gemiddelde dagelijkse neerslaghoogte: 2.5 mm</code></pre>
 </div>
@@ -453,30 +475,30 @@ Opgelet&nbsp;2: Troubleshooting <code>command not found: conda</code>
 <ol start="8" type="1">
 <li>Pas dan alleen het print commando in het py-bestand aan</li>
 </ol>
-<div id="d2b5f40a" class="cell" data-execution_count="3">
+<div id="af805a69" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Totale neerslaghoogte: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">sum</span>(P)<span class="sc">:.1f}</span><span class="ss"> mm'</span>) <span class="co"># Toon de totale neerslaghoogte over de meetperiode</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="9" type="1">
 <li><p>Selecteer alleen het aangepaste commando met je cursor en toets <em>shift + enter</em></p></li>
 <li><p>Controleer of je onderstaande output ziet in de <em>Jupyter Interactive Window</em></p></li>
 </ol>
-<div id="8d6ea300" class="cell" data-execution_count="4">
+<div id="b2f997ba" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
 <pre><code>Totale neerslaghoogte: 17.5 mm</code></pre>
 </div>
 </div>
-<p>Bij problemen met de <em>Jupyter Interactive Window</em>, zie <a href="#cau-jupyter" class="quarto-xref">Caution&nbsp;3</a>.</p>
+<p>Bij problemen met de <em>Jupyter Interactive Window</em>, zie <a href="#cau-jupyter" class="quarto-xref">Caution&nbsp;4</a>.</p>
 <div id="cau-jupyter" class="callout callout-style-default callout-caution callout-titled" title="TroubleShooting Jupyter Interactive Window">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Opgelet&nbsp;3: TroubleShooting Jupyter Interactive Window
+Opgelet&nbsp;4: TroubleShooting Jupyter Interactive Window
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Hoewel de <em>Jupyter Interactive Window</em> een handige tool is, kan het soms problemen geven bij het uitvoeren van code. Typische probelmen zijn <code>Kernel died</code> en <code>matplotlib</code> dat niet werkt. Mogelijke oplossingen zijn:</p>
 <ol type="1">
@@ -495,11 +517,11 @@ Opgelet&nbsp;3: TroubleShooting Jupyter Interactive Window
 <ol type="1">
 <li>Gebruik het ingebouwde help-commando als je niet weet welke input parameters een functie verwacht of hoe deze werkt. Meestal helpen de ‘Examples’ onderaan het best om de basiswerking van een functie snel te begrijpen.</li>
 </ol>
-<div id="703a3180" class="cell" data-execution_count="5">
+<div id="7e0c2ff5" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(np.<span class="bu">sum</span>)</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Output">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -508,9 +530,9 @@ Opgelet&nbsp;3: TroubleShooting Jupyter Interactive Window
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="dc5f31a1" class="cell" data-execution_count="6">
+<div id="8b88211d" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on method descriptor sum in module numpy:
 
@@ -640,11 +662,11 @@ sum(
 <ol start="2" type="1">
 <li>Test commando’s op kleine, fictieve datasets voordat je ze toepast op grote datasets om te begrijpen wat ze doen</li>
 </ol>
-<div id="25515a5a" class="cell" data-execution_count="7">
+<div id="39fad443" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>np.array([<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>]) <span class="op">&gt;</span> <span class="dv">0</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Output">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -653,9 +675,9 @@ sum(
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="939d032c" class="cell" data-execution_count="8">
+<div id="41957ef8" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>array([False, False,  True])</code></pre>
 </div>
