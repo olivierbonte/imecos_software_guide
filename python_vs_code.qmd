@@ -78,7 +78,13 @@ Voor Windows, zou de workflow via *Anaconda Prompt* die hierboven beschreven sta
 
 :::
 
-Als noch @cau-conda-powershell noch @cau-conda je probleem verhelpt, bekijk dan zeker eens de [algemen troubleshooting guide van Anaconda](https://www.anaconda.com/docs/reference/troubleshooting).
+::: {#cau-conda-permission .callout-caution collapse="true" title="`Permission denied` op `python.exe`"}
+
+Soms kan het antivirus programma op je computer de installatie van conda environment blokkeren, waardoor je `Permission denied` krijgt op `python.exe`. Als dit gebeurt, probeer dan het antivirus programma tijdelijk uit te schakelen en de installatie opnieuw te doen.
+
+:::
+
+Als @cau-conda-powershell, @cau-conda en @cau-conda-permission niet helpen bij het oplossen van je problemen, bekijk dan zeker eens de [algemen troubleshooting guide van Anaconda](https://www.anaconda.com/docs/reference/troubleshooting).
 
 ## VS Code
 
@@ -188,19 +194,25 @@ conda env create -f hydrologie_env.yml
 
 ```{python}
 #| output: false 
-import numpy as np # Open een pakket om te werken met vectoren/matrices 
-import matplotlib.pyplot as plt # Open een pakket om figures/python_vs_code te maken 
+import numpy as np  # Open een pakket om te werken met vectoren/matrices
+import matplotlib.pyplot as plt  # Open een pakket om figures/python_vs_code te maken
 
-t = np.arange(1, 8) #[d] Maak een vector met dagen tussen 1 en 8 (excl. 8)
-P = np.array([1.8, 2.1, 2.7, 3.4, 3.0, 2.5, 2.0]) #[mm/d] Maak een vector met dagelijkse nee rslaghoogtes
+t = np.arange(1, 8)  # [d] Maak een vector met dagen tussen 1 en 8 (excl. 8)
+P = np.array(
+    [1.8, 2.1, 2.7, 3.4, 3.0, 2.5, 2.0]
+)  # [mm/d] Maak een vector met dagelijkse nee rslaghoogtes
 
-print(f'Gemiddelde dagelijkse neerslaghoogte: {np.mean(P):.1f} mm') # Toon de gemiddelde dagelijkse neerslaghoogte
+print(
+    f"Gemiddelde dagelijkse neerslaghoogte: {np.mean(P):.1f} mm"
+)  # Toon de gemiddelde dagelijkse neerslaghoogte
 
-fig = plt.figure() # Maak een nieuwe figuur
-plt.plot(t, P, marker = '.', linestyle = 'None', color = 'black') # Maak een spreidingsdiagram met zwarte punten 
-plt.xlabel('Tijd (dagen)') # Maak een titel voor de x-as
-plt.ylabel('Dagelijkse neerslaghoogte [mm]') # Maak een titel voor de y-as
-plt.show() # Toon de grafiek in de output
+fig = plt.figure()  # Maak een nieuwe figuur
+plt.plot(
+    t, P, marker=".", linestyle="None", color="black"
+)  # Maak een spreidingsdiagram met zwarte punten
+plt.xlabel("Tijd (dagen)")  # Maak een titel voor de x-as
+plt.ylabel("Dagelijkse neerslaghoogte [mm]")  # Maak een titel voor de y-as
+plt.show()  # Toon de grafiek in de output
 ```
 
 2.  Voer het volledige script uit door te klikken op het pijl-icoon ![](figures/python_vs_code/Run_button.png){width="0.6cm" height="0.3cm"}
